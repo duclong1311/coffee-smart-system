@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Hello World",
+      "content": "This is the first post",
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Another Post",
+      "content": "This is another post",
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Another Post",
+      "content": "This is another post",
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Another Post",
+      "content": "This is another post",
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+    },
+    {
+      "id": "b412",
+      "title": "Cà phê chồn ",
+      "content": "Cà phê chồn một sản phẩm mới ra mắt",
+      "img": "https://cdn.tgdd.vn/2021/01/CookProduct/Ca-phe-chon-la-gi-nguon-goc-qua-trinh-va-gia-ca-phe-chon-tren-thi-truong-1-1200x676.jpg"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "postId": 1,
+      "content": "Nice post!"
+    },
+    {
+      "id": "2",
+      "postId": 1,
+      "content": "Thanks for sharing!"
+    }
+  ]
+}
