@@ -8,22 +8,16 @@ import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
 function App() {
   return (
     <>
-      {/* <ContextDataTable>
-        <Routes>
-          <Route path="header" element={<Header />} />
-          <Route path="/" element={<Home />} />
-          <Route path="admin" element={<Admin />}>
-            <Route path="sale" element={<TableManagement />} />
-            <FeedbackContext>
-              <Route path="feedback" element={<FeedbackTable />} />
-            </FeedbackContext>
-          </Route>
-        </Routes>
-      </ContextDataTable> */}
       <Routes>
-        {/* <Route path="header" element={<Head />} />
-        <Route path="/" element={<Home />} /> */}
-        <Route path="staff" element={<Staff />}>
+        <Route path="/" element={<Home />} >
+          <Route path="header" element={<Header />} />
+          <Route path="create" element={<CreatePost />} />
+          <Route path="list" element={<ListPost />} />
+          <Route path="postmanagement" element={<PostManagement />} />
+          <Route path="/edit/:id" element={<EditPost />} />
+          <Route path="dash" element={<Dashboard />} />
+        </Route>
+        {/* <Route path="admin" element={<Admin />}>
           <Route
             path="sale"
             element={
@@ -40,7 +34,7 @@ function App() {
               </FeedbackContext>
             }
           />
-        </Route>
+        </Route> */}
       </Routes>
     </>
   );
