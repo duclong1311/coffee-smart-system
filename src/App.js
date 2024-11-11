@@ -1,12 +1,12 @@
-// import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './components/pages/client/Home';
 
 function App() {
   return (
     <>
-      {/* <Routes>
-        <Route path="header" element={<Header />} />
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="admin" element={<Admin />}>
+        {/* <Route path="admin" element={<Admin />}>
           <Route
             path="sale"
             element={
@@ -23,8 +23,8 @@ function App() {
               </FeedbackContext>
             }
           />
-        </Route>
-      </Routes> */}
+        </Route> */}
+      </Routes>
     </>
   );
 }
