@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { MdOutlineManageAccounts } from "react-icons/md";
+import { VscFeedback } from "react-icons/vsc";
+import { IoRestaurantOutline } from "react-icons/io5";
 
 const Dashboard = () => {
   const [selected, setSelected] = useState("dashboard");
+  const [isPostsDropdownOpen, setIsPostsDropdownOpen] = useState(false);
+  const togglePostsDropdown = () => {
+    setIsPostsDropdownOpen(!isPostsDropdownOpen);
+  };
 
   const handleClick = (item) => {
     setSelected(item);
@@ -13,7 +20,7 @@ const Dashboard = () => {
         <div className="relative border-b border-white/20">
           <Link className="flex items-center gap-4 py-6 px-8" href="#/">
             <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
-              Admin Management
+              Staff Management
             </h6>
           </Link>
           <button
@@ -73,7 +80,7 @@ const Dashboard = () => {
             <li>
               <Link className="" to="/staff/sale">
                 <button
-                  className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
+                  className={` hover:bg-blue-500 middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
                    ${
                      selected === "sale"
                        ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
@@ -104,38 +111,74 @@ const Dashboard = () => {
               </Link>
             </li>
             <li>
-              <Link className="" to="/staff/feedback">
-                <button
-                  // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
-                  className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
+              <button
+                className="hover:bg-blue-500 disabled:opacity-50 active:bg-blue-500  hover:shadow-blue-500/40 middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
+                onClick={togglePostsDropdown}
+                type="button"
+              >
+                <div>
+                  <MdOutlineManageAccounts className="size-7" />
+                </div>
+                <p className="block text-base font-medium capitalize">Manage</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="w-5 h-5 text-inherit"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M6 10l6 6 6-6H6z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+              {/* Dropdown Items */}
+              {isPostsDropdownOpen && (
+                <ul className="ml-9 mr-9 flex flex-col gap-1">
+                  <li>
+                    <Link className="" to="/staff/feedback">
+                      <button
+                        className={`hover:bg-blue-500 middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
                    ${
-                     selected === "manage"
+                     selected === "feedback"
                        ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
                        : ""
                    }`}
-                  onClick={() => handleClick("manage")}
-                  type="button"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
-                    />
-                  </svg>
+                        onClick={() => handleClick("feedback")}
+                        type="button"
+                      >
+                        <VscFeedback className="size-6" />
 
-                  <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
-                    Manage
-                  </p>
-                </button>
-              </Link>
+                        <p className="block text-base font-medium capitalize">
+                          Feedback
+                        </p>
+                      </button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="" to="/staff/service">
+                      <button
+                        className={`hover:bg-blue-500 middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
+                   ${
+                     selected === "service"
+                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                       : ""
+                   }`}
+                        onClick={() => handleClick("service")}
+                        type="button"
+                      >
+                        <IoRestaurantOutline className="size-6" />
+
+                        <p className="block text-base font-medium capitalize">
+                          Service
+                        </p>
+                      </button>
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <Link className="" href="#">

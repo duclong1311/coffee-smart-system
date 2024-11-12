@@ -11,6 +11,9 @@ import { ListPost } from "./components/posts/client/ListPost";
 import { PostManagement } from "./components/posts/server/admin/PostManagement";
 import { EditPost } from "./components/posts/server/admin/EditPost";
 import DashBoard from "./components/posts/server/admin/DashBoard";
+import DishGroupList from "./components/Foodservice/DishGroupList";
+import ServiceContext from "./components/context/ServiceContext";
+import AddDishGroup from "./components/Foodservice/ActionFoodService/AddDishGroup";
 
 // import TableManagement from "./TableManagement";
 function App() {
@@ -40,6 +43,14 @@ function App() {
               <FeedbackContext>
                 <FeedbackTable />
               </FeedbackContext>
+            }
+          />
+          <Route
+            path="service"
+            element={
+              <ServiceContext>
+                <DishGroupList />
+              </ServiceContext>
             }
           />
         </Route>

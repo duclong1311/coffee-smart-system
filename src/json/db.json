@@ -42,7 +42,6 @@
       "postId": 1,
       "content": "Thanks for sharing!"
     }
-    
   ],
   "listTable": [
     {
@@ -192,7 +191,7 @@
       ]
     }
   ],
-  "feedBack":[
+  "feedBack": [
     {
       "id": 1,
       "feedbackCode": "FB01",
@@ -272,6 +271,123 @@
       "createdBy": "Lê Thị I",
       "email": "lethi@gmail.com",
       "feedback": "Good quality"
+    }
+  ],
+  "listFood": [
+    {
+      "id": "bc79",
+      "groupCode": "G01",
+      "groupName": "Bánh",
+      "items": [
+        {
+          "code": "B01",
+          "foodName": "Tiramisu",
+          "price": 30000
+        },
+        {
+          "code": "B02",
+          "foodName": "Bánh bò",
+          "price": 15000
+        },
+        {
+          "code": "B03",
+          "foodName": "Bánh kem",
+          "price": 50000
+        }
+      ]
+    },
+    {
+      "id": "aa87",
+      "groupCode": "G02",
+      "groupName": "Coffee",
+      "items": [
+        {
+          "code": "C01",
+          "foodName": "Cà phê đen",
+          "price": 15000
+        },
+        {
+          "code": "C02",
+          "foodName": "Cà phê sữa đá",
+          "price": 20000
+        },
+        {
+          "code": "C03",
+          "foodName": "Espresso",
+          "price": 25000
+        }
+      ]
+    },
+    {
+      "id": "cb97",
+      "groupCode": "G03",
+      "groupName": "Nước ép",
+      "items": [
+        {
+          "code": "N01",
+          "foodName": "Ép cam",
+          "price": 25000
+        },
+        {
+          "code": "N02",
+          "foodName": "Ép dứa",
+          "price": 30000
+        },
+        {
+          "code": "N03",
+          "foodName": "Ép ổi",
+          "price": 28000
+        }
+      ]
+    },
+    {
+      "id": "ca55",
+      "groupCode": "G04",
+      "groupName": "Nước tăng lực",
+      "items": [
+        {
+          "code": "T01",
+          "foodName": "Bò húc",
+          "price": 20000
+        },
+        {
+          "code": "T02",
+          "foodName": "Red Bull",
+          "price": 22000
+        },
+        {
+          "code": "T03",
+          "foodName": "Number One",
+          "price": 18000
+        }
+      ]
+    },
+    {
+      "id": "ca99",
+      "groupCode": "G05",
+      "groupName": "Trà sữa",
+      "items": [
+        {
+          "code": "TS01",
+          "foodName": "Trà sữa trân châu",
+          "price": 35000
+        },
+        {
+          "code": "TS02",
+          "foodName": "Trà sữa matcha",
+          "price": 40000
+        },
+        {
+          "code": "TS03",
+          "foodName": "Trà sữa socola",
+          "price": 38000
+        }
+      ]
+    },
+    {
+      "id": "2b33",
+      "groupCode": "11",
+      "groupName": "323123"
     }
   ]
 }
