@@ -10,12 +10,19 @@ const ServiceContext = ({ children }) => {
     groupName: "",
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModaEditlOpen, setIsModaEditlOpen] = useState(false);
 
   const handleAddClick = () => {
     setIsModalOpen(true);
   };
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+  const handleEditClick = () => {
+    setIsModaEditlOpen(true);
+  };
+  const closeModalEdit = () => {
+    setIsModaEditlOpen(false);
   };
 
   const getMenuList = async () => {
@@ -33,7 +40,10 @@ const ServiceContext = ({ children }) => {
 
   const AddNewDishGroup = async (data) => {
     try {
-      await axios.post("http://localhost:3000/listFood", data);
+      await axios.post("http://localhost:3000/listFood", {
+        ...data,
+        items: [],
+      });
       alert("them thanh cong");
       setInnittialValue(inittialValue);
       getMenuList();
@@ -69,6 +79,10 @@ const ServiceContext = ({ children }) => {
           handleAddClick,
           closeModal,
           inittialValue,
+          handleEditClick,
+          isModaEditlOpen,
+          closeModalEdit,
+          setMenuList,
         }}
       >
         {children}

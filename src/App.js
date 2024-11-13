@@ -10,19 +10,15 @@ import { ListPost } from "./components/posts/client/ListPost";
 import { PostManagement } from "./components/posts/server/admin/PostManagement";
 import { EditPost } from "./components/posts/server/admin/EditPost";
 import DashBoard from "./components/posts/server/admin/DashBoard";
-<<<<<<< HEAD
 import DishGroupList from "./components/Foodservice/DishGroupList";
 import ServiceContext from "./components/context/ServiceContext";
 import AddDishGroup from "./components/Foodservice/ActionFoodService/AddDishGroup";
-=======
-import { Login } from './components/user/Login';
-import { Profile } from './components/user/Profile';
-import { ChangePassword } from './components/user/Changepassword';
-import  Update  from './components/user/Update';
-import { Home } from "./components/pages/client/Home";//home của Như
-import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";//home của Phúc
-
->>>>>>> teamA
+import { Login } from "./components/user/Login";
+import { Profile } from "./components/user/Profile";
+import { ChangePassword } from "./components/user/Changepassword";
+import Update from "./components/user/Update";
+import { Home } from "./components/pages/client/Home"; //home của Như
+import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin"; //home của Phúc
 
 // import TableManagement from "./TableManagement";
 function App() {
@@ -67,10 +63,10 @@ function App() {
             }
           />
         </Route>
-        <Route path="login" element={<Login/>} />
-        <Route path="profile" element={<Profile/>} />
-        <Route path="changepassword" element={<ChangePassword/>} />
-        <Route path="update" element={<Update/>} />
+        <Route path="login" element={<Login />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="changepassword" element={<ChangePassword />} />
+        <Route path="update" element={<Update />} />
       </Routes>
     </>
   );
