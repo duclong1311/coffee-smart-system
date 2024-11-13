@@ -18,4 +18,17 @@
 
 .orderlist-infor {
     display: flex;
+    flex-direction: column;
+}
+
+.orderlist-right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.orderlist-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }

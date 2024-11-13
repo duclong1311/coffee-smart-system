@@ -13,7 +13,7 @@ const FoodType = () => {
 
                 <div className='right-container'>
                     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 food-item">
-                        <img className="rounded-t-lg" src={"https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"} alt="" />
+                        <img className="rounded-t-lg" src={"/assets/images/Menu/bac-xiu-kem-muoi.jpg"} alt="" />
                         <div className="p-5">
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cà phê chồn</h5>
                             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Cà phê chồn là sản phẩm mới ra mắt</p>
@@ -72,9 +72,6 @@ const FoodType = () => {
                                 </li>
                                 <li>
                                     <a href="/" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                                </li>
-                                <li>
-                                    <a href="/" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
                                 </li>
                                 <li>
                                     <a href="/" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
