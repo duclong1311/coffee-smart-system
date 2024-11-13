@@ -79,7 +79,7 @@ function Dashboard() {
               {isPostsDropdownOpen && (
                 <ul className="ml-6 flex flex-col gap-1">
                   <li>
-                    <Link className="" to="/create">
+                    <Link className="" to="/admin/create">
                       <button
                         className="middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
                         type="button"
@@ -92,7 +92,7 @@ function Dashboard() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="" to="/postmanagement">
+                    <Link className="" to="/admin/postmanagement">
                       <button
                         className="middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
                         type="button"

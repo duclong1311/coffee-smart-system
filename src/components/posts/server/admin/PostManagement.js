@@ -17,7 +17,7 @@ export function PostManagement() {
     };
 
     const handleEdit = async (id) => {
-        navigate(`/edit/${id}`)
+        navigate(`/admin/edit/${id}`)
     };
 
 
