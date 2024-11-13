@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
+import Header from '../partial/Header';
 
 export function Login() {
     const navigate = useNavigate();
@@ -15,7 +16,8 @@ export function Login() {
 
         if (user) {
             alert('Đăng nhập thành công!');
-            navigate('/'); 
+            localStorage.setItem('user', JSON.stringify(user));  // Lưu thông tin người dùng vào localStorage
+            navigate('/');  
         } else {
             alert('Tên đăng nhập hoặc mật khẩu không đúng!');
         }
@@ -23,6 +25,7 @@ export function Login() {
 
     return (
         <>
+        <Header/>
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
             <div className="bg-white p-6 rounded-lg shadow-lg w-80">
                 <Formik
@@ -54,15 +57,6 @@ export function Login() {
                         </button>
                     </Form>
                 </Formik>
-                {/* <Link to="/forgot-password" className="block text-center mt-3 text-sm text-blue-600">Quên Mật Khẩu</Link>
-                <hr className="my-4 border-gray-300" />
-                <Link to="/register" className="block">
-                    <button 
-                        className="w-full p-2 bg-[#c19977] text-white font-bold rounded hover:bg-[#c0865f]"
-                    >
-                        Đăng kí ngay
-                    </button>
-                </Link> */}
             </div>
         </div>
         </>

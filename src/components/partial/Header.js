@@ -1,16 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaBars } from "react-icons/fa6";
-import { FaPhoneAlt, FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { FaPhoneAlt, FaSearch, FaShoppingCart, FaUser, FaSignOutAlt } from "react-icons/fa"; // Import thêm icon đăng xuất
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate để điều hướng
 import SideBar from '../partial/SideBar';
 import logo from '../../assets/images/logo-dark-retina.webp';
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // Trạng thái đăng nhập
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // Kiểm tra xem người dùng đã đăng nhập hay chưa
+        const user = localStorage.getItem('user');
+        setIsLoggedIn(!!user); // Nếu có thông tin người dùng trong localStorage thì đã đăng nhập
+    }, []);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
         document.body.classList.toggle('sidebar-open', !isOpen);
+    };
+
+    // Hàm đăng xuất
+    const handleLogout = () => {
+        // Xóa thông tin người dùng khỏi localStorage hoặc sessionStorage
+        localStorage.removeItem('user');
+        
+        // Điều hướng người dùng về trang đăng nhập
+        setIsLoggedIn(false); // Cập nhật trạng thái đăng nhập
+        navigate('/login');
     };
 
     return (
@@ -45,12 +63,22 @@ function Header() {
                             <div className="cursor-pointer">
                                 <FaSearch className="hidden md:block"/>
                             </div>
-                            <Link to="/user" className="cursor-pointer mx-4 md:mx-6 ">
+                            <Link to="/profile" className="cursor-pointer mx-4 md:mx-6">
                                 <FaUser />
                             </Link>
                             <Link to="/cart" className="cursor-pointer">
                                 <FaShoppingCart />
                             </Link>
+                            {/* Hiển thị nút Đăng nhập/Đăng xuất */}
+                            {isLoggedIn ? (
+                                <div className="cursor-pointer mx-4 md:mx-6" onClick={handleLogout}>
+                                    <FaSignOutAlt />
+                                </div>
+                            ) : (
+                                <Link to="/login" className="cursor-pointer mx-4 md:mx-6">
+                                    Đăng nhập
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>

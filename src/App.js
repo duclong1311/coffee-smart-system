@@ -1,6 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './components/pages/client/Home';
-import {Login} from "../src/components/user/Login";
+import { Login } from './components/user/Login';
+import { Profile } from './components/user/Profile';
+import { ChangePassword } from './components/user/Changepassword';
+import  Update  from './components/user/Update';
 
 function App() {
   return (
@@ -27,6 +30,10 @@ function App() {
             }
           />
         </Route> */}
+        <Route path="login" element={<Login/>} />
+        <Route path="profile" element={<Profile/>} />
+        <Route path="changepassword" element={<ChangePassword/>} />
+        <Route path="update" element={<Update/>} />
       </Routes>
     </>
   );
