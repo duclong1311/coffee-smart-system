@@ -389,5 +389,48 @@
       "groupCode": "C05",
       "groupName": "Trứng"
     }
+    ,
+    {
+      "id": "caef",
+      "groupCode": "ádas",
+      "groupName": "ádasd"
+    }
+  ],
+  "users": [
+    {
+      "fullName": "Nguyễn Thành Nhân đep trai",
+      "address": "Codegym C05",
+      "gender": "Nam",
+      "phone": "0123456789",
+      "dob": "19-05-2002",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "username": "phuc",
+      "password": "123",
+      "fullName": "Phùng Bửu Hoàng Phúc",
+      "address": "Codegym C05",
+      "gender": "Nam",
+      "phone": "0122456789",
+      "dob": "19-05-2002",
+      "salary": "10.000.000 VND",
+      "position": "Nhân Viên"
+    },
+    {
+      "fullName": "Lê Thị Huỳnh Như",
+      "address": "Codegym C05",
+      "gender": "Nam",
+      "phone": "0122456789",
+      "dob": "2008-09-15",
+      "id": "3"
+    },
+    {
+      "id": "4",
+      "username": "hoangphuc",
+      "password": "123"
+    }
+    
   ]
+
 }
