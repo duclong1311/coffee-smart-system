@@ -93,7 +93,7 @@ function Header() {
                             <Link to="/shop" className="hover:opacity-80">Sản phẩm</Link>
                         </li>
                         <li className="p-4">
-                            <Link to="/blog" className="hover:opacity-80">Bài viết</Link>
+                            <Link to="/listpost" className="hover:opacity-80">Bài viết</Link>
                         </li>
                         <li className="p-4">
                             <Link to="/about" className="hover:opacity-80">Giới thiệu</Link>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Dashboard() {
+function AdminDashBoard() {
   const [selected, setSelected] = useState("dashboard");
   const [isPostsDropdownOpen, setIsPostsDropdownOpen] = useState(false);
 
@@ -129,4 +129,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default AdminDashBoard;

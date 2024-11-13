@@ -3,9 +3,15 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [selected, setSelected] = useState("dashboard");
+  const [isPostsDropdownOpen, setIsPostsDropdownOpen] = useState(false);
+
 
   const handleClick = (item) => {
     setSelected(item);
+  };
+
+  const togglePostsDropdown = () => {
+    setIsPostsDropdownOpen(!isPostsDropdownOpen);
   };
   return (
     <div>
@@ -46,11 +52,10 @@ const Dashboard = () => {
                 <button
                   // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white shadow-md  w-full flex items-center gap-4 px-4 capitalize bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
                   className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "dashboard"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "dashboard"
+                      ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                      : ""
+                    }`}
                   onClick={() => handleClick("dashboard")}
                   type="button"
                 >
@@ -74,11 +79,10 @@ const Dashboard = () => {
               <Link className="" to="/staff/sale">
                 <button
                   className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "sale"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "sale"
+                      ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                      : ""
+                    }`}
                   onClick={() => handleClick("sale")}
                   type="button"
                 >
@@ -108,11 +112,10 @@ const Dashboard = () => {
                 <button
                   // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                   className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "manage"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "manage"
+                      ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                      : ""
+                    }`}
                   onClick={() => handleClick("manage")}
                   type="button"
                 >
@@ -161,6 +164,63 @@ const Dashboard = () => {
                   </p>
                 </button>
               </Link>
+            </li>
+            {/* Dropdown for Posts */}
+            <li>
+              <button
+                className="middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
+                onClick={togglePostsDropdown}
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="w-5 h-5 text-inherit"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M6 10l6 6 6-6H6z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p className="block text-base font-medium capitalize">
+                  Posts
+                </p>
+              </button>
+
+              {/* Dropdown Items */}
+              {isPostsDropdownOpen && (
+                <ul className="ml-6 flex flex-col gap-1">
+                  <li>
+                    <Link className="" to="/admin/createpost">
+                      <button
+                        className="middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
+                        type="button"
+                        onClick={() => handleClick("create")}
+                      >
+                        <p className="block text-base font-medium capitalize">
+                          Create Post
+                        </p>
+                      </button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="" to="/admin/postmanagement">
+                      <button
+                        className="middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
+                        type="button"
+                        onClick={() => handleClick("postmanagement")}
+                      >
+                        <p className="block text-base font-medium capitalize">
+                          Post Management
+                        </p>
+                      </button>
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
           </ul>
         </div>

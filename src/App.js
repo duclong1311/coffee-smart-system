@@ -5,17 +5,17 @@ import TableManagement from "./components/TableManagement/TableManagement";
 import FeedbackContext from "../src/components/context/FeedbackContext";
 import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
 import { Header } from "./components/pages/server/admin/Header";
-import { CreatePost } from "./components/posts/server/admin/CreatePost";
-import { ListPost } from "./components/posts/client/ListPost";
-import { PostManagement } from "./components/posts/server/admin/PostManagement";
-import { EditPost } from "./components/posts/server/admin/EditPost";
-import DashBoard from "./components/posts/server/admin/DashBoard";
+import { CreatePost } from "./components/pages/server/admin/actionPosts/CreatePost";
+import { ListPost } from "./components/pages/client/Posts/ListPost";
+import { PostManagement } from "./components/pages/server/admin/actionPosts/PostManagement";
+import { EditPost } from "./components/pages/server/admin/actionPosts/EditPost";
+import DashBoard from "./components/pages/server/admin/AdminDashBoard";
 import { Login } from './components/user/Login';
 import { Profile } from './components/user/Profile';
 import { ChangePassword } from './components/user/Changepassword';
-import  Update  from './components/user/Update';
+import Update from './components/user/Update';
 import { Home } from "./components/pages/client/Home";//home của Như
-import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";//home của Phúc
+import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";
 
 
 // import TableManagement from "./TableManagement";
@@ -23,13 +23,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/admin" element={<HomeAdmin />}>
-          <Route path="header" element={<Header />} />
-          <Route path="create" element={<CreatePost />} />
-          <Route path="listpost" element={<ListPost />} />
+{/* Trang admin */}
+
+
+        <Route path="listpost" element={<ListPost />} />
+        <Route path="admin" element={<HomeAdmin />} >
+          <Route path="createpost" element={<CreatePost />} />
           <Route path="postmanagement" element={<PostManagement />} />
           <Route path="edit/:id" element={<EditPost />} />
-          <Route path="dash" element={<DashBoard />} />
         </Route>
         {/* <Route path="staff" element={<Staff />}/> */}
         <Route path="/" element={<Home />} />
@@ -53,10 +54,10 @@ function App() {
             }
           />
         </Route>
-        <Route path="login" element={<Login/>} />
-        <Route path="profile" element={<Profile/>} />
-        <Route path="changepassword" element={<ChangePassword/>} />
-        <Route path="update" element={<Update/>} />
+        <Route path="login" element={<Login />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="changepassword" element={<ChangePassword />} />
+        <Route path="update" element={<Update />} />
       </Routes>
     </>
   );
