@@ -1,0 +1,21 @@
+.order-list-container{
+    width: 100%;
+}
+
+.orderlist-action {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.orderlist-table {
+    display: flex;    
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderlist-infor {
+    display: flex;
+}

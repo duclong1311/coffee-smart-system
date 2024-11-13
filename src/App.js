@@ -1,8 +1,10 @@
 // import { Route, Routes } from 'react-router-dom';
+import DisplayMenu from "./components/pages/client/DisplayMenu";
 
 function App() {
   return (
     <>
+      <DisplayMenu />
       {/* <Routes>
         <Route path="header" element={<Header />} />
         <Route path="/" element={<Home />} />
