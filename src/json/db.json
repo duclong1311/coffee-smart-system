@@ -42,5 +42,22 @@
       "postId": 1,
       "content": "Thanks for sharing!"
     }
+  ],
+  "users" : [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "nhan",
+      "password": "123"
+    },
+    {
+      "id": 3,
+      "username": "nhule",
+      "password": "123"
+    }
   ]
 }
