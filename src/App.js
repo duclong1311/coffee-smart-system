@@ -16,6 +16,8 @@ import { ChangePassword } from './components/user/Changepassword';
 import  Update  from './components/user/Update';
 import { Home } from "./components/pages/client/Home";//home của Như
 import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";//home của Phúc
+// import { Route, Routes } from 'react-router-dom';
+import DisplayMenu from "./components/pages/client/DisplayMenu";
 
 
 // import TableManagement from "./TableManagement";
@@ -34,6 +36,7 @@ function App() {
         {/* <Route path="staff" element={<Staff />}/> */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/menu" element={<DisplayMenu />} />
 
         <Route path="staff" element={<Staff />}>
           <Route
