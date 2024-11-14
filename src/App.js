@@ -18,7 +18,7 @@ import { Home } from "./components/pages/client/Home";//home của Như
 import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";//home của Phúc
 // import { Route, Routes } from 'react-router-dom';
 import DisplayMenu from "./components/pages/client/DisplayMenu";
-
+import "react-toastify/dist/ReactToastify.css";
 
 // import TableManagement from "./TableManagement";
 function App() {

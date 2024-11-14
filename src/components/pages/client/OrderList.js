@@ -1,6 +1,42 @@
+import { useState } from 'react';
 import './OrderList.css';
+import { toast } from 'react-toastify';
 
-const OrderList = () => {
+const OrderList = ({ orderList, setOrderList }) => {
+    const [selectedItems, setSelectedItems] = useState([]);
+
+    const handleCheckboxChange = (event, itemId) => {
+        if (event.target.checked) {
+            setSelectedItems((prevSelected) => [...prevSelected, itemId]);
+        } else {
+            setSelectedItems((prevSelected) => prevSelected.filter((id) => id !== itemId));
+        }
+    };
+
+    const handleDeleteOrder = () => {
+        if (selectedItems && selectedItems.length > 0) {
+            const updatedOrderList = orderList.filter((item) => !selectedItems.includes(item.id));
+            setOrderList(updatedOrderList);
+            setSelectedItems([]);
+            toast.success("Delete success");
+        } else {
+            toast.error("No item selected to delete");
+        }
+    };
+
+    const handleCallOrder = () => {
+        //to do, gửi order đến backend
+        const functionThatReturnPromise = () => new Promise(resolve => setTimeout(resolve, 3000));
+        toast.promise(
+            functionThatReturnPromise,
+            {
+                pending: 'Đang tiến hành gọi món',
+                success: 'Gọi món thành công 👌',
+                error: 'Gọi món thất bại 🤯'
+            }
+        )
+    }
+
     return (
         <>
             <div className="order-list-container">
@@ -11,12 +47,9 @@ const OrderList = () => {
                                 <tr>
                                     <th scope="col" className="p-4">
                                         <div className="flex items-center">
-                                            <input id="checkbox-all" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                            <input disabled id="checkbox-all" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                             <label for="checkbox-all" className="sr-only">checkbox</label>
                                         </div>
-                                    </th>
-                                    <th scope="col" className="px-6 py-3 w-20">
-                                        STT
                                     </th>
                                     <th scope="col" className="px-6 py-3">
                                         Tên món
@@ -36,55 +69,52 @@ const OrderList = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <td className="w-4 p-4">
-                                        <div className="flex items-center">
-                                            <input id="checkbox-table-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label for="checkbox-table-1" className="sr-only">checkbox</label>
-                                        </div>
-                                    </td>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Apple MacBook Pro 17"
-                                    </th>
-                                    <td className="px-6 py-4">
-                                        Silver
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        Laptop
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        $2999
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        $2999
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        {/* <a href="/" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> */}
-                                        5 min
-                                    </td>
-                                </tr>
+                                {orderList && orderList.length > 0
+                                    ?
+                                    orderList.map((orderItem, index) => (
+                                        <tr key={orderItem.name} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td className="w-4 p-4">
+                                                <div className="flex items-center">
+                                                    <input
+                                                        onChange={(event) => handleCheckboxChange(event, orderItem.id)}
+                                                        id={`${orderItem.name}-${index}`}
+                                                        type="checkbox"
+                                                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                                    />
+                                                    <label for={`${orderItem.name}-${index}`} className="sr-only">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                {orderItem.name}
+                                            </th>
+                                            <td className="px-6 py-4">
+                                                {orderItem.quantity}
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                {orderItem.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })}
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                {orderItem.total.toLocaleString('vi', { style: 'currency', currency: 'VND' })}
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                5 phút
+                                            </td>
+                                        </tr>
+                                    ))
+                                    :
+                                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                        <td colSpan={5} className="px-6 py-4">
+                                            Không có sản phẩm nào trong danh sách Order!
+                                        </td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
-                    <div className='pagination'>
-                        <nav aria-label="Page navigation example">
-                            <ul class="inline-flex -space-x-px text-sm">
-                                <li>
-                                    <a href="/" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                                </li>
-                                <li>
-                                    <a href="/" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                                </li>
-                                <li>
-                                    <a href="/" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
                 <div className="orderlist-action">
-                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Xóa món</button>
-                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi món</button>
+                    <button onClick={handleDeleteOrder} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Xóa món</button>
+                    <button onClick={handleCallOrder} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi món</button>
                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Tính tiền</button>
                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi phục vụ</button>
                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Phản hồi</button>
