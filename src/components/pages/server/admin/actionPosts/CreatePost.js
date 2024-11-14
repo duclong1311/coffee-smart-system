@@ -27,7 +27,8 @@ export function CreatePost() {
                     initialValues={{
                         title: "",
                         content: "",
-                        img: ""
+                        img: "",
+                        date: ""
                     }}
                     onSubmit={createPost}
                 >
@@ -47,6 +48,14 @@ export function CreatePost() {
                                         setFieldValue("content", content);
                                         setFieldTouched("content", true); // Mark field as touched
                                     }}
+                                />
+                            </div>
+                            <div>
+                                <Field
+                                    type="date"
+                                    name="date"
+                                    placeholder="ngày"
+                                    className="block w-full p-2 border border-gray-300 rounded"
                                 />
                             </div>
                             <div>
