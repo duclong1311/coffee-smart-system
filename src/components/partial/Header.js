@@ -85,9 +85,9 @@ function Header() {
                         </div>
 
                         <div className="w-[20%] md:w-1/3 flex items-center justify-end text-[#333] text-4xl">
-                            <div className="relative cursor-pointer mx-2 md:mx-2 group">
+                            <div className="relative cursor-pointer mx-4 md:mx-6 group">
                                 <Link to="/profile">
-                                    <SlUser className='size-6'/>
+                                    <FaUser />
                                 </Link>
                                 <span className="absolute top-full mt-1 right-0 hidden group-hover:block bg-[#333] text-white text-sm px-2 py-1 rounded min-w-[150px] max-w-[300px]">
                                     Xem thông tin tài khoản
@@ -95,9 +95,9 @@ function Header() {
                             </div>
 
                             {isLoggedIn ? (
-                                <div className="relative cursor-pointer mx-4 md:mx-2 group" onClick={handleLogout}>
-                                    <IoIosLogOut className='size-7' />
-                                    <span className="absolute top-full mt-1 right-0 hidden group-hover:block bg-[#333] text-white text-sm px-1 py-1 rounded">
+                                <div className="relative cursor-pointer mx-4 md:mx-6 group" onClick={handleLogout}>
+                                    <FaSignOutAlt />
+                                    <span className="absolute top-full mt-1 right-0 hidden group-hover:block bg-[#333] text-white text-sm px-2 py-1 rounded">
                                         Đăng xuất
                                     </span>
                                 </div>

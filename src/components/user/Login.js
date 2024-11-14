@@ -35,7 +35,7 @@ export function Login() {
 
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
                 <ToastContainer />
                 <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 m-4 shadow-lg rounded-md bg-white">
@@ -49,30 +49,30 @@ export function Login() {
                         >
                             <Form>
                                 <div className="mb-12">
-                                    <h3 className="text-[#333] text-3xl font-extrabold">Đăng Nhập</h3>
+                                    <h3 className="text-gray-800 text-3xl font-extrabold">Đăng Nhập</h3>
                                 </div>
 
                                 <div>
-                                    <label className="text-[#333] text-xs block mb-2">Tên Đăng Nhập</label>
+                                    <label className="text-gray-800 text-xs block mb-2">Tên Đăng Nhập</label>
                                     <div className="relative flex items-center">
                                         <Field
                                             type="text"
                                             name="username"
                                             required
-                                            className="w-full text-[#333] text-sm border-b border-gray-300 focus:border-[#888682] px-2 py-3 outline-none"
+                                            className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                                             placeholder="Tên Đăng Nhập"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="mt-8">
-                                    <label className="text-[#333] text-xs block mb-2">Mật Khẩu</label>
+                                    <label className="text-gray-800 text-xs block mb-2">Mật Khẩu</label>
                                     <div className="relative flex items-center">
                                         <Field
                                             type="password"
                                             name="password"
                                             required
-                                            className="w-full text-[#333] text-sm border-b border-gray-300 focus:border-[#888682] px-2 py-3 outline-none"
+                                            className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                                             placeholder="Mật Khẩu"
                                         />
                                     </div>
@@ -84,19 +84,19 @@ export function Login() {
                                             id="remember-me"
                                             name="remember-me"
                                             type="checkbox"
-                                            className="h-4 w-4 text-[#888682] focus:ring-blue-500 border-gray-300 rounded"
+                                            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                                         />
-                                        <label htmlFor="remember-me" className="ml-3 block text-sm text-[#333]">Nhớ Đăng Nhập</label>
+                                        <label htmlFor="remember-me" className="ml-3 block text-sm text-gray-800">Nhớ Đăng Nhập</label>
                                     </div>
                                     <div>
-                                        <a href="javascript:void(0);" className="text-[#888682] font-semibold text-sm hover:underline">Quên Mật Khẩu ?</a>
+                                        <a href="javascript:void(0);" className="text-blue-600 font-semibold text-sm hover:underline">Quên Mật Khẩu ?</a>
                                     </div>
                                 </div>
 
                                 <div className="mt-12">
                                     <button
                                         type="submit"
-                                        className="w-full p-2 bg-[#333] text-white font-semibold rounded hover:bg-white hover:text-[#c19977] border hover:border-[#c19977]"
+                                        className="w-full p-2 bg-gray-800 text-white font-semibold rounded hover:bg-white hover:text-[#c19977] border hover:border-[#c19977]"
                                     >
                                         Đăng Nhập
                                     </button>
@@ -137,7 +137,7 @@ export function Login() {
                     </div>
                 </div>
             </div>
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }
