@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import Staff from "./components/pages/server/staff/Staff";
 import ContextDataTable from "./components/context/ContextDataTable";
 import TableManagement from "./components/TableManagement/TableManagement";
-import FeedbackContext from "../src/components/context/FeedbackContext";
 import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
 import { Header } from "./components/pages/server/admin/Header";
 import { CreatePost } from "./components/posts/server/admin/CreatePost";
@@ -46,14 +45,7 @@ function App() {
               </ContextDataTable>
             }
           />
-          <Route
-            path="feedback"
-            element={
-              <FeedbackContext>
-                <FeedbackTable />
-              </FeedbackContext>
-            }
-          />
+          <Route path="feedback" element={<FeedbackTable />} />
           <Route
             path="service"
             element={

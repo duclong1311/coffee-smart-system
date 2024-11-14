@@ -16,7 +16,7 @@ const Dashboard = () => {
   };
   return (
     <div>
-      <aside className="bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0">
+      <aside className="bg-[#333] -translate-x-80 fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0">
         <div className="relative border-b border-white/20">
           <Link className="flex items-center gap-4 py-6 px-8" href="#/">
             <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
@@ -47,15 +47,15 @@ const Dashboard = () => {
           </button>
         </div>
         <div className="m-4">
-          <ul className="mb-4 flex flex-col gap-1">
+          <ul className="mb-4 flex flex-col gap-2">
             <li>
               <Link aria-current="page" className="active" to="/staff">
                 <button
                   // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white shadow-md  w-full flex items-center gap-4 px-4 capitalize bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
-                  className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
+                  className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
                    ${
                      selected === "dashboard"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
                        : ""
                    }`}
                   onClick={() => handleClick("dashboard")}
@@ -80,14 +80,14 @@ const Dashboard = () => {
             <li>
               <Link className="" to="/staff/sale">
                 <button
-                  className={` hover:bg-blue-500 middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
+                  type="button"
+                  className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
                    ${
                      selected === "sale"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
                        : ""
                    }`}
                   onClick={() => handleClick("sale")}
-                  type="button"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ const Dashboard = () => {
             </li>
             <li>
               <button
-                className="hover:bg-blue-500 disabled:opacity-50 active:bg-blue-500  hover:shadow-blue-500/40 middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
+                className="hover:bg-[#c48355]  first-letter:shadow-amber-700  hover:shadow-lg  mb-3 disabled:opacity-50 active:bg-[#6F4F37]  hover:shadow-amber-700 middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
                 onClick={togglePostsDropdown}
                 type="button"
               >
@@ -140,10 +140,10 @@ const Dashboard = () => {
                   <li>
                     <Link className="" to="/staff/feedback">
                       <button
-                        className={`hover:bg-blue-500 middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
+                        className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
                    ${
                      selected === "feedback"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
                        : ""
                    }`}
                         onClick={() => handleClick("feedback")}
@@ -157,6 +157,7 @@ const Dashboard = () => {
                       </button>
                     </Link>
                   </li>
+                  {/* service here */}
                   <li>
                     <Link className="" to="/staff/service">
                       <button
