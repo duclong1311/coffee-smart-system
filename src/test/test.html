@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <div class="font-sans">
+        <div class="min-h-screen flex flex-col items-center justify-center">
+            <div class="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 m-4 shadow-lg rounded-md bg-white">
+                <div class="md:max-w-md w-full px-4 py-4">
+                    <form>
+                        <div class="mb-12">
+                            <h3 class="text-gray-800 text-3xl font-extrabold">Đăng Nhập</h3>
+                        </div>
+
+                        <div>
+                            <label class="text-gray-800 text-xs block mb-2">Tên Đăng Nhập</label>
+                            <div class="relative flex items-center">
+                                <input name="email" type="text" required class="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none" placeholder="Tên Đăng Nhập" />
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <label class="text-gray-800 text-xs block mb-2">Mật Khẩu</label>
+                            <div class="relative flex items-center">
+                                <input name="password" type="password" required class="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none" placeholder="Mật Khẩu" />
+                                  
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-between gap-4 mt-6">
+                            <div class="flex items-center">
+                                <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+                                <label for="remember-me" class="ml-3 block text-sm text-gray-800">Nhớ Đăng Nhập</label>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0);" class="text-blue-600 font-semibold text-sm hover:underline">Quên Mật Khẩu ?</a>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <button type="submit" class="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">Đăng Nhập</button>
+                        </div>
+
+                        <div class="space-x-6 flex justify-center mt-6">
+                            <button type="button" class="border-none outline-none">
+                                <!-- Google Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32px" class="inline" viewBox="0 0 512 512">
+                                    <!-- Google SVG Paths -->
+                                    <path fill="#fbbd00" d="M120 256c0-25.367 6.989-49.13..."></path>
+                                    <path fill="#0f9d58" d="m256 392-60 60 60 60c..."></path>
+                                    <path fill="#31aa52" d="m139.131 325.477-86.308..."></path>
+                                    <path fill="#3c79e6" d="M512 256a258.24 258.24..."></path>
+                                    <path fill="#cf2d48" d="m352.167 159.833 10.606..."></path>
+                                    <path fill="#eb4132" d="M256 120V0C187.62 0 123.333..."></path>
+                                </svg>
+                            </button>
+                            <button type="button" class="border-none outline-none">
+                                <!-- Apple Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32px" fill="#000" viewBox="0 0 22.773 22.773">
+                                    <path d="M15.769 0h.162c.13 1.606..."></path>
+                                </svg>
+                            </button>
+                            <button type="button" class="border-none outline-none">
+                                <!-- Facebook Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32px" fill="#007bff" viewBox="0 0 167.657 167.657">
+                                    <path d="M83.829.349C37.532.349 0..."></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="md:h-full bg-[#000842] rounded-xl lg:p-12 p-8">
+                    <img src="https://readymadeui.com/signin-image.webp" class="w-full h-full object-contain" alt="login-image" />
+                </div>
+                <p style="color: #535050;"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
