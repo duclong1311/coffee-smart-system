@@ -26,7 +26,7 @@ export function EditPost() {
         try {
             await axios.put(`http://localhost:3000/posts/${id}`, post);
             alert('Post updated successfully');
-            navigate('/postmanagement');
+            navigate('/admin/postmanagement');
         } catch (error) {
             alert('Error updating post', error);
         }
