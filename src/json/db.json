@@ -222,7 +222,6 @@
       "img": "https://cdn.tgdd.vn/2021/01/CookProduct/Ca-phe-chon-la-gi-nguon-goc-qua-trinh-va-gia-ca-phe-chon-tren-thi-truong-1-1200x676.jpg"
     }
   ],
-
   "comments": [
     {
       "id": "1",
@@ -479,7 +478,7 @@
   "users": [
     {
       "username": "nhan",
-      "password": "123123",
+      "password": "123456",
       "fullName": "Nguyễn Thành Nhân",
       "address": "Codegym C05",
       "gender": "Nam",
