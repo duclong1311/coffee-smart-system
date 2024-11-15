@@ -6,17 +6,18 @@ import { useNavigate } from "react-router-dom";
 export function CreatePost() {
     const navigate = useNavigate();
 
-
     const createPost = async (value) => {
+        const currentDateTime = new Date().toISOString(); 
+        const postData = { ...value, date: currentDateTime }; 
+
         try {
-            await axios.post('http://localhost:3000/posts', value)
+            await axios.post('http://localhost:3000/posts', postData)
             alert("Thêm tin thành công");
             navigate("/admin/postmanagement")
         } catch (error) {
             alert("Thêm tin thất bại")
         }
     }
-
 
     return (
         <>
@@ -27,8 +28,7 @@ export function CreatePost() {
                     initialValues={{
                         title: "",
                         content: "",
-                        img: "",
-                        date: ""
+                        img: ""
                     }}
                     onSubmit={createPost}
                 >
@@ -48,14 +48,6 @@ export function CreatePost() {
                                         setFieldValue("content", content);
                                         setFieldTouched("content", true); // Mark field as touched
                                     }}
-                                />
-                            </div>
-                            <div>
-                                <Field
-                                    type="date"
-                                    name="date"
-                                    placeholder="ngày"
-                                    className="block w-full p-2 border border-gray-300 rounded"
                                 />
                             </div>
                             <div>
