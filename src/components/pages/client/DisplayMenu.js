@@ -4,9 +4,11 @@ import './DisplayMenu.css';
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ModalFeedback from "./ModalFeedback";
 
 const DisplayMenu = () => {
     const [orderList, setOrderList] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
     const addToOrder = (item) => {
         const existingItem = orderList.find(orderItem => orderItem.name === item.name);
@@ -25,15 +27,22 @@ const DisplayMenu = () => {
         <>
             <div className="menu-container">
                 <div className="left-container">
-                    <FoodType addToOrder={addToOrder} />
+                    <FoodType
+                        addToOrder={addToOrder}
+                    />
                 </div>
                 <div className="right-container">
                     <OrderList
                         orderList={orderList}
                         setOrderList={setOrderList}
+                        setShowModal={setShowModal}
                     />
                 </div>
             </div>
+            <ModalFeedback
+                showModal={showModal}
+                setShowModal={setShowModal}
+            />
 
             <ToastContainer
                 position="top-center"

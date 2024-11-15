@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './OrderList.css';
 import { toast } from 'react-toastify';
 
-const OrderList = ({ orderList, setOrderList }) => {
+const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     const [selectedItems, setSelectedItems] = useState([]);
 
     const handleCheckboxChange = (event, itemId) => {
@@ -117,7 +117,7 @@ const OrderList = ({ orderList, setOrderList }) => {
                     <button onClick={handleCallOrder} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi món</button>
                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Tính tiền</button>
                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi phục vụ</button>
-                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Phản hồi</button>
+                    <button onClick={() => setShowModal(true)} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Phản hồi</button>
                 </div>
             </div>
         </>
