@@ -5,11 +5,11 @@ import Footer from '../../partial/Footer';
 
 export function Main() {
   return (
-    <div>
+    <>
       <Header></Header>
       <Outlet />
       <Footer></Footer>
-    </div>
+    </>
   );
 }
 
