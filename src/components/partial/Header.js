@@ -5,6 +5,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SideBar from '../partial/SideBar';
 import logo from '../../assets/images/logo-dark-retina.webp';
+import { IoIosLogIn } from "react-icons/io";
+import { IoIosLogOut } from "react-icons/io";
+import { SlUser } from "react-icons/sl";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -82,9 +85,9 @@ function Header() {
                         </div>
 
                         <div className="w-[20%] md:w-1/3 flex items-center justify-end text-[#333] text-4xl">
-                            <div className="relative cursor-pointer mx-4 md:mx-6 group">
+                            <div className="relative cursor-pointer mx-2 md:mx-2 group">
                                 <Link to="/profile">
-                                    <FaUser />
+                                    <SlUser className='size-6'/>
                                 </Link>
                                 <span className="absolute top-full mt-1 right-0 hidden group-hover:block bg-[#333] text-white text-sm px-2 py-1 rounded min-w-[150px] max-w-[300px]">
                                     Xem thông tin tài khoản
@@ -92,15 +95,15 @@ function Header() {
                             </div>
 
                             {isLoggedIn ? (
-                                <div className="relative cursor-pointer mx-4 md:mx-6 group" onClick={handleLogout}>
-                                    <FaSignOutAlt />
-                                    <span className="absolute top-full mt-1 right-0 hidden group-hover:block bg-[#333] text-white text-sm px-2 py-1 rounded">
+                                <div className="relative cursor-pointer mx-4 md:mx-2 group" onClick={handleLogout}>
+                                    <IoIosLogOut className='size-7' />
+                                    <span className="absolute top-full mt-1 right-0 hidden group-hover:block bg-[#333] text-white text-sm px-1 py-1 rounded">
                                         Đăng xuất
                                     </span>
                                 </div>
                             ) : (
-                                <Link to="/login" className="cursor-pointer mx-4 md:mx-6">
-                                    Đăng nhập
+                                <Link to="/login" className="cursor-pointer mx-4 md:mx-2">
+                                    <IoIosLogIn />
                                 </Link>
                             )}
                         </div>
