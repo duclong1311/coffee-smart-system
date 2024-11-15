@@ -38,7 +38,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
         </Route>
-        {/* <Route path="/menu" element={<DisplayMenu />} /> */}
+        <Route path="/menu" element={<DisplayMenu />} />
 
         <Route path="staff" element={<Staff />}>
           <Route
