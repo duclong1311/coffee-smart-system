@@ -3,6 +3,7 @@ import axios from "axios";
 import { Field, Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
 
+
 export function CreatePost() {
     const navigate = useNavigate();
 

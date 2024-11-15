@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { Header } from "./components/pages/server/admin/Header";
 import { Home } from "./components/pages/client/Home";
 import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";
 import { ListPost } from "./components/pages/client/Posts/ListPost";
