@@ -34,9 +34,9 @@ function App() {
         </Route>
         {/* <Route path="staff" element={<Staff />}/> */}
         <Route path="/" element={<Main />}>
-          <Route index element={<Home />} />
-          <Route path="/login" element={<Login />} />
+        <Route index element={<Home />} />
         </Route>
+        <Route path="/login" element={<Login />} />
         <Route path="/menu" element={<DisplayMenu />} />
 
         <Route path="staff" element={<Staff />}>
