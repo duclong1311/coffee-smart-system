@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "../partial/Footer";
+import Header from "../partial/Header";
 
 export function ChangePassword() {
     const [oldPassword, setOldPassword] = useState('');
@@ -55,8 +57,10 @@ export function ChangePassword() {
     };
 
     return (
-        <div className="bg-gray-100 rounded-lg p-6 mx-auto my-5 max-w-lg shadow-md">
-            <h1 className="text-2xl text-gray-800 text-center mb-4">Thay Đổi Mật Khẩu</h1>
+        <>
+        <Header/>
+        <div className="bg-[#333] rounded-lg p-6 mx-auto my-5 max-w-lg shadow-md">
+            <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 text-white text-center">Thay Đổi Mật Khẩu</h1>
 
             {success && (
                 <div className="mb-4 text-green-600 text-center">
@@ -72,7 +76,7 @@ export function ChangePassword() {
 
             <form onSubmit={handleSubmit}>
                 <div className="mb-4 relative">
-                    <label className="block text-gray-700 mb-2" htmlFor="oldPassword">
+                    <label className="block text-white font-font-semibold" htmlFor="oldPassword">
                         Mật khẩu cũ
                     </label>
                     <input
@@ -93,7 +97,7 @@ export function ChangePassword() {
                 </div>
 
                 <div className="mb-4 relative">
-                    <label className="block text-gray-700 mb-2" htmlFor="newPassword">
+                    <label className="block text-white font-font-semibold" htmlFor="newPassword">
                         Mật khẩu mới
                     </label>
                     <input
@@ -114,7 +118,7 @@ export function ChangePassword() {
                 </div>
 
                 <div className="mb-4 relative">
-                    <label className="block text-gray-700 mb-2" htmlFor="confirmPassword">
+                    <label className="block text-white font-font-semibold" htmlFor="confirmPassword">
                         Xác nhận mật khẩu mới
                     </label>
                     <input
@@ -137,7 +141,7 @@ export function ChangePassword() {
                 <div className="flex justify-center space-x-4 mt-4">
                     <button
                         type="submit"
-                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                        className="w-30 p-2 bg-gray-800 text-white font-semibold rounded hover:bg-white hover:text-[#c19977]"
                     >
                         Thay Đổi Mật Khẩu
                     </button>
@@ -148,5 +152,7 @@ export function ChangePassword() {
                 <Link to="/profile" className="text-blue-600 hover:underline">Quay lại trang hồ sơ</Link>
             </div>
         </div>
+        <Footer/>
+        </>
     );
 }

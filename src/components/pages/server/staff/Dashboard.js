@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaPhoneAlt, FaSearch, FaShoppingCart, FaUser, FaSignOutAlt } from "react-icons/fa"; // Import thêm icon đăng xuất
 
 const Dashboard = () => {
   const [selected, setSelected] = useState("dashboard");
@@ -46,11 +47,10 @@ const Dashboard = () => {
                 <button
                   // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white shadow-md  w-full flex items-center gap-4 px-4 capitalize bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
                   className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "dashboard"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "dashboard"
+                      ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                      : ""
+                    }`}
                   onClick={() => handleClick("dashboard")}
                   type="button"
                 >
@@ -74,11 +74,10 @@ const Dashboard = () => {
               <Link className="" to="/staff/sale">
                 <button
                   className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "sale"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "sale"
+                      ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                      : ""
+                    }`}
                   onClick={() => handleClick("sale")}
                   type="button"
                 >
@@ -101,6 +100,7 @@ const Dashboard = () => {
                     Sale
                   </p>
                 </button>
+
               </Link>
             </li>
             <li>
@@ -108,11 +108,10 @@ const Dashboard = () => {
                 <button
                   // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                   className={`middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "manage"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "manage"
+                      ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                      : ""
+                    }`}
                   onClick={() => handleClick("manage")}
                   type="button"
                 >
@@ -160,6 +159,9 @@ const Dashboard = () => {
                     notifactions
                   </p>
                 </button>
+                <Link to="/" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex items-center">
+                  Quay Về Trang Chủ
+                </Link>
               </Link>
             </li>
           </ul>

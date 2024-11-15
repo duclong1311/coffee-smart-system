@@ -13,12 +13,12 @@ import DashBoard from "./components/posts/server/admin/DashBoard";
 import { Login } from './components/user/Login';
 import { Profile } from './components/user/Profile';
 import { ChangePassword } from './components/user/Changepassword';
-import  Update  from './components/user/Update';
+import Update from './components/user/Update';
 import { Home } from "./components/pages/client/Home";//home của Như
+import { Main } from "./components/pages/client/Main";
 import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";//home của Phúc
-// import { Route, Routes } from 'react-router-dom';
 import DisplayMenu from "./components/pages/client/DisplayMenu";
-import "react-toastify/dist/ReactToastify.css";
+
 
 // import TableManagement from "./TableManagement";
 function App() {
@@ -34,9 +34,11 @@ function App() {
           <Route path="dash" element={<DashBoard />} />
         </Route>
         {/* <Route path="staff" element={<Staff />}/> */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Main />}>
+        <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/menu" element={<DisplayMenu />} />
+        </Route>
+        {/* <Route path="/menu" element={<DisplayMenu />} /> */}
 
         <Route path="staff" element={<Staff />}>
           <Route
@@ -56,10 +58,10 @@ function App() {
             }
           />
         </Route>
-        <Route path="login" element={<Login/>} />
-        <Route path="profile" element={<Profile/>} />
-        <Route path="changepassword" element={<ChangePassword/>} />
-        <Route path="update" element={<Update/>} />
+        <Route path="login" element={<Login />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="changepassword" element={<ChangePassword />} />
+        <Route path="update" element={<Update />} />
       </Routes>
     </>
   );
