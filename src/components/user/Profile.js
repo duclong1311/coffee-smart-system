@@ -24,7 +24,7 @@ export function Profile() {
             <div className="bg-cover bg-center bg-[#F9F4EE] bg-[url('https://example.com/your-image.jpg')] text-gray-300 py-10">
                 <section className="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
                     <div className="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-xl p-6 rounded-xl h-fit self-center bg-[#fff] text-[#333]">
-                        <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-semisemibold mb-2 text-white">
+                        <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-bold mb-2 text-[#333] text-center f ">
                             Thông Tin Cá Nhân
                         </h1>
 
@@ -46,9 +46,11 @@ export function Profile() {
                         <p className=" mb-2 font-semibold">Vị Trí : <span className="font-normal">{user.position}</span></p>
 
                         <div className="flex justify-center space-x-4 mt-4">
-                            <Link to="/" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Quay Về</Link>
-                            <Link to="/update" className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">Cập Nhật Thông Tin</Link>
-                            <Link to="/changepassword" className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">Thay Đổi Mật Khẩu</Link>
+                            <Link to="/" className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black">
+                                Quay Về
+                            </Link>
+                            <Link to="/update" className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black">Cập Nhật Thông Tin</Link>
+                            <Link to="/changepassword" className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black">Thay Đổi Mật Khẩu</Link>
                         </div>
                     </div>
                 </section>
