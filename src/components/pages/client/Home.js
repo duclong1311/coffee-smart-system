@@ -29,9 +29,9 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 export function Home() {
 
   const SpecialMenuItem = ({ image, name, price }) => (
-    <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+    <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md ">
       <a className="relative mx-3 mt-3 flex h-72 overflow-hidden rounded-xl" href="#">
-        <img className="w-full bg-[#f6f5f5]" src={image} alt={name} />
+        <img className="w-full bg-[#f6f5f5] object-cover transition-transform duration-500 ease-out transform hover:scale-110 " src={image} alt={name} />
       </a>
       <div className="mt-4 px-5 pb-5">
         <a href="#">
