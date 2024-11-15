@@ -6,7 +6,7 @@ import DashboardNavbar from "../staff/DashboardNavbar";
 function Staff() {
   return (
     <>
-      <div className="min-h-screen bg-gray-50/50">
+      <div className="min-h-screen bg-[#F9F4EC]">
         <Dashboard />
         <div className="p-4 xl:ml-80">
           <DashboardNavbar />
