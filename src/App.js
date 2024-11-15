@@ -15,6 +15,7 @@ import { Profile } from './components/user/Profile';
 import { ChangePassword } from './components/user/Changepassword';
 import  Update  from './components/user/Update';
 import { Home } from "./components/pages/client/Home";//home của Như
+import { Main } from "./components/pages/client/Main";
 import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";//home của Phúc
 
 
@@ -32,7 +33,9 @@ function App() {
           <Route path="dash" element={<DashBoard />} />
         </Route>
         {/* <Route path="staff" element={<Staff />}/> */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Main />}>
+        <Route index element={<Home />} />
+        </Route>
         <Route path="/login" element={<Login />} />
 
         <Route path="staff" element={<Staff />}>
