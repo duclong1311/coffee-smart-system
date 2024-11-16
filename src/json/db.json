@@ -4,7 +4,26 @@
       "id": "1",
       "title": "Hello World",
       "content": "This is the first post",
-      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg",
+      "date": "2024-11-16T05:27:53.186Z",
+      "comments": [
+        {
+          "content": "Món này rất ngonn",
+          "date": "11/14/2024, 11:20:28 AM"
+        },
+        {
+          "content": "tuyệt",
+          "date": "11/14/2024, 11:23:30 AM"
+        },
+        {
+          "content": "Tôi nghĩ đây chắc chắn là bestseller của quán",
+          "date": "11/14/2024, 11:32:11 AM"
+        },
+        {
+          "content": "123!!",
+          "date": "11/16/2024, 9:12:17 PM"
+        }
+      ]
     },
     {
       "id": "2",
@@ -38,9 +57,11 @@
       "content": "Nice post!"
     },
     {
-      "id": "2",
-      "postId": 1,
-      "content": "Thanks for sharing!"
+      "id": "f357",
+      "title": "Cà phê chồn",
+      "content": "Cà phê chồn hay cà phê phân chồn là tên một loại cà phê đặc biệt, một thứ đồ uống được xếp vào loại hiếm nhất trên thế giới. Loại cà phê này có nhiều ở Indonesia, trên các hòn đảo Sumatra, Java và Sulawesi. Từ Kopi Luwak được dùng để chỉ một loại hạt do loài cầy vòi đốm ăn quả cà phê rồi thải phân ra đem đi phơi khô rồi chế biến .",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Luwak_coffee_beans.jpg/450px-Luwak_coffee_beans.jpg",
+      "date": "2024-11-15"
     }
   ],
   "listTable": [
