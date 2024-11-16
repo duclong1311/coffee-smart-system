@@ -44,7 +44,7 @@ export function PostManagement() {
 
     return (
         <div className="flex flex-col px-4 py-8 max-w-7xl mx-auto">
-            <h1 className="text-center text-3xl font-bold mb-8 ">Quản lý bài viết</h1>
+            <h1 className="text-center text-3xl font-bold mb-8">Quản lý bài viết</h1>
 
             <div className="w-full ml-0 md:ml-8">
                 <table className="min-w-full bg-white border border-gray-200">
@@ -70,7 +70,6 @@ export function PostManagement() {
                                 <td className="py-4 px-6 border-b text-gray-800">{post.title}</td>
                                 <td className="py-4 px-6 border-b text-gray-600">
                                     {post.content.split(" ").slice(0, 6).join(" ")}...
-
                                 </td>
                                 <td className="py-4 px-6 border-b text-gray-400">{post.date}</td>
                                 <td className="py-4 px-6 border-b">
@@ -90,7 +89,7 @@ export function PostManagement() {
             {/* Modal hiển thị chi tiết bài viết */}
             {selectedPost && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-                    <div className="bg-white rounded-lg p-6 max-w-lg w-full">
+                    <div className="bg-white rounded-lg p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto">
                         <h2 className="text-2xl font-bold mb-4">{selectedPost.title}</h2>
                         <img
                             src={selectedPost.img}
@@ -103,19 +102,19 @@ export function PostManagement() {
                         {/* Nút "Edit" và "Delete" trong modal */}
                         <div className="flex justify-end space-x-4">
                             <button
-                                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                                className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
                                 onClick={() => handleEdit(selectedPost.id)}
                             >
                                 Edit
                             </button>
                             <button
-                                className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+                                className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
                                 onClick={() => handleDelete(selectedPost.id)}
                             >
                                 Delete
                             </button>
                             <button
-                                className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
+                                className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
                                 onClick={closeModal}
                             >
                                 Đóng

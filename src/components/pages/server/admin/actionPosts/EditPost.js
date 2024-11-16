@@ -97,7 +97,7 @@ export function EditPost() {
                             <div className="flex items-center justify-center">
                                 <button
                                     type="submit"
-                                    className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                                    className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
                                 >
                                     Lưu thay đổi
                                 </button>
