@@ -2,22 +2,22 @@ import Header from "../../partial/Header";
 import Banner from "../../partial/Banner";
 import Footer from "../../partial/Footer";
 
-import imgae1 from "../../../assets/images/243-min-1.jpg";
-import imgae2 from "../../../assets/images/img-home-12.jpg";
-import imgae3 from "../../../assets/images/img-home-13.jpg";
-import imgae4 from "../../../assets/images/img-home-11.jpg";
-import imgae5 from "../../../assets/images/images-29.jpg";
-import imgae6 from "../../../assets/images/images-25-min-1.jpg";
-import imgae7 from "../../../assets/images/images-28-min-1.jpg";
-import imgae8 from "../../../assets/images/images-27-min-1.jpg";
-import imgae9 from "../../../assets/images/images-26-min.jpg";
-import imgae10 from "../../../assets/images/300.png";
-import imgae11 from "../../../assets/images/images-30-min-370x370.jpg";
-import imgae12 from "../../../assets/images/images-31-min-370x370.jpg";
-import imgae13 from "../../../assets/images/images-32-min-370x370.jpg";
-import imgae14 from "../../../assets/images/images-33-min-370x370.jpg";
-import imgae15 from "../../../assets/images/images-34-min-370x370.jpg";
-import imgae16 from "../../../assets/images/images-35-min-370x370.jpg";
+import image1 from "../../../assets/images/243-min-1.jpg";
+import image2 from "../../../assets/images/img-home-12.jpg";
+import image3 from "../../../assets/images/img-home-13.jpg";
+import image4 from "../../../assets/images/img-home-11.jpg";
+import image5 from "../../../assets/images/images-29.jpg";
+import image6 from "../../../assets/images/images-25-min-1.jpg";
+import image7 from "../../../assets/images/images-28-min-1.jpg";
+import image8 from "../../../assets/images/images-27-min-1.jpg";
+import image9 from "../../../assets/images/images-26-min.jpg";
+import image10 from "../../../assets/images/300.png";
+import image11 from "../../../assets/images/images-30-min-370x370.jpg";
+import image12 from "../../../assets/images/images-31-min-370x370.jpg";
+import image13 from "../../../assets/images/images-32-min-370x370.jpg";
+import image14 from "../../../assets/images/images-33-min-370x370.jpg";
+import image15 from "../../../assets/images/images-34-min-370x370.jpg";
+import image16 from "../../../assets/images/images-35-min-370x370.jpg";
 
 
 
@@ -27,22 +27,40 @@ import { MdOutlineCoffeeMaker } from "react-icons/md";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 
 export function Home() {
+
+  const SpecialMenuItem = ({ image, name, price }) => (
+    <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md ">
+      <a className="relative mx-3 mt-3 flex h-72 overflow-hidden rounded-xl" href="#">
+        <img className="w-full bg-[#f6f5f5] object-cover transition-transform duration-500 ease-out transform hover:scale-110 " src={image} alt={name} />
+      </a>
+      <div className="mt-4 px-5 pb-5">
+        <a href="#">
+          <h5 className="text-lg font-semibold tracking-tight text-[#333]">{name}</h5>
+        </a>
+        <div className="mt-2 mb-5 flex items-center justify-between">
+          <p>
+            <span className="text-base text-[#888682]">{price}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Banner />
       <div className="flex flex-col md:flex-row items-center justify-between bg-white py-12 px-6 md:px-36 md:py-32">
         <div className="relative md:w-1/2 mb-8 md:mb-0">
           <div className="w-48 h-48 md:w-96 md:h-auto ">
             <img
-              src={imgae1}
+              src={image1}
               alt="Coffee cup"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="absolute top-24 left-24 md:top-52 md:left-52 w-40 h-40 md:w-80 md:h-auto">
             <img
-              src={imgae2}
+              src={image2}
               alt="Coffee machine"
               className="w-full h-full object-cover hidden md:block"
             />
@@ -77,110 +95,45 @@ export function Home() {
       </div>
 
       <div className="bg-[#F9F4EC] px-6 py-16 md:py-32">
-        <h3 className="text-sm font-semibold text-[#b98d58] uppercase text-center">
-          Thực đơn
-        </h3>
-        <h2 className="text-3xl md:text-4xl font-semibold text-[#333] text-center pt-5">
-          Món đặc biệt
-        </h2>
-        <div className="flex flex-col md:flex-row pt-12 md:px-36 gap-y-8 md:gap-x-8">
-          <div className="w-full md:w-1/2 flex flex-col gap-y-8">
-            <div className="gap-y-5">
-              <div className="flex justify-between text-[#333] text-xl">
-                <span className="text-start font-semibold">Espresso</span>
-                <span className="text-end font-semibold">120,000 VND</span>
-              </div>
-              <p className="text-[#888682] text-base">
-                Một phần nhỏ (30 ml) cà phê nguyên chất, đậm đà, thơm ngon
-              </p>
-            </div>
-
-            <div className="gap-y-5">
-              <div className="flex justify-between text-[#333] text-xl">
-                <span className="text-start font-semibold ">Espresso</span>
-                <span className="text-end font-semibold ">120,000 VND</span>
-              </div>
-              <p className="text-[#888682] text-base">
-                Một phần nhỏ (30 ml) cà phê nguyên chất, đậm đà, thơm ngon
-              </p>
-            </div>
-
-            <div className="gap-y-5">
-              <div className="flex justify-between text-[#333] text-xl">
-                <span className="text-start font-semibold ">Espresso</span>
-                <span className="text-end font-semibold ">120,000 VND</span>
-              </div>
-              <p className="text-[#888682] text-base">
-                Một phần nhỏ (30 ml) cà phê nguyên chất, đậm đà, thơm ngon
-              </p>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 flex flex-col gap-y-8">
-            <div className="gap-y-5">
-              <div className="flex justify-between text-[#333] text-xl">
-                <span className="text-start font-semibold ">Espresso</span>
-                <span className="text-end font-semibold ">120,000 VND</span>
-              </div>
-              <p className="text-[#888682] text-base">
-                Một phần nhỏ (30 ml) cà phê nguyên chất, đậm đà, thơm ngon
-              </p>
-            </div>
-
-            <div className="gap-y-5">
-              <div className="flex justify-between text-[#333] text-xl">
-                <span className="text-start font-semibold ">Espresso</span>
-                <span className="text-end font-semibold ">120,000 VND</span>
-              </div>
-              <p className="text-[#888682] text-base">
-                Một phần nhỏ (30 ml) cà phê nguyên chất, đậm đà, thơm ngon
-              </p>
-            </div>
-
-            <div className="gap-y-5">
-              <div className="flex justify-between text-[#333] text-xl">
-                <span className="text-start font-semibold ">Espresso</span>
-                <span className="text-end font-semibold ">120,000 VND</span>
-              </div>
-              <p className="text-[#888682] text-base">
-                Một phần nhỏ (30 ml) cà phê nguyên chất, đậm đà, thơm ngon
-              </p>
-            </div>
-          </div>
+        <h3 className="text-sm font-semibold text-[#b98d58] uppercase text-center">Thực đơn</h3>
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#333] text-center pt-5">Món đặc biệt</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <SpecialMenuItem image='https://bizweb.dktcdn.net/thumb/large/100/451/095/products/sp6.png?v=1648442393260' name="Latte" price="49,000 VND" />
+          <SpecialMenuItem image='https://bizweb.dktcdn.net/thumb/large/100/451/095/products/sp7.png?v=1648442418313' name="Vanila Latte" price="59,000 VND" />
+          <SpecialMenuItem image='https://bizweb.dktcdn.net/thumb/large/100/451/095/products/sp5.png?v=1648442373590' name="Americano" price="46,000 VND" />
+          <SpecialMenuItem image='https://bizweb.dktcdn.net/thumb/large/100/451/095/products/sp1.png?v=1648442297547' name="Caramel Latte" price="54,000 VND" />
         </div>
-
-
-
       </div>
+
 
       <div className="grid grid-cols-5 grid-rows-6 gap-0">
         <div className="col-span-3 row-span-6 overflow-hidden">
           <img
-            src={imgae5}
+            src={image5}
             className="w-full h-full object-cover transition-transform duration-500 ease-out transform hover:scale-110"
           />
         </div>
         <div className="row-span-3 col-start-4 overflow-hidden">
           <img
-            src={imgae6}
+            src={image6}
             className="w-full h-full object-cover transition-transform duration-500 ease-out transform hover:scale-110"
           />
         </div>
         <div className="row-span-3 col-start-5 overflow-hidden">
           <img
-            src={imgae7}
+            src={image7}
             className="w-full h-full object-cover transition-transform duration-500 ease-out transform hover:scale-110"
           />
         </div>
         <div className="row-span-3 col-start-4 row-start-4 overflow-hidden">
           <img
-            src={imgae8}
+            src={image8}
             className="w-full h-full object-cover transition-transform duration-500 ease-out transform hover:scale-110"
           />
         </div>
         <div className="row-span-3 col-start-5 row-start-4 overflow-hidden">
           <img
-            src={imgae9}
+            src={image9}
             className="w-full h-full object-cover transition-transform duration-500 ease-out transform hover:scale-110"
           />
         </div>
@@ -190,14 +143,14 @@ export function Home() {
         <div className="relative md:w-1/2 mb-8 md:mb-0">
           <div className="w-48 h-48 md:w-96 md:h-auto ">
             <img
-              src={imgae3}
+              src={image3}
               alt="Coffee cup"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="absolute top-24 left-24 md:top-52 md:left-52 w-40 h-40 md:w-80 md:h-auto">
             <img
-              src={imgae4}
+              src={image4}
               alt="Coffee machine"
               className="w-full h-full object-cover hidden md:block"
             />
@@ -258,7 +211,7 @@ export function Home() {
         {/* Ảnh */}
         <div className="col-span-1 md:col-start-8 md:col-span-1 group overflow-hidden relative mb-6 md:mb-0">
           <img
-            src={imgae10}
+            src={image10}
             alt="Coffee machine"
             className="w-full h-full object-contain transition-all duration-500 ease-out transform group-hover:translate-x-4 group-hover:translate-y-4"
           />
@@ -310,53 +263,47 @@ export function Home() {
         </div>
       </div>
 
-
-
-
-
-
-
       <div className="grid grid-cols-6 grid-rows-1 gap-0">
         <div >
           <img
-            src={imgae11}
+            src={image11}
             className="w-full h-full object-cover"
           />
         </div>
         <div >
           <img
-            src={imgae12}
+            src={image12}
             className="w-full h-full object-cover"
           />
         </div>
         <div >
           <img
-            src={imgae13}
+            src={image13}
             className="w-full h-full object-cover"
           />
         </div>
         <div >
           <img
-            src={imgae14}
+            src={image14}
             className="w-full h-full object-cover"
           />
         </div>
         <div >
           <img
-            src={imgae15}
+            src={image15}
             className="w-full h-full object-cover"
           />
         </div>
         <div >
           <img
-            src={imgae16}
+            src={image16}
             className="w-full h-full object-cover"
           />
         </div>
       </div >
 
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

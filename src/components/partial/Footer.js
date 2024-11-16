@@ -8,7 +8,7 @@ export function Footer() {
     <div className="bg-[#222222] text-[#f9f9f9] pt-8">
       <div className="container mx-auto md:px-40 px-5">
 
-        <div className="flex flex-col md:flex-row items-start justify-between mb-6 md:mb-8">
+        {/* <div className="flex flex-col md:flex-row items-start justify-between mb-6 md:mb-8">
           <div className="md:w-1/2 mb-4 md:mb-0 w-full">
             <h3 className="text-2xl lg:text-3xl font-semibold mb-2">
               ĐĂNG KÝ NHẬN KHUYẾN MÃI
@@ -43,7 +43,7 @@ export function Footer() {
               )}
             </Formik>
           </div>
-        </div>
+        </div> */}
 
         <hr className="border-[#ccc] my-4" />
 
