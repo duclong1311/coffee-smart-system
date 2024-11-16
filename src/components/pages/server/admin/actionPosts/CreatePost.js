@@ -1,23 +1,46 @@
 import Tiny from "../../../../../Tiny";
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
+import * as Yup from "yup"; 
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const validationSchema = Yup.object({
+    title: Yup.string()
+        .required("Tiêu đề là bắt buộc")
+        .min(5, "Tiêu đề phải có ít nhất 5 ký tự")
+        .max(100, "Tiêu đề không được vượt quá 100 ký tự"),
+    content: Yup.string()
+        .required("Nội dung là bắt buộc")
+        .min(20, "Nội dung phải có ít nhất 20 ký tự"),
+    img: Yup.string()
+        .url("Ảnh phải là một URL hợp lệ")
+        .required("Ảnh là bắt buộc")
+});
 
 
 export function CreatePost() {
     const navigate = useNavigate();
 
-
     const createPost = async (value) => {
+        const currentDateTime = new Date().toISOString();
+        const postData = { ...value, date: currentDateTime };
+        console.log("Form values:", value);
         try {
-            await axios.post('http://localhost:3000/posts', value)
-            alert("Thêm tin thành công");
-            navigate("/admin/postmanagement")
+            await axios.post('http://localhost:3000/posts', postData);
+            toast.success("Thêm tin thành công", {
+                position: "top-right",
+                autoClose: 3000,
+            });
+            navigate("/admin/postmanagement");
         } catch (error) {
-            alert("Thêm tin thất bại")
+            toast.error("Thêm tin thất bại", {
+                position: "top-right",
+                autoClose: 3000,
+            });
         }
-    }
-
+    };
 
     return (
         <>
@@ -28,12 +51,12 @@ export function CreatePost() {
                     initialValues={{
                         title: "",
                         content: "",
-                        img: "",
-                        date: ""
+                        img: ""
                     }}
+                    validationSchema={validationSchema} 
                     onSubmit={createPost}
                 >
-                    {({ setFieldValue, setFieldTouched }) => (
+                    {({ setFieldValue, setFieldTouched, errors, touched }) => (
                         <Form className="space-y-4">
                             <div>
                                 <Field
@@ -42,6 +65,9 @@ export function CreatePost() {
                                     placeholder="Tiêu đề"
                                     className="block w-full p-2 border border-gray-300 rounded"
                                 />
+                                {touched.title && errors.title && (
+                                    <div className="text-red-500 text-sm">{errors.title}</div>
+                                )}
                             </div>
                             <div>
                                 <Tiny
@@ -50,14 +76,9 @@ export function CreatePost() {
                                         setFieldTouched("content", true); // Mark field as touched
                                     }}
                                 />
-                            </div>
-                            <div>
-                                <Field
-                                    type="date"
-                                    name="date"
-                                    placeholder="ngày"
-                                    className="block w-full p-2 border border-gray-300 rounded"
-                                />
+                                {touched.content && errors.content && (
+                                    <div className="text-red-500 text-sm">{errors.content}</div>
+                                )}
                             </div>
                             <div>
                                 <Field
@@ -66,17 +87,22 @@ export function CreatePost() {
                                     placeholder="Ảnh"
                                     className="block w-full p-2 border border-gray-300 rounded"
                                 />
+                                {touched.img && errors.img && (
+                                    <div className="text-red-500 text-sm">{errors.img}</div>
+                                )}
                             </div>
-                            <button
-                                type="submit"
-                                className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
-                            >
-                                Đăng tin
-                            </button>
+                            <div className="flex items-center justify-center">
+                                <button
+                                    type="submit"
+                                    className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                                >
+                                    Đăng tin
+                                </button>
+                            </div>
                         </Form>
                     )}
                 </Formik>
             </div>
         </>
-    )
+    );
 }

@@ -7,3 +7,6 @@ body {
     font-family: "Montserrat", serif;
 }
 
+.Toastify__toast {
+    z-index: 9999 !important; /* Đảm bảo toast hiển thị lên trên */
+  }

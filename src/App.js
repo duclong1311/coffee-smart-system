@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import {  ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import CSS
 import { Home } from "./components/pages/client/Home";
 import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";
 import { ListPost } from "./components/pages/client/Posts/ListPost";
@@ -15,9 +17,21 @@ import ContextDataTable from "./components/context/ContextDataTable";
 import TableManagement from "./components/TableManagement/TableManagement";
 import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
 import { DetailPost } from "./components/pages/client/Posts/DetailPost";
+
 function App() {
+
   return (
     <>
+      <ToastContainer 
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      draggable
+      theme="light"
+      />
       <Routes>
         {/* Trang người dùng */}
         <Route path="/" element={<Home />} />
@@ -49,14 +63,6 @@ function App() {
             }
           />
           <Route path="feedback" element={<FeedbackTable />} />
-          {/* <Route
-            path="service"
-            element={
-              <ServiceContext>
-                <DishGroupList />
-              </ServiceContext>
-            }
-          /> */}
         </Route>
       </Routes>
     </>

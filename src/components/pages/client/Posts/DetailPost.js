@@ -5,13 +5,12 @@ import Header from '../../../partial/Header';
 import Footer from '../../../partial/Footer';
 
 export function DetailPost() {
-    const { id } = useParams(); // Lấy id từ URL
+    const { id } = useParams();
     const [post, setPost] = useState(null);
     const [newComment, setNewComment] = useState('');
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        // Lấy bài viết từ db.json dựa trên id
         const fetchPost = async () => {
             try {
                 const response = await axios.get(`http://localhost:3000/posts/${id}`);
@@ -33,8 +32,8 @@ export function DetailPost() {
 
             try {
                 await axios.put(`http://localhost:3000/posts/${id}`, updatedPost);
-                setPost(updatedPost); // Cập nhật lại bài post sau khi thêm bình luận
-                setNewComment(''); // Reset input sau khi gửi
+                setPost(updatedPost); 
+                setNewComment(''); 
             } catch (error) {
                 console.error("Lỗi khi lưu bình luận:", error);
             }
