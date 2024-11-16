@@ -2,22 +2,30 @@ import Tiny from "../../../../../Tiny";
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function CreatePost() {
     const navigate = useNavigate();
 
     const createPost = async (value) => {
-        const currentDateTime = new Date().toISOString(); 
-        const postData = { ...value, date: currentDateTime }; 
-
+        const currentDateTime = new Date().toISOString();
+        const postData = { ...value, date: currentDateTime };
+        console.log("Form values:", value);
         try {
-            await axios.post('http://localhost:3000/posts', postData)
-            alert("Thêm tin thành công");
-            navigate("/admin/postmanagement")
+            await axios.post('http://localhost:3000/posts', postData);
+            toast.success("Thêm tin thành công", {
+                position: "top-right",
+                autoClose: 3000,
+            });
+            navigate("/admin/postmanagement");
         } catch (error) {
-            alert("Thêm tin thất bại")
+            toast.error("Thêm tin thất bại", {
+                position: "top-right",
+                autoClose: 3000,
+            });
         }
-    }
+    };
 
     return (
         <>
@@ -69,5 +77,5 @@ export function CreatePost() {
                 </Formik>
             </div>
         </>
-    )
+    );
 }

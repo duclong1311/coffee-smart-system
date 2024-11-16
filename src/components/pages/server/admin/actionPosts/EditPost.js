@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export function EditPost() {
     const { id } = useParams();
@@ -26,10 +27,16 @@ export function EditPost() {
         const updatedPost = { ...post, date: new Date().toISOString() }
         try {
             await axios.put(`http://localhost:3000/posts/${id}`, updatedPost);
-            alert('Post updated successfully');
+            toast.success("Cập nhật tin thành công!", {
+                position: "top-right",
+                autoClose: 3000,
+            });
             navigate('/admin/postmanagement');
         } catch (error) {
-            alert('Error updating post', error);
+            toast.error("Cập nhật tin thất bại!", {
+                position: "top-right",
+                autoClose: 3000,
+            });
         }
     };
 

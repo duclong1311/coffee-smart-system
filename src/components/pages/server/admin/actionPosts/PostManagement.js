@@ -54,7 +54,7 @@ export function PostManagement() {
                             <th className="py-3 px-6 font-semibold text-gray-800 border-b">Title</th>
                             <th className="py-3 px-6 font-semibold text-gray-800 border-b">Content</th>
                             <th className="py-3 px-6 font-semibold text-gray-800 border-b">Date</th>
-                            <th className="py-3 px-6 font-semibold text-gray-800 border-b">Detail</th>
+                            <th className="py-3 px-6 font-semibold text-gray-800 border-b w-40">Detail</th>
                         </tr>
                     </thead>
                     <tbody>
