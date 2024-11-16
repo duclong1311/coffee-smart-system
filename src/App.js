@@ -1,40 +1,58 @@
 import { Route, Routes } from "react-router-dom";
+import {  ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import CSS
+import { Home } from "./components/pages/client/Home";
+import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";
+import { ListPost } from "./components/pages/client/Posts/ListPost";
+import { CreatePost } from "./components/pages/server/admin/actionPosts/CreatePost";
+import { EditPost } from "./components/pages/server/admin/actionPosts/EditPost";
+import { PostManagement } from "./components/pages/server/admin/actionPosts/PostManagement";
+import DashBoard from "./components/pages/server/admin/AdminDashBoard";
+import { Login } from "./components/user/Login";
+import { Profile } from "./components/user/Profile";
+import { ChangePassword } from "./components/user/Changepassword";
+import Update from "./components/user/Update";
 import Staff from "./components/pages/server/staff/Staff";
 import ContextDataTable from "./components/context/ContextDataTable";
 import TableManagement from "./components/TableManagement/TableManagement";
-import FeedbackContext from "../src/components/context/FeedbackContext";
 import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
-import { Header } from "./components/pages/server/admin/Header";
-import { CreatePost } from "./components/posts/server/admin/CreatePost";
-import { ListPost } from "./components/posts/client/ListPost";
-import { PostManagement } from "./components/posts/server/admin/PostManagement";
-import { EditPost } from "./components/posts/server/admin/EditPost";
-import DashBoard from "./components/posts/server/admin/DashBoard";
-import { Login } from './components/user/Login';
-import { Profile } from './components/user/Profile';
-import { ChangePassword } from './components/user/Changepassword';
-import  Update  from './components/user/Update';
-import { Home } from "./components/pages/client/Home";//home của Như
-import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";//home của Phúc
+import { DetailPost } from "./components/pages/client/Posts/DetailPost";
 
-
-// import TableManagement from "./TableManagement";
 function App() {
+
   return (
     <>
+      <ToastContainer 
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      draggable
+      theme="light"
+      />
       <Routes>
-        <Route path="/admin" element={<HomeAdmin />}>
-          <Route path="header" element={<Header />} />
-          <Route path="create" element={<CreatePost />} />
-          <Route path="listpost" element={<ListPost />} />
+        {/* Trang người dùng */}
+        <Route path="/" element={<Home />} />
+        <Route path="/listpost" element={<ListPost />} />
+        <Route path="/posts/:id" element={<DetailPost />} />
+
+        {/* Trang đăng nhập và hồ sơ người dùng */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route path="/update" element={<Update />} />
+
+        {/* Trang admin */}
+        <Route path="admin" element={<HomeAdmin />}>
+          <Route path="dashboard" element={<DashBoard />} />
+          <Route path="createpost" element={<CreatePost />} />
           <Route path="postmanagement" element={<PostManagement />} />
           <Route path="edit/:id" element={<EditPost />} />
-          <Route path="dash" element={<DashBoard />} />
         </Route>
-        {/* <Route path="staff" element={<Staff />}/> */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
 
+        {/* Trang quản lý nhân viên */}
         <Route path="staff" element={<Staff />}>
           <Route
             path="sale"
@@ -44,19 +62,8 @@ function App() {
               </ContextDataTable>
             }
           />
-          <Route
-            path="feedback"
-            element={
-              <FeedbackContext>
-                <FeedbackTable />
-              </FeedbackContext>
-            }
-          />
+          <Route path="feedback" element={<FeedbackTable />} />
         </Route>
-        <Route path="login" element={<Login/>} />
-        <Route path="profile" element={<Profile/>} />
-        <Route path="changepassword" element={<ChangePassword/>} />
-        <Route path="update" element={<Update/>} />
       </Routes>
     </>
   );

@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": "1",
-      "title": "Hello World",
+      "title": "Cà phê ",
       "content": "This is the first post",
       "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg",
       "date": "2024-11-16T05:27:53.186Z",
@@ -29,32 +29,37 @@
       "id": "2",
       "title": "Another Post",
       "content": "This is another post",
-      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
-    },
-    {
-      "id": "3",
-      "title": "Another Post",
-      "content": "This is another post",
-      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg",
+      "date": "2024-11-16T05:12:46.325Z"
     },
     {
       "id": "4",
       "title": "Another Post",
-      "content": "This is another post",
-      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+      "content": "Có rất nhiều địa điểm để bạn có thể trải nghiệm cà phê bệt ở Sài Gòn, từ những khu vực trung tâm như  Nhà thờ Đức Bà, Phố đi bộ Nguyễn Huệ cho đến những khu vực ven thành phố như Hồ Con Rùa. Mỗi nơi đều có những điểm hấp dẫn riêng, từ không gian, khung cảnh đến các món ăn vặt và thức uống kèm theo. Bạn có thể tự do lựa chọn nơi mình thích nhất để tận hưởng ly cà phê bệt theo cách của mình.",
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg",
+      "date": "2024-11-15T16:57:34.015Z",
+      "lastEdited": "11/15/2024, 11:46:18 PM"
     },
     {
-      "id": "b412",
-      "title": "Cà phê chồn ",
-      "content": "Cà phê chồn một sản phẩm mới ra mắt",
-      "img": "https://cdn.tgdd.vn/2021/01/CookProduct/Ca-phe-chon-la-gi-nguon-goc-qua-trinh-va-gia-ca-phe-chon-tren-thi-truong-1-1200x676.jpg"
-    }
-  ],
-  "comments": [
+      "id": "e4d8",
+      "title": "Cà phê",
+      "content": "Cà phê (bắt nguồn từ tiếng Pháp: café [/kafe/])[2] là một loại thức uống được ủ từ hạt cà phê rang, lấy từ quả của cây cà phê. Các giống cây cà phê được bắt nguồn từ vùng nhiệt đới châu Phi và các vùng Madagascar, Comoros, Mauritius và Réunion trên các khu vực thuộc đường xích đạo.[3] Giống cây này được xuất khẩu từ châu Phi tới các nước trên thế giới và hiện nay đã được trồng tại tổng cộng hơn 70 quốc gia, chủ yếu là các khu vực nằm gần đường xích đạo thuộc châu Mỹ, Đông Nam Á, Ấn Độ và châu Phi. Hai giống cà phê được trồng phổ biến nhất là cà phê chè, và cà phê vối. Sau khi chín, quả cà phê sẽ được hái, chế biến theo các cách thức khác nhau, rang, xay và pha với nước. Quy trình chế biến cũng có nhiều dạng như như chế biến khô, chế biến ướt, chế biến mật ong; hạt cà phê khô được rang trong nhiều điều kiện nhiệt độ khác nhau từ rang sáng tới rang tối màu; sau khi rang lại được đem đi xay theo các kích cỡ hạt mịn hay thô, và ủ với nước sôi hoặc nước lạnh, tùy thị hiếu, để tạo ra cà phê dưới dạng thức uống.",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/330px-A_small_cup_of_coffee.JPG",
+      "date": "2024-11-16T04:15:34.838Z"
+    },
     {
-      "id": "1",
-      "postId": 1,
-      "content": "Nice post!"
+      "id": "48c1",
+      "title": "Cà phê ",
+      "content": "Cà phê chồn là một loại cà phê đặc biệt, được xếp vào trong danh sách các loại đồ uống độc đáo nhất trên thế giới. Hương vị của hạt cà phê bị biến đổi nhờ trải qua quá trình tiêu hóa hạt cà phê trong dạ dày của loài chồn, nhất là sự tác động của enzyme làm biến đổi các thành phần vốn có trong hạt cà phê.",
+      "img": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/9/8934680113274-tet-1.jpg.webp",
+      "date": "2024-11-16T05:22:59.698Z"
+    },
+    {
+      "id": "f343",
+      "title": "Cà phê chồn ",
+      "content": "Cà phê chồn nghe thì nặng mùi nhưng thật ra nó mới chính là một hương vị hảo hạn trong giới cà phê",
+      "img": "https://cdn.tgdd.vn/2021/01/CookProduct/Ca-phe-chon-la-gi-nguon-goc-qua-trinh-va-gia-ca-phe-chon-tren-thi-truong-1-1200x676.jpg",
+      "date": "2024-11-01"
     },
     {
       "id": "f357",
@@ -82,7 +87,8 @@
           "price": 10000,
           "totalPrice": 10000
         }
-      ]
+      ],
+      "id": "1f4a"
     },
     {
       "tableNumber": "TB002",
@@ -94,7 +100,8 @@
           "price": 20000,
           "totalPrice": 60000
         }
-      ]
+      ],
+      "id": "0bed"
     },
     {
       "tableNumber": "TB003",
@@ -113,7 +120,8 @@
           "price": 18000,
           "totalPrice": 18000
         }
-      ]
+      ],
+      "id": "4706"
     },
     {
       "tableNumber": "TB004",
@@ -125,7 +133,8 @@
           "price": 25000,
           "totalPrice": 50000
         }
-      ]
+      ],
+      "id": "a943"
     },
     {
       "tableNumber": "TB005",
@@ -137,7 +146,8 @@
           "price": 20000,
           "totalPrice": 40000
         }
-      ]
+      ],
+      "id": "7c73"
     },
     {
       "tableNumber": "TB006",
@@ -149,7 +159,8 @@
           "price": 20000,
           "totalPrice": 40000
         }
-      ]
+      ],
+      "id": "5ab4"
     },
     {
       "tableNumber": "TB007",
@@ -161,7 +172,8 @@
           "price": 20000,
           "totalPrice": 40000
         }
-      ]
+      ],
+      "id": "7a9a"
     },
     {
       "tableNumber": "TB008",
@@ -173,7 +185,8 @@
           "price": 20000,
           "totalPrice": 40000
         }
-      ]
+      ],
+      "id": "79bc"
     },
     {
       "tableNumber": "TB009",
@@ -185,7 +198,8 @@
           "price": 20000,
           "totalPrice": 40000
         }
-      ]
+      ],
+      "id": "d3e9"
     },
     {
       "tableNumber": "TB010",
@@ -197,7 +211,8 @@
           "price": 20000,
           "totalPrice": 40000
         }
-      ]
+      ],
+      "id": "4e0b"
     },
     {
       "tableNumber": "TB011",
@@ -209,12 +224,13 @@
           "price": 20000,
           "totalPrice": 40000
         }
-      ]
+      ],
+      "id": "7578"
     }
   ],
   "feedBack": [
     {
-      "id": 1,
+      "id": "1",
       "feedbackCode": "FB01",
       "feedbackDate": "25/11/2024",
       "createdBy": "Nguyễn Văn A",
@@ -222,7 +238,7 @@
       "feedback": "Delicious drink"
     },
     {
-      "id": 2,
+      "id": "2",
       "feedbackCode": "FB02",
       "feedbackDate": "12/02/2021",
       "createdBy": "Nguyễn Văn A",
@@ -230,7 +246,7 @@
       "feedback": "Nice view"
     },
     {
-      "id": 3,
+      "id": "3",
       "feedbackCode": "FB03",
       "feedbackDate": "15/05/2021",
       "createdBy": "Trần Thị B",
@@ -238,7 +254,7 @@
       "feedback": "Good service"
     },
     {
-      "id": 4,
+      "id": "4",
       "feedbackCode": "FB04",
       "feedbackDate": "22/06/2021",
       "createdBy": "Lê Văn C",
@@ -246,7 +262,7 @@
       "feedback": "Comfortable space"
     },
     {
-      "id": 5,
+      "id": "5",
       "feedbackCode": "FB05",
       "feedbackDate": "10/07/2021",
       "createdBy": "Phạm Thị D",
@@ -254,7 +270,7 @@
       "feedback": "Reasonable price"
     },
     {
-      "id": 6,
+      "id": "6",
       "feedbackCode": "FB06",
       "feedbackDate": "18/08/2021",
       "createdBy": "Vũ Thị E",
@@ -262,7 +278,7 @@
       "feedback": "Delicious food"
     },
     {
-      "id": 7,
+      "id": "7",
       "feedbackCode": "FB07",
       "feedbackDate": "30/09/2021",
       "createdBy": "Ngô Văn F",
@@ -270,7 +286,7 @@
       "feedback": "Good music"
     },
     {
-      "id": 8,
+      "id": "8",
       "feedbackCode": "FB08",
       "feedbackDate": "05/10/2021",
       "createdBy": "Đỗ Thị G",
@@ -278,7 +294,7 @@
       "feedback": "Fast service"
     },
     {
-      "id": 9,
+      "id": "9",
       "feedbackCode": "FB09",
       "feedbackDate": "15/10/2021",
       "createdBy": "Hoàng Văn H",
@@ -286,12 +302,140 @@
       "feedback": "Great atmosphere"
     },
     {
-      "id": 10,
+      "id": "10",
       "feedbackCode": "FB10",
       "feedbackDate": "25/11/2021",
       "createdBy": "Lê Thị I",
       "email": "lethi@gmail.com",
       "feedback": "Good quality"
+    }
+  ],
+  "listFood": [
+    {
+      "id": "bc79",
+      "groupCode": "G01",
+      "groupName": "Bánh",
+      "items": [
+        {
+          "code": "B01",
+          "foodName": "Tiramisu",
+          "price": 30000
+        },
+        {
+          "code": "B02",
+          "foodName": "Bánh bò",
+          "price": 15000
+        },
+        {
+          "code": "B03",
+          "foodName": "Bánh kem",
+          "price": 50000
+        }
+      ]
+    },
+    {
+      "id": "aa87",
+      "groupCode": "G02",
+      "groupName": "Coffee",
+      "items": [
+        {
+          "code": "C01",
+          "foodName": "Cà phê đen",
+          "price": 15000
+        },
+        {
+          "code": "C02",
+          "foodName": "Cà phê sữa đá",
+          "price": 20000
+        },
+        {
+          "code": "C03",
+          "foodName": "Espresso",
+          "price": 25000
+        }
+      ]
+    },
+    {
+      "id": "cb97",
+      "groupCode": "G03",
+      "groupName": "Nước ép",
+      "items": [
+        {
+          "code": "N01",
+          "foodName": "Ép cam",
+          "price": 25000
+        },
+        {
+          "code": "N02",
+          "foodName": "Ép dứa",
+          "price": 30000
+        },
+        {
+          "code": "N03",
+          "foodName": "Ép ổi",
+          "price": 28000
+        }
+      ]
+    },
+    {
+      "id": "ca55",
+      "groupCode": "G04",
+      "groupName": "Nước tăng lực",
+      "items": [
+        {
+          "code": "T01",
+          "foodName": "Bò húc",
+          "price": 20000
+        },
+        {
+          "code": "T02",
+          "foodName": "Red Bull",
+          "price": 22000
+        },
+        {
+          "code": "T03",
+          "foodName": "Number One",
+          "price": 18000
+        }
+      ]
+    },
+    {
+      "id": "ca99",
+      "groupCode": "G05",
+      "groupName": "Trà sữa",
+      "items": [
+        {
+          "code": "TS01",
+          "foodName": "Trà sữa trân châu",
+          "price": 35000
+        },
+        {
+          "code": "TS02",
+          "foodName": "Trà sữa matcha",
+          "price": 40000
+        },
+        {
+          "code": "TS03",
+          "foodName": "Trà sữa socola",
+          "price": 38000
+        }
+      ]
+    },
+    {
+      "id": "a72d",
+      "groupCode": "C05",
+      "groupName": "Trứng"
+    },
+    {
+      "id": "caef",
+      "groupCode": "ádas",
+      "groupName": "ádasd"
+    },
+    {
+      "id": "7112",
+      "groupCode": "asdas",
+      "groupName": "asd",
+      "items": []
     }
   ],
   "users": [
