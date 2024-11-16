@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import {  ToastContainer } from "react-toastify"; // Import ToastContainer
+import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import CSS
+import { Main } from "./components/pages/client/Main";
 import { Home } from "./components/pages/client/Home";
 import { HomeAdmin } from "./components/pages/server/admin/HomeAdmin";
 import { ListPost } from "./components/pages/client/Posts/ListPost";
@@ -22,19 +23,21 @@ function App() {
 
   return (
     <>
-      <ToastContainer 
-      position="top-center"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      draggable
-      theme="light"
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme="light"
       />
       <Routes>
         {/* Trang người dùng */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Main />}>
+          <Route index element={<Home />} />
+        </Route>
         <Route path="/listpost" element={<ListPost />} />
         <Route path="/posts/:id" element={<DetailPost />} />
 
