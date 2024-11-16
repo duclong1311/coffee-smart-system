@@ -133,7 +133,9 @@ export function Login() {
                     </div>
 
                     <div className="md:h-full bg-[#fff] rounded-xl lg:p-12 p-8">
-                        <img src="https://readymadeui.com/signin-image.webp" className="w-full h-full object-contain" alt="login-image" />
+                    <img src="https://images8.alphacoders.com/134/1349209.png" style={{ width: '500px', height: '350px' }} alt="login-image" />
+
+
                     </div>
                 </div>
             </div>
