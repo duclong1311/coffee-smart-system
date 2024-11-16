@@ -1,22 +1,37 @@
 import { useState, useEffect } from 'react';
-import { FaBars, FaPhoneAlt, FaUser, FaSignOutAlt } from "react-icons/fa";
+import { FaBars, FaPhoneAlt } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SideBar from '../partial/SideBar';
 import logo from '../../assets/images/logo-dark-retina.webp';
-import { IoIosLogIn } from "react-icons/io";
-import { IoIosLogOut } from "react-icons/io";
+import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 import { SlUser } from "react-icons/sl";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isFixed, setIsFixed] = useState(false); // State to manage fixed position
     const navigate = useNavigate();
 
     useEffect(() => {
         const user = localStorage.getItem('user');
         setIsLoggedIn(!!user);
+
+        // Scroll event to handle fixed nav
+        const handleScroll = () => {
+            if (window.scrollY > 480) {
+                setIsFixed(true);
+            } else {
+                setIsFixed(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const toggleMenu = () => {
@@ -35,7 +50,7 @@ function Header() {
         const customToast = (
             <div>
                 <p>Bạn muốn đăng xuất tài khoản?</p>
-                <div className="flex justify-center  mt-2 space-x-10">
+                <div className="flex justify-center mt-2 space-x-10">
                     <button 
                         onClick={() => {
                             toast.dismiss();
@@ -55,7 +70,6 @@ function Header() {
             </div>
         );
 
-        // Thêm icon: false vào đây để loại bỏ biểu tượng "i"
         toast.info(customToast, { autoClose: false, position: "top-center", icon: false });
     };
 
@@ -64,8 +78,8 @@ function Header() {
             <ToastContainer />
             <SideBar isOpen={isOpen} toggleMenu={toggleMenu} />
 
-            <div className="flex-1 transition-all duration-300">
-                <div className="container shadow-[0_1px_3px_rgba(0,0,0,0.09)]">
+            <div className="flex-1 transition-all duration-300 w-full">
+                <div className="shadow-[0_1px_3px_rgba(0,0,0,0.09)]">
                     <div className="md:px-40 px-5 flex items-center justify-between py-3 text-[#333]">
                         <div className="cursor-pointer w-[10%] md:hidden" onClick={toggleMenu}>
                             <FaBars className="text-[#333] text-2xl" />
@@ -110,7 +124,10 @@ function Header() {
                     </div>
                 </div>
 
-                <nav className="hidden md:block md:sticky md:top-0 md:z-10 text-[#333] font-semibold">
+                {/* Apply fixed positioning to the nav when scrolled past 480px */}
+                <nav
+                    className={`hidden md:block text-[#333] font-semibold ${isFixed ? 'fixed w-full top-0 left-0 z-10 shadow-md bg-white' : 'w-full bg-transparent'} transition-all`}
+                >
                     <ul className="flex items-center justify-center">
                         <li className="p-4">
                             <Link to="/" className="hover:opacity-80">Trang chủ</Link>
