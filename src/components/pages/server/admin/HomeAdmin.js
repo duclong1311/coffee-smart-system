@@ -4,7 +4,7 @@ import DashboardNavbar from "../staff/DashboardNavbar";
 export function HomeAdmin() {
     return (
         <>
-            <div className="min-h-screen bg-gray-50/50 bg-[#f9f5ec]">
+            <div className="min-h-screen bg-[#f9f5ec]">
                 <Dashboard />
                 <div className="p-4 xl:ml-80">
                     <DashboardNavbar />
