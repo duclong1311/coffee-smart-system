@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     const [selectedItems, setSelectedItems] = useState([]);
+    const [freeTable, setFreeTable] = useState('TB001');
 
     const handleCheckboxChange = (event, itemId) => {
         if (event.target.checked) {
