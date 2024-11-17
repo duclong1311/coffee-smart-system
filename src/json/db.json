@@ -401,6 +401,42 @@
           "total": 25000
         }
       ]
+    },
+    {
+      "id": "2f0e",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        }
+      ]
+    },
+    {
+      "id": "2f2d",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        }
+      ]
     }
   ],
   "feedBack": [
@@ -622,8 +658,9 @@
       "gender": "Nam",
       "phone": "0123456789",
       "dob": "19-05-2002",
-      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2F243-min-1.jpg?alt=media&token=06c4eed7-bf26-45ea-b28d-e084d64363da",
-      "id": "1"
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2Fbanner1.png?alt=media&token=92821f76-0461-4810-bd4e-9c0c9a96e14f",
+      "id": "1",
+      "role": 1
     },
     {
       "id": "2",
@@ -635,7 +672,8 @@
       "phone": "0122456789",
       "dob": "19-05-2002",
       "salary": "10.000.000 VND",
-      "position": "Nhân Viên"
+      "position": "Nhân Viên",
+      "role": 0
     },
     {
       "fullName": "Lê Thị Huỳnh Như",
@@ -643,7 +681,8 @@
       "gender": "Nam",
       "phone": "0122456789",
       "dob": "2008-09-15",
-      "id": "3"
+      "id": "3",
+      "role": 0
     },
     {
       "id": "4",
