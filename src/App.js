@@ -19,6 +19,7 @@ import TableManagement from "./components/TableManagement/TableManagement";
 import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
 import { DetailPost } from "./components/pages/client/Posts/DetailPost";
 import { ProtectedRoute } from "./components/user/ProtectedRoute";
+import DisplayMenu from "./components/pages/client/DisplayMenu";
 
 function App() {
 
@@ -41,7 +42,7 @@ function App() {
         </Route>
         <Route path="/listpost" element={<ListPost />} />
         <Route path="/posts/:id" element={<DetailPost />} />
-
+        <Route path="/menu" element={<DisplayMenu />} />
         {/* Trang đăng nhập và hồ sơ người dùng */}
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />

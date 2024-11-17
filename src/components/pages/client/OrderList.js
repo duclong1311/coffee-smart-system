@@ -18,9 +18,9 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
             const updatedOrderList = orderList.filter((item) => !selectedItems.includes(item.id));
             setOrderList(updatedOrderList);
             setSelectedItems([]);
-            toast.success("Delete success");
+            toast.success("Xóa thành công");
         } else {
-            toast.error("No item selected to delete");
+            toast.error("Không có mục nào được chọn để xóa");
         }
     };
 
