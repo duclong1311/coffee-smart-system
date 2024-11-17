@@ -1,6 +1,8 @@
 .order-list-container {
   width: 100%;
-  margin-left: 1em;
+  margin-left: 0.5em;
+  min-width: 110%;
+  max-width: 110%;
 }
 
 .order-list-container .orderlist-table {
