@@ -39,8 +39,8 @@ export function Profile() {
                             {/* User information */}
                             <div className="mt-[10px] mx-auto w-[80%] relative left-[100px] top-[0px]">
                             <p className="mb-2 font-semibold" style={{ width: '300px' }}>Tên Đăng Nhập: <span className="font-normal">{user.username}</span></p>
-                                <p className="mb-2 font-semibold" style={{ width: '300px' }}>Mật Khẩu: <span className="font-normal">{user.password}</span></p>
-                                <p className="mb-2 font-semibold" style={{ width: '300px' }}>Họ và Tên: <span className="font-normal">{user.fullName}</span></p>
+                                <p className="mb-2 font-semibold" style={{ width: '310px' }}>Mật Khẩu: <span className="font-normal">{user.password}</span></p>
+                                <p className="mb-2 font-semibold" style={{ width: '310px' }}>Họ và Tên: <span className="font-normal">{user.fullName}</span></p>
                                 <p className="mb-2 font-semibold" style={{ width: '300px' }}>Địa Chỉ: <span className="font-normal">{user.address}</span></p>
                                 <p className="mb-2 font-semibold"style={{ width: '300px' }} >Giới Tính: <span className="font-normal">{user.gender}</span></p>
                                 <p className="mb-2 font-semibold" style={{ width: '300px' }}>Số Điện Thoại: <span className="font-normal">{user.phone}</span></p>
