@@ -44,9 +44,16 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
             isAvailability: false,
             food: orderList
         });
-        console.log("Check order", res);
-        console.log("freeTable:", freeTable);
-        console.log("orderList:", orderList);
+        
+        const resolveAfter3Sec = new Promise(res => setTimeout(res, 3000));
+        toast.promise(
+            resolveAfter3Sec,
+            {
+                pending: 'Đang tiến hành gọi món',
+                success: 'Gọi món thành công 👌',
+                error: 'Gói món thất bại 🤯'
+            }
+        )
     }
 
     return (
@@ -74,9 +81,6 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
                                     </th>
                                     <th scope="col" className="px-6 py-3">
                                         Tổng tiền
-                                    </th>
-                                    <th scope="col" className="px-6 py-3">
-                                        Thời gian chờ
                                     </th>
                                 </tr>
                             </thead>
@@ -107,9 +111,6 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
                                             </td>
                                             <td className="px-6 py-4">
                                                 {orderItem.total.toLocaleString('vi', { style: 'currency', currency: 'VND' })}
-                                            </td>
-                                            <td className="px-6 py-4">
-                                                5 phút
                                             </td>
                                         </tr>
                                     ))

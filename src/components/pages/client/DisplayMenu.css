@@ -1,7 +1,19 @@
 body {
-    margin: 0;
+    box-sizing: border-box;
 }
 
 .menu-container {
+    margin-top: 20px;
+    margin-left: 20px;
     display: flex;
+    width: calc(100% - 20px);
+    height: 100vh;
+}
+
+.menu-container .left-container {
+    
+}
+
+.menu-container .right-container {
+
 }

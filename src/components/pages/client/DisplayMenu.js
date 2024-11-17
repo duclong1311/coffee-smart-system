@@ -45,17 +45,14 @@ const DisplayMenu = () => {
             />
 
             <ToastContainer
-                position="top-center"
+                position="bottom-right"
                 autoClose={5000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
                 rtl={false}
-                draggable
                 theme="light"
             />
-            {/* Same as */}
-            <ToastContainer />
         </>
     )
 }
