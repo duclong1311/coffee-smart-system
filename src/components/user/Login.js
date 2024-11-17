@@ -35,7 +35,7 @@ export function Login() {
 
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
                 <ToastContainer />
                 <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 m-4 shadow-lg rounded-md bg-white">
@@ -133,13 +133,13 @@ export function Login() {
                     </div>
 
                     <div className="md:h-full bg-[#fff] rounded-xl lg:p-12 p-8">
-                    <img src="https://images8.alphacoders.com/134/1349209.png" style={{ width: '500px', height: '350px' }} alt="login-image" />
+                    <img src="https://img.freepik.com/free-vector/coffee-love-foam-with-beans-cartoon-icon-illustration_138676-2575.jpg?w=360" style={{ width: '400px', height: '350px' }} alt="login-image" />
 
 
                     </div>
                 </div>
             </div>
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }
