@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Loading from '../../assets/images/Loading.jpg';
 import Header from "../partial/Header";
 import Footer from "../partial/Footer";
+import { storage } from '../../firebase'; // Import Firebase storage reference
 
 export function Profile() {
     const [user, setUser] = useState(null);
@@ -28,10 +29,29 @@ export function Profile() {
                             Thông Tin Cá Nhân
                         </h1>
 
-                        {/* Ảnh nền */}
-                        <div className="w-full rounded-xl bg-[url('https://png.pngtree.com/background/20210709/original/pngtree-coffee-background-for-simple-coffee-restaurant-picture-image_905317.jpg')] bg-cover bg-center bg-no-repeat items-center mb-6">
-                            {/* Ảnh hồ sơ */}
-                            <div className="mx-auto flex justify-center w-[141px] h-[141px] bg-blue-300/20 rounded-full bg-[url('https://cdn.eva.vn/upload/3-2021/images/2021-07-31/182636312_1294694704259617_8777969660546104509_n-down-1627714443-420-width800height1067.jpg')] bg-cover bg-center bg-no-repeat"></div>
+                        {/* Cover photo */}
+                        <div className="w-full h-[150px] bg-[url('https://images8.alphacoders.com/134/1349209.png')] bg-cover bg-center mb-6 rounded-xl"></div>
+                        {/* Container for user information and profile image */}
+                        <div className="flex flex-col md:flex-row-reverse gap-6 items-start md:items-center mb-6">
+                            {/* Profile image */}
+                            {/* <div className="w-[250px] h-[300px] bg-[url('https://cdn.eva.vn/upload/3-2021/images/2021-07-31/182636312_1294694704259617_8777969660546104509_n-down-1627714443-420-width800height1067.jpg')] bg-cover bg-center bg-no-repeat border-4 border-[#333] rounded-lg"></div> */}
+                            <div
+                                className="w-[250px] h-[300px] bg-cover bg-center bg-no-repeat border-4 border-[#333] rounded-lg"
+                                style={{ backgroundImage: `url(${user.profileImage})` }}
+                            ></div>
+
+                            {/* User information */}
+                            <div className="mt-[10px] mx-auto w-[80%]">
+                                <p className="mb-2 font-semibold">Tên Đăng Nhập: <span className="font-normal">{user.username}</span></p>
+                                <p className="mb-2 font-semibold">Mật Khẩu: <span className="font-normal">{user.password}</span></p>
+                                <p className="mb-2 font-semibold">Họ và Tên: <span className="font-normal">{user.fullName}</span></p>
+                                <p className="mb-2 font-semibold">Địa Chỉ: <span className="font-normal">{user.address}</span></p>
+                                <p className="mb-2 font-semibold">Giới Tính: <span className="font-normal">{user.gender}</span></p>
+                                <p className="mb-2 font-semibold">Số Điện Thoại: <span className="font-normal">{user.phone}</span></p>
+                                <p className="mb-2 font-semibold">Ngày Sinh: <span className="font-normal">{user.dob}</span></p>
+                                <p className="mb-2 font-semibold">Lương: <span className="font-normal">{user.salary}</span></p>
+                                <p className="mb-2 font-semibold">Vị Trí: <span className="font-normal">{user.position}</span></p>
+                            </div>
                         </div>
 
                         {/* Hiển thị thông tin cá nhân */}

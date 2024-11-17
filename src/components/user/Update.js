@@ -4,6 +4,7 @@ import Header from "../partial/Header";
 import Footer from "../partial/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { storage, ref, uploadBytesResumable, getDownloadURL } from '../../firebase'; // Import Firebase methods
 
 function Update() {
     const navigate = useNavigate();
@@ -37,14 +38,31 @@ function Update() {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setUser({
-                    ...user,
-                    profileImage: reader.result,
-                });
-            };
-            reader.readAsDataURL(file);
+            // Create a storage reference
+            const storageRef = ref(storage, `profile_images/${file.name}`);
+            const uploadTask = uploadBytesResumable(storageRef, file);
+
+            // Monitor the upload progress
+            uploadTask.on('state_changed', 
+                (snapshot) => {
+                    // Optionally, you can add progress feedback here
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    console.log('Upload is ' + progress + '% done');
+                },
+                (error) => {
+                    toast.error("Upload ảnh thất bại!");
+                    console.error("Error uploading image:", error);
+                },
+                () => {
+                    // Get the download URL after upload is complete
+                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                        setUser({
+                            ...user,
+                            profileImage: downloadURL,
+                        });
+                    });
+                }
+            );
         }
     };
 
@@ -216,57 +234,24 @@ function Update() {
                                     name="dob"
                                     value={user.dob}
                                     onChange={handleChange}
-                                    className="w-full p-4 border-2 rounded-lg text-[#333] ml-auto rtl"
-                                />
-                            </div>
-                            {/* Salary - Display Only */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Lương</label>
-                                <input
-                                    type="text"
-                                    name="salary"
-                                    value={user.salary}
-                                    readOnly
                                     className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                    placeholder="Lương"
                                 />
                             </div>
 
-                            {/* Position - Display Only */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Vị Trí</label>
-                                <input
-                                    type="text"
-                                    name="position"
-                                    value={user.position}
-                                    readOnly
-                                    className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                    placeholder="Vị trí"
-                                />
+                            <div className="text-center mt-6">
+                                <button
+                                    type="submit"
+                                    className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600"
+                                >
+                                    Cập Nhật
+                                </button>
                             </div>
-
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="w-full p-4 bg-[#333] text-white rounded-lg font-semibold mt-4 hover:opacity-90"
-                            >
-                                Cập Nhật
-                            </button>
-
-                            {/* Cancel Button */}
-                            <button
-                                type="button"
-                                onClick={() => navigate("/profile")}
-                                className="w-full p-4 rounded-lg bg-red-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-red-700"
-                            >
-                                Hủy
-                            </button>
                         </form>
                     </div>
                 </section>
             </div>
-            <Footer />
             <ToastContainer />
+            <Footer />
         </>
     );
 }
