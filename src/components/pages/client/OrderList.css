@@ -1,35 +1,14 @@
-.order-list-container{
-    width: 100%;
+.order-list-container {
+  width: 100%;
+  margin-left: 1em;
 }
 
-.orderlist-action {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+.order-list-container .orderlist-table {
+  max-height: 58vh;
 }
 
-.orderlist-table {
-    display: flex;    
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    width: 100%;
-    max-height: 58vh;
-}
-
-.orderlist-infor {
-    display: flex;
-    flex-direction: column;
-}
-
-.orderlist-right {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.orderlist-left {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+.order-list-container .orderlist-action {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
 }

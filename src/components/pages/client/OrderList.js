@@ -24,15 +24,20 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
         }
     };
 
-    const handleCallOrder = () => {
-        //to do, gửi order đến backend
-        const functionThatReturnPromise = () => new Promise(resolve => setTimeout(resolve, 3000));
+    const handleCallOrder = async () => {
+        const res = await axios.post('http://localhost:3000/listTable', {
+            tableNumber: freeTable,
+            isAvailability: false,
+            food: orderList
+        });
+        
+        const resolveAfter3Sec = new Promise(res => setTimeout(res, 3000));
         toast.promise(
-            functionThatReturnPromise,
+            resolveAfter3Sec,
             {
                 pending: 'Đang tiến hành gọi món',
                 success: 'Gọi món thành công 👌',
-                error: 'Gọi món thất bại 🤯'
+                error: 'Gói món thất bại 🤯'
             }
         )
     }
@@ -63,9 +68,6 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
                                     <th scope="col" className="px-6 py-3">
                                         Tổng tiền
                                     </th>
-                                    <th scope="col" className="px-6 py-3">
-                                        Thời gian chờ
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,9 +97,6 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
                                             </td>
                                             <td className="px-6 py-4">
                                                 {orderItem.total.toLocaleString('vi', { style: 'currency', currency: 'VND' })}
-                                            </td>
-                                            <td className="px-6 py-4">
-                                                5 phút
                                             </td>
                                         </tr>
                                     ))
