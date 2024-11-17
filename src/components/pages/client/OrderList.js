@@ -1,9 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './OrderList.css';
 import { toast } from 'react-toastify';
+import axios from 'axios';
+import _ from 'lodash';
 
 const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     const [selectedItems, setSelectedItems] = useState([]);
+    const [freeTable, setFreeTable] = useState('TB001');
+
+    useEffect(() => {
+        const findAvailabelTable = async () => {
+            const res = await axios.get('http://localhost:3000/listTable');
+            if (res.data && res.data.length > 0) {
+                const availableTable = res.data.find((item) => item?.isAvailability === true);
+                setFreeTable(availableTable ? availableTable.tableNumber : "Hiện tại không có bàn trống!");
+            }
+        }
+        findAvailabelTable();
+    }, []);
 
     const handleCheckboxChange = (event, itemId) => {
         if (event.target.checked) {
@@ -24,17 +38,15 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
         }
     };
 
-    const handleCallOrder = () => {
-        //to do, gửi order đến backend
-        const functionThatReturnPromise = () => new Promise(resolve => setTimeout(resolve, 3000));
-        toast.promise(
-            functionThatReturnPromise,
-            {
-                pending: 'Đang tiến hành gọi món',
-                success: 'Gọi món thành công 👌',
-                error: 'Gọi món thất bại 🤯'
-            }
-        )
+    const handleCallOrder = async () => {
+        const res = await axios.post('http://localhost:3000/listTable', {
+            tableNumber: freeTable,
+            isAvailability: false,
+            food: orderList
+        });
+        console.log("Check order", res);
+        console.log("freeTable:", freeTable);
+        console.log("orderList:", orderList);
     }
 
     return (
