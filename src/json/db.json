@@ -231,8 +231,14 @@
   "listTable": [
     {
       "tableNumber": "TB001",
-      "isAvailability": false,
       "food": [
+        {
+          "id": 1,
+          "foodName": "Cà phê đen",
+          "quantity": 2,
+          "price": 15000,
+          "totalPrice": 30000
+        },
         {
           "id": 2,
           "foodName": "Bánh mì",
@@ -245,7 +251,6 @@
     },
     {
       "tableNumber": "TB002",
-      "isAvailability": false,
       "food": [
         {
           "id": 1,
@@ -259,13 +264,26 @@
     },
     {
       "tableNumber": "TB003",
-      "isAvailability": true,
-      "food": [],
+      "food": [
+        {
+          "id": 1,
+          "foodName": "Nước cam",
+          "quantity": 1,
+          "price": 12000,
+          "totalPrice": 12000
+        },
+        {
+          "id": 2,
+          "foodName": "Cà phê sữa",
+          "quantity": 1,
+          "price": 18000,
+          "totalPrice": 18000
+        }
+      ],
       "id": "8abd"
     },
     {
       "tableNumber": "TB004",
-      "isAvailability": false,
       "food": [
         {
           "id": 1,
@@ -279,13 +297,19 @@
     },
     {
       "tableNumber": "TB005",
-      "isAvailability": true,
-      "food": [],
+      "food": [
+        {
+          "id": 1,
+          "foodName": "Nước ép táo",
+          "quantity": 2,
+          "price": 20000,
+          "totalPrice": 40000
+        }
+      ],
       "id": "31b3"
     },
     {
       "tableNumber": "TB006",
-      "isAvailability": false,
       "food": [
         {
           "id": 1,
@@ -299,13 +323,19 @@
     },
     {
       "tableNumber": "TB007",
-      "isAvailability": true,
-      "food": [],
+      "food": [
+        {
+          "id": 1,
+          "foodName": "Nước ép táo",
+          "quantity": 2,
+          "price": 20000,
+          "totalPrice": 40000
+        }
+      ],
       "id": "f6c6"
     },
     {
       "tableNumber": "TB008",
-      "isAvailability": false,
       "food": [
         {
           "id": 1,
@@ -319,13 +349,19 @@
     },
     {
       "tableNumber": "TB009",
-      "isAvailability": true,
-      "food": [],
+      "food": [
+        {
+          "id": 1,
+          "foodName": "Nước ép táo",
+          "quantity": 2,
+          "price": 20000,
+          "totalPrice": 40000
+        }
+      ],
       "id": "5a0b"
     },
     {
       "tableNumber": "TB010",
-      "isAvailability": false,
       "food": [
         {
           "id": 1,
@@ -339,7 +375,6 @@
     },
     {
       "tableNumber": "TB011",
-      "isAvailability": false,
       "food": [
         {
           "id": 1,
@@ -352,89 +387,20 @@
       "id": "7f76"
     },
     {
-      "id": "31fe",
-      "tableNumber": "TB003",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": "4",
-          "name": "Sữa tươi cà phê",
-          "description": "Sữa tươi kết hợp với cà phê, đem lại vị thanh mát, béo nhẹ và hương thơm tự nhiên của cà phê.",
-          "img": "/assets/images/Menu/sua-tuoi-cafe.jpg",
-          "price": 27000,
-          "category": "coffee",
-          "availability": true,
-          "quantity": 1,
-          "total": 27000
-        },
-        {
-          "id": "3",
-          "name": "Nâu đá",
-          "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
-          "img": "/assets/images/Menu/nau-da.jpg",
-          "price": 20000,
-          "category": "coffee",
-          "availability": true,
-          "quantity": 1,
-          "total": 20000
-        },
-        {
-          "id": "2",
-          "name": "Bạc xỉu kem muối",
-          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
-          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
-          "price": 30000,
-          "category": "coffee",
-          "availability": true,
-          "quantity": 1,
-          "total": 30000
-        },
-        {
-          "id": "1",
-          "name": "Cà phê muối",
-          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
-          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
-          "price": 25000,
-          "category": "coffee",
-          "availability": true,
-          "quantity": 1,
-          "total": 25000
-        }
-      ]
-    },
-    {
-      "id": "2f0e",
+      "id": "23c8",
       "tableNumber": "TB001",
       "isAvailability": false,
       "food": [
         {
-          "id": "1",
-          "name": "Cà phê muối",
-          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
-          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
-          "price": 25000,
-          "category": "coffee",
+          "id": "19",
+          "name": "Cocktail Mojito",
+          "description": "Cocktail Mojito thơm ngon, sự kết hợp tươi mát của rượu rum, bạc hà và chanh, hoàn hảo để giải nhiệt.",
+          "img": "/assets/images/Menu/mojito.jpg",
+          "price": 80000,
+          "category": "alcohol",
           "availability": true,
           "quantity": 1,
-          "total": 25000
-        }
-      ]
-    },
-    {
-      "id": "2f2d",
-      "tableNumber": "TB001",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": "2",
-          "name": "Bạc xỉu kem muối",
-          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
-          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
-          "price": 30000,
-          "category": "coffee",
-          "availability": true,
-          "quantity": 1,
-          "total": 30000
+          "total": 80000
         }
       ]
     }
@@ -656,11 +622,10 @@
       "fullName": "Nguyễn Thành Nhân",
       "address": "Codegym C05",
       "gender": "Nam",
-      "phone": "0123456789",
+      "phone": "0364923664",
       "dob": "19-05-2002",
-      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2Fbanner1.png?alt=media&token=92821f76-0461-4810-bd4e-9c0c9a96e14f",
-      "id": "1",
-      "role": 1
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2F243-min-1.jpg?alt=media&token=06c4eed7-bf26-45ea-b28d-e084d64363da",
+      "id": "1"
     },
     {
       "id": "2",
@@ -699,7 +664,8 @@
       "phone": "0122456789",
       "dob": "19-05-2002",
       "salary": "10.000.000 VND",
-      "position": "Nhân Viên"
+      "position": "Nhân Viên",
+      "role": 0
     },
     {
       "id": "6",
