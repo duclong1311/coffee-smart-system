@@ -99,14 +99,16 @@ function Header() {
                         </div>
 
                         <div className="w-[20%] md:w-1/3 flex items-center justify-end text-[#333] text-4xl">
-                            <div className="relative cursor-pointer mx-2 md:mx-2 group">
-                                <Link to="/profile">
-                                    <SlUser className='size-6'/>
-                                </Link>
-                                <span className="absolute top-full mt-1 right-0 hidden group-hover:block bg-[#333] text-white text-sm px-2 py-1 rounded min-w-[150px] max-w-[300px]">
-                                    Xem thông tin tài khoản
-                                </span>
-                            </div>
+                            {isLoggedIn && (
+                                <div className="relative cursor-pointer mx-2 md:mx-2 group">
+                                    <Link to="/profile">
+                                        <SlUser className='size-6' />
+                                    </Link>
+                                    <span className="absolute top-full mt-1 right-0 hidden group-hover:block bg-[#333] text-white text-sm px-2 py-1 rounded min-w-[150px] max-w-[300px]">
+                                        Xem thông tin tài khoản
+                                    </span>
+                                </div>
+                            )}
 
                             {isLoggedIn ? (
                                 <div className="relative cursor-pointer mx-4 md:mx-2 group" onClick={handleLogout}>
