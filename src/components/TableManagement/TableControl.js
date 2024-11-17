@@ -27,7 +27,7 @@ const TableControl = ({ handleClickTable }) => {
                     className="object-fill h-full w-full rounded-lg "
                   />
                   <div className="absolute top-1 right-1 bg-white p-1 rounded-full border border-gray-300">
-                    {item.food.length > 0 ? (
+                    {item.isAvailability === false ? (
                       <img
                         src={waiter}
                         alt=""
