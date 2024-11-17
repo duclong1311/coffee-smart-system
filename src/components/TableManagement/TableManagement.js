@@ -90,7 +90,7 @@ function TableManagement() {
     setSelectedTable(data);
   };
   return (
-    <div className="grid grid-cols-12  gap-4 h-screen">
+    <div className="grid grid-cols-12  gap-4 h-screen bg-[#F9F4EC]">
       <div className="col-span-6 row-span-5">
         <TableControl handleClickTable={handleClickTable} />
       </div>
