@@ -6,23 +6,28 @@ export const ProtectedRoute = ({ children, requiredRole }) => {
     const hasAccess = checkRole(requiredRole);
 
     if (!hasAccess) {
-        // Lưu thông báo vào localStorage
-        localStorage.setItem('accessDenied', 'Bạn không có quyền truy cập!');
+        // Kiểm tra xem đã hiển thị thông báo chưa trong sessionStorage
+        if (!sessionStorage.getItem('accessDeniedShown')) {
+            // Lưu thông báo vào sessionStorage
+            sessionStorage.setItem('accessDenied', 'Bạn không có quyền truy cập!');
 
-        // Trì hoãn chuyển hướng
-        setTimeout(() => {
-            // Chuyển hướng bằng Navigate sau khi hiển thị thông báo
-            toast.error(localStorage.getItem('accessDenied'), {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                draggable: true,
-                theme: "light",
-            });
-        }, 1000); // Đợi 1 giây trước khi chuyển hướng
+            // Trì hoãn chuyển hướng và hiển thị thông báo
+            setTimeout(() => {
+                toast.error(sessionStorage.getItem('accessDenied'), {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    draggable: true,
+                    theme: "light",
+                });
 
-        // Trả về null để không render gì trong ProtectedRoute
+                // Đánh dấu là đã hiển thị thông báo
+                sessionStorage.setItem('accessDeniedShown', 'true');
+            }, 1000); // Đợi 1 giây trước khi hiển thị thông báo
+        }
+
+        // Chuyển hướng về trang chính sau khi hiển thị thông báo
         return <Navigate to="/" replace />;
     }
 
