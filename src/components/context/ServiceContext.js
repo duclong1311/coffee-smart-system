@@ -9,21 +9,6 @@ const ServiceContext = ({ children }) => {
     groupCode: "",
     groupName: "",
   });
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModaEditlOpen, setIsModaEditlOpen] = useState(false);
-
-  const handleAddClick = () => {
-    setIsModalOpen(true);
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  const handleEditClick = () => {
-    setIsModaEditlOpen(true);
-  };
-  const closeModalEdit = () => {
-    setIsModaEditlOpen(false);
-  };
 
   const getMenuList = async () => {
     try {
@@ -47,7 +32,7 @@ const ServiceContext = ({ children }) => {
       alert("them thanh cong");
       setInnittialValue(inittialValue);
       getMenuList();
-      closeModal();
+      // closeModal();
     } catch (e) {
       alert(e.message);
     }
@@ -75,14 +60,8 @@ const ServiceContext = ({ children }) => {
           loading,
           removeDishGroup,
           AddNewDishGroup,
-          isModalOpen,
-          handleAddClick,
-          closeModal,
-          inittialValue,
-          handleEditClick,
-          isModaEditlOpen,
-          closeModalEdit,
           setMenuList,
+          inittialValue,
         }}
       >
         {children}

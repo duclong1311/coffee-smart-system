@@ -629,6 +629,30 @@
       "groupCode": "asdas",
       "groupName": "asd",
       "items": []
+    },
+    {
+      "id": "e5e2",
+      "groupCode": "áda",
+      "groupName": "đâ",
+      "items": []
+    },
+    {
+      "id": "35c8",
+      "groupCode": "111",
+      "groupName": "333",
+      "items": []
+    },
+    {
+      "id": "29e6",
+      "groupCode": "333",
+      "groupName": "322",
+      "items": []
+    },
+    {
+      "id": "6dd8",
+      "groupCode": "333",
+      "groupName": "555",
+      "items": []
     }
   ],
   "users": [

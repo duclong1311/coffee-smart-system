@@ -1,10 +1,10 @@
 import { Field, Form, Formik } from "formik";
 import React, { useContext, useState } from "react";
 import { MyServiceContext } from "../../context/ServiceContext";
-const EditDishGroup = () => {
-  const { closeModalEdit } = useContext(MyServiceContext);
+const EditDishGroup = ({ closeModalEdit }) => {
   const [oldDishGroup, setOldDishGroup] = useState({});
 
+  console.log("editgroupmodal");
   return (
     <div>
       <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center">

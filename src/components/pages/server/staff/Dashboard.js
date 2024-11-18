@@ -114,7 +114,6 @@ const Dashboard = () => {
                     Sale
                   </p>
                 </button>
-
               </Link>
             </li>
             <li>
@@ -165,7 +164,7 @@ const Dashboard = () => {
                     </Link>
                   </li>
                   {/* service here */}
-                  {/* <li>
+                  <li>
                     <Link className="" to="/staff/service">
                       <button
                         className={`hover:bg-blue-500 middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
@@ -184,7 +183,7 @@ const Dashboard = () => {
                         </p>
                       </button>
                     </Link>
-                  </li> */}
+                  </li>
                 </ul>
               )}
             </li>

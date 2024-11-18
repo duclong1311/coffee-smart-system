@@ -2,14 +2,17 @@ import { Field, Form, Formik } from "formik";
 import React, { useContext } from "react";
 import { MyServiceContext } from "../../context/ServiceContext";
 
-function AddDishGroup() {
-  const { AddNewDishGroup, closeModal, inittialValue } =
-    useContext(MyServiceContext);
+function AddDishGroup({ closeModal }) {
+  const onSubmitHander = async (data) => {
+    await AddNewDishGroup(data);
+    closeModal();
+  };
+  const { AddNewDishGroup, inittialValue } = useContext(MyServiceContext);
   return (
     <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 className="text-xl font-semibold mb-4">Thêm nhóm món</h2>
-        <Formik initialValues={inittialValue} onSubmit={AddNewDishGroup}>
+        <Formik initialValues={inittialValue} onSubmit={onSubmitHander}>
           <Form>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700">
