@@ -17,6 +17,7 @@ function Update() {
         phone: "",
         dob: "",
         profileImage: "",
+        role: 0
     });
     const [uploadProgress, setUploadProgress] = useState(0); // State to track upload progress
 
@@ -77,7 +78,7 @@ function Update() {
         }
 
         fetch(`http://localhost:3000/users/${user.id}`, {
-            method: "PUT",
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
