@@ -260,9 +260,22 @@
       "id": "ce55"
     },
     {
-      "tableNumber": "TB005",
-      "isAvailability": true,
-      "food": [],
+      "id": "2f2d",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        }
+      ],
       "id": "31b3"
     },
     {
