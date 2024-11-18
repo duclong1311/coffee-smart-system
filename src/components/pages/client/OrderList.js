@@ -6,6 +6,7 @@ import axios from 'axios';
 const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     const [selectedItems, setSelectedItems] = useState([]);
     const [freeTable, setFreeTable] = useState('TB001');
+<<<<<<< HEAD
 
     useEffect(() => {
         const findAvailabelTable = async () => {
@@ -17,6 +18,8 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
         }
         findAvailabelTable();
     }, []);
+=======
+>>>>>>> 369481b0a4f30bd649051d8ab1c490cef288183f
 
     const handleCheckboxChange = (event, itemId) => {
         if (event.target.checked) {

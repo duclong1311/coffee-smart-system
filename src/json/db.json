@@ -359,6 +359,24 @@
         }
       ],
       "id": "7f76"
+    },
+    {
+      "id": "23c8",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "19",
+          "name": "Cocktail Mojito",
+          "description": "Cocktail Mojito thơm ngon, sự kết hợp tươi mát của rượu rum, bạc hà và chanh, hoàn hảo để giải nhiệt.",
+          "img": "/assets/images/Menu/mojito.jpg",
+          "price": 80000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 1,
+          "total": 80000
+        }
+      ]
     }
   ],
   "feedBack": [
@@ -578,10 +596,15 @@
       "fullName": "Nguyễn Thành Nhân",
       "address": "Codegym C05",
       "gender": "Nam",
-      "phone": "0123456789",
+      "phone": "0364923664",
       "dob": "19-05-2002",
+<<<<<<< HEAD
       "id": "1",
       "role": 1
+=======
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2F243-min-1.jpg?alt=media&token=06c4eed7-bf26-45ea-b28d-e084d64363da",
+      "id": "1"
+>>>>>>> 369481b0a4f30bd649051d8ab1c490cef288183f
     },
     {
       "id": "2",

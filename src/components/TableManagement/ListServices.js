@@ -20,10 +20,10 @@ function ListServices() {
           </thead>
           <tbody>
             {selectedTable && selectedTable.food.length > 0 ? (
-              selectedTable.food.map((item) => (
+              selectedTable.food.map((item, index) => (
                 <tr className="bg-white font-sans   " key={item.id}>
                   <td className="border border-gray-400  px-4 py-2 text-center">
-                    {item.id}
+                    {index + 1}
                   </td>
                   <td className="border border-gray-400 px-4 py-2">
                     {item.foodName}
