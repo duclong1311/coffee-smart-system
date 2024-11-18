@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Tiny from "../../../../../Tiny";
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -16,10 +17,13 @@ export function EditPost() {
             try {
                 const response = await axios.get(`http://localhost:3000/posts/${id}`);
                 setPost(response.data); // Lưu dữ liệu bài viết vào state
+                console.log(response.data);
             } catch (error) {
                 alert('Error fetching post', error);
             }
+            
         };
+        
         getPost();
     }, [id]);
 
@@ -65,7 +69,7 @@ export function EditPost() {
                     validationSchema={validationSchema}
                     onSubmit={handleEdit}
                 >
-                    {() => (
+                    {({ setFieldValue, setFieldTouched, errors, touched }) => (
                         <Form>
                             <div className="mb-4">
                                 <label className="block text-gray-700">Tiêu đề:</label>
@@ -78,12 +82,22 @@ export function EditPost() {
                             </div>
                             <div className="mb-4">
                                 <label className="block text-gray-700">Nội dung:</label>
-                                <Field
+                                <Tiny
+                                initialValue={post.content}
+                                    onChange={(content) => {
+                                        setFieldValue("content", content);
+                                        setFieldTouched("content", true); 
+                                    }}
+                                />
+                                {/* <Field
                                     as="textarea"
                                     name="content"
                                     className="border border-gray-300 p-2 w-full"
-                                />
-                                <ErrorMessage name="content" component="div" className="text-red-500 text-sm" />
+                                /> */}
+                                 {touched.content && errors.content && (
+                                    <div className="text-red-500 text-sm">{errors.content}</div>
+                                )}
+                                {/* <ErrorMessage name="content" component="div" className="text-red-500 text-sm" /> */}
                             </div>
                             <div className="mb-4">
                                 <label className="block text-gray-700">Image URL:</label>

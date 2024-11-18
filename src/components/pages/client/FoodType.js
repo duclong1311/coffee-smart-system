@@ -1,6 +1,7 @@
 import axios from 'axios';
 import './FoodType.css'
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 
 const FoodType = ({ addToOrder }) => {
@@ -30,6 +31,7 @@ const FoodType = ({ addToOrder }) => {
 
     const handleClickAddToOrder = (item) => {
         addToOrder(item);
+        toast.success("Thêm thành công!")
     }
 
     return (
@@ -48,7 +50,7 @@ const FoodType = ({ addToOrder }) => {
                         {
                             menuData.length > 0 && menuData.map((item, index) => (
                                 <div className='menu-card' key={`${item}-${index}`}>
-                                    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 food-item">
+                                    <div className="food-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                         <img className="rounded-t-lg" src={item.img} alt="..." />
                                         <div className="p-5">
                                             <h5 className="item-name mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{item.name}</h5>

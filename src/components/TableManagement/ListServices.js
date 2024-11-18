@@ -26,7 +26,7 @@ function ListServices() {
                     {index + 1}
                   </td>
                   <td className="border border-gray-400 px-4 py-2">
-                    {item.foodName}
+                    {item.name}
                   </td>
                   <td className="border border-gray-400 px-4 py-2 text-center">
                     {item.quantity}

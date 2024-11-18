@@ -43,7 +43,7 @@ export default function Tiny({ initialValue, onChange }) {
         onInit={(_evt, editor) => (editorRef.current = editor)}
         initialValue={initialValue} // Có thể sử dụng để thiết lập giá trị ban đầu
         init={{
-          height: 500,
+          height: 300,
           menubar: false,
           plugins: [
             'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',

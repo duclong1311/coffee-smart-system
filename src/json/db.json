@@ -196,8 +196,14 @@
       "title": "Another Post",
       "content": "Có rất nhiều địa điểm để bạn có thể trải nghiệm cà phê bệt ở Sài Gòn, từ những khu vực trung tâm như  Nhà thờ Đức Bà, Phố đi bộ Nguyễn Huệ cho đến những khu vực ven thành phố như Hồ Con Rùa. Mỗi nơi đều có những điểm hấp dẫn riêng, từ không gian, khung cảnh đến các món ăn vặt và thức uống kèm theo. Bạn có thể tự do lựa chọn nơi mình thích nhất để tận hưởng ly cà phê bệt theo cách của mình.",
       "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg",
-      "date": "2024-11-15T16:57:34.015Z",
-      "lastEdited": "11/15/2024, 11:46:18 PM"
+      "date": "2024-11-16T17:26:06.794Z",
+      "lastEdited": "11/15/2024, 11:46:18 PM",
+      "comments": [
+        {
+          "content": "Cà phê ngon quá",
+          "date": "11/18/2024, 6:41:55 PM"
+        }
+      ]
     },
     {
       "id": "e4d8",
@@ -231,30 +237,14 @@
   "listTable": [
     {
       "tableNumber": "TB001",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": 2,
-          "foodName": "Bánh mì",
-          "quantity": 1,
-          "price": 10000,
-          "totalPrice": 10000
-        }
-      ],
+      "isAvailability": true,
+      "food": [],
       "id": "b1a7"
     },
     {
       "tableNumber": "TB002",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": 1,
-          "foodName": "Trà sữa",
-          "quantity": 3,
-          "price": 20000,
-          "totalPrice": 60000
-        }
-      ],
+      "isAvailability": true,
+      "food": [],
       "id": "4527"
     },
     {
@@ -265,16 +255,8 @@
     },
     {
       "tableNumber": "TB004",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": 1,
-          "foodName": "Sinh tố dâu",
-          "quantity": 2,
-          "price": 25000,
-          "totalPrice": 50000
-        }
-      ],
+      "isAvailability": true,
+      "food": [],
       "id": "ce55"
     },
     {
@@ -285,16 +267,8 @@
     },
     {
       "tableNumber": "TB006",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": 1,
-          "foodName": "Nước ép táo",
-          "quantity": 2,
-          "price": 20000,
-          "totalPrice": 40000
-        }
-      ],
+      "isAvailability": true,
+      "food": [],
       "id": "84d3"
     },
     {
@@ -305,16 +279,8 @@
     },
     {
       "tableNumber": "TB008",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": 1,
-          "foodName": "Nước ép táo",
-          "quantity": 2,
-          "price": 20000,
-          "totalPrice": 40000
-        }
-      ],
+      "isAvailability": true,
+      "food": [],
       "id": "7577"
     },
     {
@@ -325,37 +291,104 @@
     },
     {
       "tableNumber": "TB010",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": 1,
-          "foodName": "Nước ép táo",
-          "quantity": 2,
-          "price": 20000,
-          "totalPrice": 40000
-        }
-      ],
+      "isAvailability": true,
+      "food": [],
       "id": "6224"
     },
     {
       "tableNumber": "TB011",
-      "isAvailability": false,
-      "food": [
-        {
-          "id": 1,
-          "foodName": "Nước ép táo",
-          "quantity": 2,
-          "price": 20000,
-          "totalPrice": 40000
-        }
-      ],
+      "isAvailability": true,
+      "food": [],
       "id": "7f76"
     },
     {
-      "id": "31fe",
-      "tableNumber": "TB003",
+      "id": "7e6d",
+      "tableNumber": "TB001",
       "isAvailability": false,
       "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        }
+      ]
+    },
+    {
+      "id": "a078",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 2,
+          "total": 50000
+        }
+      ]
+    },
+    {
+      "id": "f4ef",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        }
+      ]
+    },
+    {
+      "id": "2aa1",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        }
+      ]
+    },
+    {
+      "id": "9cac",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        },
         {
           "id": "4",
           "name": "Sữa tươi cà phê",
@@ -366,29 +399,14 @@
           "availability": true,
           "quantity": 1,
           "total": 27000
-        },
-        {
-          "id": "3",
-          "name": "Nâu đá",
-          "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
-          "img": "/assets/images/Menu/nau-da.jpg",
-          "price": 20000,
-          "category": "coffee",
-          "availability": true,
-          "quantity": 1,
-          "total": 20000
-        },
-        {
-          "id": "2",
-          "name": "Bạc xỉu kem muối",
-          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
-          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
-          "price": 30000,
-          "category": "coffee",
-          "availability": true,
-          "quantity": 1,
-          "total": 30000
-        },
+        }
+      ]
+    },
+    {
+      "id": "9237",
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
         {
           "id": "1",
           "name": "Cà phê muối",
@@ -620,9 +638,11 @@
       "fullName": "Nguyễn Thành Nhân",
       "address": "Codegym C05",
       "gender": "Nam",
-      "phone": "0123456789",
+      "phone": "0364923664",
       "dob": "19-05-2002",
-      "id": "1"
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2F20241114221133.png?alt=media&token=5a8bf6bc-6af9-4ec8-996b-1f1443ffa878",
+      "id": "1",
+      "role": 1
     },
     {
       "id": "2",
@@ -634,7 +654,9 @@
       "phone": "0122456789",
       "dob": "19-05-2002",
       "salary": "10.000.000 VND",
-      "position": "Nhân Viên"
+      "position": "Nhân Viên",
+      "role": 0,
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2F20240721110729.jpeg?alt=media&token=c3ca019b-cc83-493a-b498-dbd10dc0e81c"
     },
     {
       "fullName": "Lê Thị Huỳnh Như",
@@ -642,7 +664,8 @@
       "gender": "Nam",
       "phone": "0122456789",
       "dob": "2008-09-15",
-      "id": "3"
+      "id": "3",
+      "role": 0
     },
     {
       "id": "4",
@@ -659,7 +682,8 @@
       "phone": "0122456789",
       "dob": "19-05-2002",
       "salary": "10.000.000 VND",
-      "position": "Nhân Viên"
+      "position": "Nhân Viên",
+      "role": 0
     },
     {
       "id": "6",

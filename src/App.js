@@ -18,6 +18,8 @@ import ContextDataTable from "./components/context/ContextDataTable";
 import TableManagement from "./components/TableManagement/TableManagement";
 import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
 import { DetailPost } from "./components/pages/client/Posts/DetailPost";
+import { ProtectedRoute } from "./components/user/ProtectedRoute";
+import DisplayMenu from "./components/pages/client/DisplayMenu";
 
 function App() {
 
@@ -40,6 +42,7 @@ function App() {
         </Route>
         <Route path="/listpost" element={<ListPost />} />
         <Route path="/posts/:id" element={<DetailPost />} />
+        <Route path="/menu" element={<DisplayMenu />} />
 
         {/* Trang đăng nhập và hồ sơ người dùng */}
         <Route path="/login" element={<Login />} />
@@ -48,7 +51,11 @@ function App() {
         <Route path="/update" element={<Update />} />
 
         {/* Trang admin */}
-        <Route path="admin" element={<HomeAdmin />}>
+        <Route path="admin" element={
+          <ProtectedRoute requiredRole={1}>
+            <HomeAdmin />
+          </ProtectedRoute>
+        }>
           <Route path="dashboard" element={<DashBoard />} />
           <Route path="createpost" element={<CreatePost />} />
           <Route path="postmanagement" element={<PostManagement />} />
@@ -56,7 +63,11 @@ function App() {
         </Route>
 
         {/* Trang quản lý nhân viên */}
-        <Route path="staff" element={<Staff />}>
+        <Route path="staff" element={
+          <ProtectedRoute requiredRole={1}>
+            <Staff />
+          </ProtectedRoute>
+        }>
           <Route
             path="sale"
             element={

@@ -4,6 +4,7 @@ import Header from "../partial/Header";
 import Footer from "../partial/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { storage, ref, uploadBytesResumable, getDownloadURL } from '../../firebase'; // Import Firebase methods
 
 function Update() {
     const navigate = useNavigate();
@@ -16,7 +17,9 @@ function Update() {
         phone: "",
         dob: "",
         profileImage: "",
+        role: 0
     });
+    const [uploadProgress, setUploadProgress] = useState(0); // State to track upload progress
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
@@ -37,14 +40,32 @@ function Update() {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setUser({
-                    ...user,
-                    profileImage: reader.result,
-                });
-            };
-            reader.readAsDataURL(file);
+            // Create a storage reference
+            const storageRef = ref(storage, `profile_images/${file.name}`);
+            const uploadTask = uploadBytesResumable(storageRef, file);
+
+            // Monitor the upload progress
+            uploadTask.on('state_changed',
+                (snapshot) => {
+                    // Calculate the upload progress
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    setUploadProgress(progress);
+                },
+                (error) => {
+                    toast.error("Upload ảnh thất bại!");
+                    console.error("Error uploading image:", error);
+                },
+                () => {
+                    // Get the download URL after upload is complete
+                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                        setUser({
+                            ...user,
+                            profileImage: downloadURL,
+                        });
+                        setUploadProgress(0); // Reset the progress after successful upload
+                    });
+                }
+            );
         }
     };
 
@@ -57,7 +78,7 @@ function Update() {
         }
 
         fetch(`http://localhost:3000/users/${user.id}`, {
-            method: "PUT",
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -126,141 +147,159 @@ function Update() {
                             />
                         </div>
 
+                        {uploadProgress > 0 && uploadProgress < 100 && (
+                            <div className="mb-4">
+                                <div className="text-center text-[#333] font-semibold">Tải ảnh lên: {Math.round(uploadProgress)}%</div>
+                            </div>
+
+                        )}
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            {/* Username */}
-                            <div>
-                                <label className="block text-[#333] font-semibold">Tên Đăng Nhập</label>
-                                <input
-                                    type="text"
-                                    name="username"
-                                    value={user.username}
-                                    onChange={handleChange}
-                                    className="w-full p-4 border-2 rounded-lg text-[#333] "
-                                    placeholder="Tên đăng nhập"
-                                />
+                            <div className="grid grid-cols-2 gap-4">
+                                {/* Username */}
+                                <div>
+                                    <label className="block text-[#333] font-semibold">Tên Đăng Nhập</label>
+                                    <input
+                                        type="text"
+                                        name="username"
+                                        value={user.username}
+                                        onChange={handleChange}
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Tên đăng nhập"
+                                    />
+                                </div>
+
+                                {/* Password */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Mật Khẩu</label>
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        value={user.password}
+                                        onChange={handleChange}
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Mật khẩu"
+                                    />
+                                </div>
                             </div>
 
-                            {/* Password */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Mật Khẩu</label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    value={user.password}
-                                    onChange={handleChange}
-                                    className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                    placeholder="Mật khẩu"
-                                />
+                            <div className="grid grid-cols-2 gap-4">
+                                {/* Full Name */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Họ và Tên</label>
+                                    <input
+                                        type="text"
+                                        name="fullName"
+                                        value={user.fullName}
+                                        onChange={handleChange}
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Họ và tên"
+                                    />
+                                </div>
+
+                                {/* Address */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Địa Chỉ</label>
+                                    <input
+                                        type="text"
+                                        name="address"
+                                        value={user.address}
+                                        onChange={handleChange}
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Địa chỉ"
+                                    />
+                                </div>
                             </div>
 
-                            {/* Full Name */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Họ và Tên</label>
-                                <input
-                                    type="text"
-                                    name="fullName"
-                                    value={user.fullName}
-                                    onChange={handleChange}
-                                    className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                    placeholder="Họ và tên"
-                                />
+                            <div className="grid grid-cols-2 gap-4">
+                                {/* Gender */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Giới Tính</label>
+                                    <select
+                                        name="gender"
+                                        value={user.gender}
+                                        onChange={handleChange}
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                    >
+                                        <option value="">Chọn Giới Tính</option>
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                        <option value="Khác">Khác</option>
+                                    </select>
+                                </div>
+
+                                {/* Phone */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Số Điện Thoại</label>
+                                    <input
+                                        type="text"
+                                        name="phone"
+                                        value={user.phone}
+                                        onChange={handleChange}
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Số điện thoại"
+                                    />
+                                </div>
                             </div>
 
-                            {/* Address */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Địa Chỉ</label>
-                                <input
-                                    type="text"
-                                    name="address"
-                                    value={user.address}
-                                    onChange={handleChange}
-                                    className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                    placeholder="Địa chỉ"
-                                />
+                            <div className="grid grid-cols-2 gap-4">
+                                {/* Date of Birth */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Ngày Sinh</label>
+                                    <input
+                                        type="date"
+                                        name="dob"
+                                        value={user.dob}
+                                        onChange={handleChange}
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                    />
+                                </div>
+
+                                {/* Salary - Display Only */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Lương</label>
+                                    <input
+                                        type="text"
+                                        name="salary"
+                                        value={user.salary}
+                                        readOnly
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Lương"
+                                    />
+                                </div>
                             </div>
 
-                            {/* Gender */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Giới Tính</label>
-                                <select
-                                    name="gender"
-                                    value={user.gender}
-                                    onChange={handleChange}
-                                    className="w-full p-4 border-2 rounded-lg text-[#333]"
+                            <div className="grid grid-cols-2 gap-4">
+                                {/* Position - Display Only */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Vị Trí</label>
+                                    <input
+                                        type="text"
+                                        name="position"
+                                        value={user.position}
+                                        readOnly
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Vị trí"
+                                    />
+                                </div>
+                            </div>
+                            <div className="flex justify-center space-x-16 mt-4">
+                                {/* Submit Button */}
+                                <button
+                                    type="submit"
+                                    className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
                                 >
-                                    <option value="">Chọn Giới Tính</option>
-                                    <option value="Nam">Nam</option>
-                                    <option value="Nữ">Nữ</option>
-                                    <option value="Khác">Khác</option>
-                                </select>
-                            </div>
+                                    Cập Nhật
+                                </button>
 
-                            {/* Phone */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Số Điện Thoại</label>
-                                <input
-                                    type="text"
-                                    name="phone"
-                                    value={user.phone}
-                                    onChange={handleChange}
-                                    className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                    placeholder="Số điện thoại"
-                                />
+                                {/* Cancel Button */}
+                                <button
+                                    type="button"
+                                    onClick={() => navigate("/profile")}
+                                    className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#FF0000] hover:text-white transition border border-black"
+                                >
+                                    Hủy
+                                </button>
                             </div>
-
-                            {/* Date of Birth */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Ngày Sinh</label>
-                                <input
-                                    type="date"
-                                    name="dob"
-                                    value={user.dob}
-                                    onChange={handleChange}
-                                    className="w-full p-4 border-2 rounded-lg text-[#333] ml-auto rtl"
-                                />
-                            </div>
-                            {/* Salary - Display Only */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Lương</label>
-                                <input
-                                    type="text"
-                                    name="salary"
-                                    value={user.salary}
-                                    readOnly
-                                    className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                    placeholder="Lương"
-                                />
-                            </div>
-
-                            {/* Position - Display Only */}
-                            <div>
-                                <label className="block text-[#333] font-bold">Vị Trí</label>
-                                <input
-                                    type="text"
-                                    name="position"
-                                    value={user.position}
-                                    readOnly
-                                    className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                    placeholder="Vị trí"
-                                />
-                            </div>
-
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="w-full p-4 bg-[#333] text-white rounded-lg font-semibold mt-4 hover:opacity-90"
-                            >
-                                Cập Nhật
-                            </button>
-
-                            {/* Cancel Button */}
-                            <button
-                                type="button"
-                                onClick={() => navigate("/profile")}
-                                className="w-full p-4 rounded-lg bg-red-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-red-700"
-                            >
-                                Hủy
-                            </button>
                         </form>
                     </div>
                 </section>
