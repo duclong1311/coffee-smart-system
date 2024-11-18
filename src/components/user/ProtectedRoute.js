@@ -27,8 +27,4 @@ export const ProtectedRoute = ({ children, requiredRole }) => {
     }
 
     return children; // Nếu có quyền, render children
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> 369481b0a4f30bd649051d8ab1c490cef288183f

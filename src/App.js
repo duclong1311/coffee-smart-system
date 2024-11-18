@@ -43,10 +43,7 @@ function App() {
         <Route path="/listpost" element={<ListPost />} />
         <Route path="/posts/:id" element={<DetailPost />} />
         <Route path="/menu" element={<DisplayMenu />} />
-<<<<<<< HEAD
-=======
 
->>>>>>> 369481b0a4f30bd649051d8ab1c490cef288183f
         {/* Trang đăng nhập và hồ sơ người dùng */}
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />

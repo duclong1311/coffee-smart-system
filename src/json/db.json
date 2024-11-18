@@ -386,8 +386,7 @@
           "quantity": 1,
           "total": 30000
         }
-      ],
-      "id": "31b3"
+      ]
     },
     {
       "tableNumber": "TB006",
@@ -648,10 +647,6 @@
       "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2Fbanner1.png?alt=media&token=92821f76-0461-4810-bd4e-9c0c9a96e14f",
       "id": "1",
       "role": 1
-=======
-      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2F243-min-1.jpg?alt=media&token=06c4eed7-bf26-45ea-b28d-e084d64363da",
-      "id": "1"
->>>>>>> 369481b0a4f30bd649051d8ab1c490cef288183f
     },
     {
       "id": "2",

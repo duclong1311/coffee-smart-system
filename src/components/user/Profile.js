@@ -31,28 +31,6 @@ export function Profile() {
 
                         {/* Cover photo */}
                         <div className="w-full h-[150px] bg-[url('https://images8.alphacoders.com/134/1349209.png')] bg-cover bg-center mb-6 rounded-xl"></div>
-<<<<<<< HEAD
-
-                        {/* Container for user information and profile image */}
-                        <div className="flex flex-col md:flex-row-reverse gap-6 items-start md:items-center mb-6">
-                            {/* Profile image */}
-                            <div className="w-[250px] h-[300px] bg-[url('https://cdn.eva.vn/upload/3-2021/images/2021-07-31/182636312_1294694704259617_8777969660546104509_n-down-1627714443-420-width800height1067.jpg')] bg-cover bg-center bg-no-repeat border-4 border-[#333] rounded-lg"></div>
-                            {/* User information */}
-                            <div className="mt-[10px] mx-auto w-[80%]">
-                                <p className="mb-2 font-semibold">Tên Đăng Nhập: <span className="font-normal">{user.username}</span></p>
-                                <p className="mb-2 font-semibold">Mật Khẩu: <span className="font-normal">{user.password}</span></p>
-                                <p className="mb-2 font-semibold">Họ và Tên: <span className="font-normal">{user.fullName}</span></p>
-                                <p className="mb-2 font-semibold">Địa Chỉ: <span className="font-normal">{user.address}</span></p>
-                                <p className="mb-2 font-semibold">Giới Tính: <span className="font-normal">{user.gender}</span></p>
-                                <p className="mb-2 font-semibold">Số Điện Thoại: <span className="font-normal">{user.phone}</span></p>
-<p className="mb-2 font-semibold">Ngày Sinh: <span className="font-normal">{user.dob}</span></p>
-                                <p className="mb-2 font-semibold">Lương: <span className="font-normal">{user.salary}</span></p>
-                                <p className="mb-2 font-semibold">Vị Trí: <span className="font-normal">{user.position}</span></p>
-                            </div>
-                        </div>
-
-                        {/* Buttons */}
-=======
                         {/* Container for user information and profile image */}
                         <div className="flex flex-col md:flex-row-reverse gap-6 items-start md:items-center mb-6">
                             {/* Profile image */}
@@ -77,7 +55,6 @@ export function Profile() {
                             </div>
                         </div>
 
->>>>>>> 369481b0a4f30bd649051d8ab1c490cef288183f
                         <div className="flex justify-center space-x-4 mt-4">
                             <Link to="/" className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black">
                                 Quay Về
