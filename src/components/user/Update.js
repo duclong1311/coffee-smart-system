@@ -19,6 +19,7 @@ function Update() {
         profileImage: "",
         role: 0
     });
+    const [imageFile, setImageFile] = useState(null); // State to hold the image file before uploading
     const [uploadProgress, setUploadProgress] = useState(0); // State to track upload progress
 
     useEffect(() => {
@@ -39,33 +40,21 @@ function Update() {
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
+        const MAX_SIZE = 5 * 1024 * 1024; // 5MB
+    
         if (file) {
-            // Create a storage reference
-            const storageRef = ref(storage, `profile_images/${file.name}`);
-            const uploadTask = uploadBytesResumable(storageRef, file);
+            // Check if the file size exceeds the limit
+            if (file.size > MAX_SIZE) {
+                toast.error("Ảnh quá lớn! Vui lòng chọn ảnh có kích thước dưới 5MB.");
+                return;
+            }
 
-            // Monitor the upload progress
-            uploadTask.on('state_changed',
-                (snapshot) => {
-                    // Calculate the upload progress
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    setUploadProgress(progress);
-                },
-                (error) => {
-                    toast.error("Upload ảnh thất bại!");
-                    console.error("Error uploading image:", error);
-                },
-                () => {
-                    // Get the download URL after upload is complete
-                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        setUser({
-                            ...user,
-                            profileImage: downloadURL,
-                        });
-                        setUploadProgress(0); // Reset the progress after successful upload
-                    });
-                }
-            );
+            setImageFile(file); // Store the image file locally
+            const imageUrl = URL.createObjectURL(file); // Generate a URL for the selected image
+            setUser({
+                ...user,
+                profileImage: imageUrl, // Set the preview image
+            });
         }
     };
 
@@ -77,6 +66,38 @@ function Update() {
             return;
         }
 
+        // If there's an image to upload, handle the upload
+        let profileImageUrl = user.profileImage;
+        if (imageFile) {
+            const storageRef = ref(storage, `profile_images/${imageFile.name}`);
+            const uploadTask = uploadBytesResumable(storageRef, imageFile);
+
+            uploadTask.on(
+                'state_changed',
+                (snapshot) => {
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    setUploadProgress(progress); // Update progress state
+                },
+                (error) => {
+                    toast.error("Upload ảnh thất bại!");
+                    console.error("Error uploading image:", error);
+                },
+                () => {
+                    // Get the download URL of the uploaded image
+                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                        profileImageUrl = downloadURL; // Use the uploaded image URL
+                        // Now submit the updated user data
+                        updateUserData(profileImageUrl);
+                    });
+                }
+            );
+        } else {
+            // If no new image, just submit the user data as is
+            updateUserData(profileImageUrl);
+        }
+    };
+
+    const updateUserData = (profileImageUrl) => {
         fetch(`http://localhost:3000/users/${user.id}`, {
             method: "PATCH",
             headers: {
@@ -90,7 +111,7 @@ function Update() {
                 gender: user.gender,
                 phone: user.phone,
                 dob: user.dob,
-                profileImage: user.profileImage,
+                profileImage: profileImageUrl, // Send the updated image URL
             }),
         })
             .then((response) => {
@@ -150,9 +171,15 @@ function Update() {
                         {uploadProgress > 0 && uploadProgress < 100 && (
                             <div className="mb-4">
                                 <div className="text-center text-[#333] font-semibold">Tải ảnh lên: {Math.round(uploadProgress)}%</div>
+                                <div className="w-full bg-gray-200 h-2 rounded-full mt-2">
+                                    <div
+                                        className="bg-[#3333FF] h-2 rounded-full"
+                                        style={{ width: `${uploadProgress}%` }}
+                                    ></div>
+                                </div>
                             </div>
-
                         )}
+
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="grid grid-cols-2 gap-4">
                                 {/* Username */}
@@ -220,10 +247,9 @@ function Update() {
                                         onChange={handleChange}
                                         className="w-full p-4 border-2 rounded-lg text-[#333]"
                                     >
-                                        <option value="">Chọn Giới Tính</option>
-                                        <option value="Nam">Nam</option>
-                                        <option value="Nữ">Nữ</option>
-                                        <option value="Khác">Khác</option>
+                                        <option value="male">Nam</option>
+                                        <option value="female">Nữ</option>
+                                        <option value="other">Khác</option>
                                     </select>
                                 </div>
 
@@ -253,51 +279,14 @@ function Update() {
                                         className="w-full p-4 border-2 rounded-lg text-[#333]"
                                     />
                                 </div>
-
-                                {/* Salary - Display Only */}
-                                <div>
-                                    <label className="block text-[#333] font-bold">Lương</label>
-                                    <input
-                                        type="text"
-                                        name="salary"
-                                        value={user.salary}
-                                        readOnly
-                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                        placeholder="Lương"
-                                    />
-                                </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
-                                {/* Position - Display Only */}
-                                <div>
-                                    <label className="block text-[#333] font-bold">Vị Trí</label>
-                                    <input
-                                        type="text"
-                                        name="position"
-                                        value={user.position}
-                                        readOnly
-                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
-                                        placeholder="Vị trí"
-                                    />
-                                </div>
-                            </div>
-                            <div className="flex justify-center space-x-16 mt-4">
-                                {/* Submit Button */}
+                            <div className="text-center mt-6">
                                 <button
                                     type="submit"
-                                    className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
+                                    className="bg-[#333] text-white p-2 rounded-lg text-lg w-full"
                                 >
                                     Cập Nhật
-                                </button>
-
-                                {/* Cancel Button */}
-                                <button
-                                    type="button"
-                                    onClick={() => navigate("/profile")}
-                                    className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#FF0000] hover:text-white transition border border-black"
-                                >
-                                    Hủy
                                 </button>
                             </div>
                         </form>
