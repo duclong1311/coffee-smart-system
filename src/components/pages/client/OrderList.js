@@ -41,8 +41,10 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
         }
     };
 
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const handleCallOrder = async () => {
         try {
+            await delay(5000); // Delay 5 giây
             await toast.promise(
                 axios.patch(`http://localhost:3000/listTable/${freeTable}`, {
                     isAvailability: false,
@@ -58,6 +60,7 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
             toast.error('Đã xảy ra lỗi khi gọi món!');
         }
     };
+
 
     return (
         <>
