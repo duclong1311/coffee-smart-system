@@ -42,14 +42,19 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     };
 
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    const updateTableStatus = async (tableNumber, orderList) => {
+        await delay(5000); // Chờ 5 giây
+        return axios.patch(`http://localhost:3000/listTable/${tableNumber}`, {
+            isAvailability: false,
+            food: orderList,
+        });
+    };
+
     const handleCallOrder = async () => {
         try {
-            await delay(5000); // Delay 5 giây
             await toast.promise(
-                axios.patch(`http://localhost:3000/listTable/${freeTable}`, {
-                    isAvailability: false,
-                    food: orderList,
-                }),
+                updateTableStatus(freeTable, orderList),
                 {
                     pending: 'Đang tiến hành gọi món...',
                     success: 'Gọi món thành công 👌',
