@@ -1,44 +1,47 @@
 import { Field, Form, Formik } from "formik";
-import React, { useContext } from "react";
-import { MyServiceContext } from "../../context/ServiceContext";
+import React from "react";
 
-function AddDishGroup({ closeModal }) {
-  const { AddNewDishGroup, inittialValue } = useContext(MyServiceContext);
-  const onSubmitHander = async (data) => {
-    await AddNewDishGroup(data);
-    closeModal();
-  };
-
+const AddNewDish = ({ closeModalAddDish }) => {
   return (
     <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 className="text-xl font-semibold mb-4">Thêm nhóm món</h2>
-        <Formik initialValues={inittialValue} onSubmit={onSubmitHander}>
+      <div className="bg-white p-6 rounded-lg shadow-lg w-2/6">
+        <h2 className="text-xl font-semibold mb-4">Thêm mới món</h2>
+        <Formik>
           <Form>
-            <div className="mb-4">
+            <div className="mb-4 flex justify-between pr-16 pl-3 items-center  ">
               <label className="block text-sm font-medium text-gray-700">
-                Mã nhóm món
+                Mã số món
               </label>
               <Field
                 type="text"
                 name="groupCode"
-                className="w-full p-2 border border-gray-300 rounded-lg mt-1"
+                className="w-2/3  p-2 border border-gray-300 rounded-lg "
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 flex justify-between pr-16 pl-3 items-center ">
               <label className="block text-sm font-medium text-gray-700">
-                Nhóm món
+                Tên món
               </label>
               <Field
                 type="text"
                 name="groupName"
-                className="w-full p-2 border border-gray-300 rounded-lg mt-1"
+                className="w-2/3 p-2 border border-gray-300 rounded-lg "
+              />
+            </div>
+            <div className="mb-4 flex justify-between pr-16 pl-3 items-center ">
+              <label className="block text-sm font-medium text-gray-700">
+                Giá món
+              </label>
+              <Field
+                type="text"
+                name="groupName"
+                className="w-2/3 p-2 border border-gray-300 rounded-lg "
               />
             </div>
             <div className="flex justify-end gap-2 ">
               <button
                 type="button"
-                onClick={closeModal}
+                onClick={closeModalAddDish}
                 className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
               >
                 Cancel
@@ -55,6 +58,6 @@ function AddDishGroup({ closeModal }) {
       </div>
     </div>
   );
-}
+};
 
-export default AddDishGroup;
+export default AddNewDish;

@@ -10,6 +10,8 @@ const ServiceContext = ({ children }) => {
     groupName: "",
   });
 
+  const [groupDetails, setGroupDetails] = useState("");
+
   const getMenuList = async () => {
     try {
       setLoading(true);
@@ -41,11 +43,25 @@ const ServiceContext = ({ children }) => {
   const removeDishGroup = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/listFood/${id}`);
+      // thiếu toast
       alert("xoa thanh cong");
       getMenuList();
     } catch (e) {
       alert(e.message);
     }
+  };
+
+  const updateFoodList = async (data) => {
+    try {
+      await axios.put(`http://localhost:3000/listFood/${data.id}`, data);
+      getMenuList();
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+
+  const fetchDishGroup = (item) => {
+    setGroupDetails(item);
   };
 
   useEffect(() => {
@@ -62,6 +78,9 @@ const ServiceContext = ({ children }) => {
           AddNewDishGroup,
           setMenuList,
           inittialValue,
+          updateFoodList,
+          fetchDishGroup,
+          groupDetails,
         }}
       >
         {children}

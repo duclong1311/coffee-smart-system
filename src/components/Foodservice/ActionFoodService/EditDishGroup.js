@@ -1,16 +1,22 @@
 import { Field, Form, Formik } from "formik";
 import React, { useContext, useState } from "react";
 import { MyServiceContext } from "../../context/ServiceContext";
-const EditDishGroup = ({ closeModalEdit }) => {
-  const [oldDishGroup, setOldDishGroup] = useState({});
+const EditDishGroup = ({ closeModalEdit, oldDishGroup }) => {
+  const { updateFoodList } = useContext(MyServiceContext);
+  const handleUpdateFoodListOnSubmit = async (data) => {
+    updateFoodList(data);
+    closeModalEdit();
+  };
 
-  console.log("editgroupmodal");
   return (
     <div>
       <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center">
         <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-          <h2 className="text-xl font-semibold mb-4">Thêm nhóm món</h2>
-          <Formik initialValues={oldDishGroup}>
+          <h2 className="text-xl font-semibold mb-4">Sửa nhóm món</h2>
+          <Formik
+            initialValues={oldDishGroup}
+            onSubmit={handleUpdateFoodListOnSubmit}
+          >
             <Form>
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700">

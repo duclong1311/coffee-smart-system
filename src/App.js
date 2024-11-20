@@ -22,6 +22,7 @@ import { ProtectedRoute } from "./components/user/ProtectedRoute";
 import DisplayMenu from "./components/pages/client/DisplayMenu";
 import DishGroupList from "./components/Foodservice/DishGroupList";
 import ServiceContext from "./components/context/ServiceContext";
+import CategoryDishList from "./components/Foodservice/MenuByGroup/CategoryDishList";
 
 function App() {
   return (
@@ -89,6 +90,14 @@ function App() {
             element={
               <ServiceContext>
                 <DishGroupList />
+              </ServiceContext>
+            }
+          ></Route>
+          <Route
+            path="groupeddishes"
+            element={
+              <ServiceContext>
+                <CategoryDishList />
               </ServiceContext>
             }
           />
