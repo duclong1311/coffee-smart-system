@@ -362,7 +362,7 @@
       "timeOut": "7:38:05 AM",
       "date": "13/11/2024",
       "total": 100000,
-      "food": [
+      "foods": [
         {
           "name": "Nâu đá",
           "price": 20000,
@@ -375,7 +375,7 @@
       "timeOut": "9:38:05 AM",
       "date": "20/11/2024",
       "total": 200000,
-      "food": [
+      "foods": [
         {
           "name": "Nâu đá",
           "price": 20000,
