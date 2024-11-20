@@ -1,11 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './OrderList.css';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     const [selectedItems, setSelectedItems] = useState([]);
-    const [freeTable, setFreeTable] = useState('TB001');
+    const [freeTable, setFreeTable] = useState('');
+
+    useEffect(() => {
+        const findAvailabelTable = async () => {
+            try {
+                const res = await axios.get('http://localhost:3000/listTable');
+                if (res.data && res.data.length > 0) {
+                    const isTabelAvailable = res.data.find((item) => item?.isAvailability === true);
+                    isTabelAvailable ? setFreeTable(isTabelAvailable?.id) : toast.error("Không còn bàn trống! :(");
+                }
+            } catch (error) {
+                console.error("Error fetching table list:", error);
+            }
+        };
+        findAvailabelTable();
+    }, []);
 
     const handleCheckboxChange = (event, itemId) => {
         if (event.target.checked) {
@@ -20,20 +35,26 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
             const updatedOrderList = orderList.filter((item) => !selectedItems.includes(item.id));
             setOrderList(updatedOrderList);
             setSelectedItems([]);
-            toast.success("Delete success");
+            toast.success("Xóa thành công");
         } else {
-            toast.error("No item selected to delete");
+            toast.error("Không có mục nào được chọn để xóa");
         }
+    };
+
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    const updateTableStatus = async (tableNumber, orderList) => {
+        await delay(5000); // Chờ 5 giây
+        return axios.patch(`http://localhost:3000/listTable/${tableNumber}`, {
+            isAvailability: false,
+            food: orderList,
+        });
     };
 
     const handleCallOrder = async () => {
         try {
             await toast.promise(
-                axios.post('http://localhost:3000/listTable', {
-                    tableNumber: freeTable,
-                    isAvailability: false,
-                    food: orderList
-                }),
+                updateTableStatus(freeTable, orderList),
                 {
                     pending: 'Đang tiến hành gọi món...',
                     success: 'Gọi món thành công 👌',
@@ -43,7 +64,8 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
         } catch (error) {
             toast.error('Đã xảy ra lỗi khi gọi món!');
         }
-    }
+    };
+
 
     return (
         <>
