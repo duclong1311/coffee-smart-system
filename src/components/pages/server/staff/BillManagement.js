@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Search from "./Search";
+import { includes } from "lodash";
 
 const BillManagement = () => {
 
     const [billData, setBillData] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const fetchBillData = async () => {
@@ -13,25 +16,34 @@ const BillManagement = () => {
         fetchBillData();
     }, []);
 
-    console.log(billData);
+    const filterBills = (bills, query) => {
+        if (!query) {
+            return bills;
+        }
+        
+        const lowerCaseQuery = query.toLowerCase();
+
+        return bills.filter((bill) => {
+            const billByDate = bill.date.toLowerCase();
+            const billByFood = bill.foods.map((food) => food.name.toLowerCase());
+            if (billByFood.some((food) => food.includes(lowerCaseQuery)))
+                return billByFood;
+            if (billByDate.includes(lowerCaseQuery))
+                return billByDate;
+        })
+    };
+    const filteredBills = filterBills(billData, searchQuery);
+
+
     return (
         <>
             <div className="container p-1">
                 <h1 className="text-center text-3xl font-bold mb-8">Hóa đơn</h1>
                 <div className="flex justify-end gap-2">
-                    <div className="mb-2">
-                        <input
-                            type="date"
-                            className="border border-gray-300 rounded-lg px-4 py-2 shadow-sm h-9 focus:outline-none focus:ring-2 focus:ring-amber-800 transition-all hover:ring-amber-600 text-gray-700"
-                        />
-                    </div>
-                    <div className="mb-2">
-                        <input
-                            type="search"
-                            placeholder="Bạc xỉu,..."
-                            className="border border-gray-300 rounded-lg px-4 py-2 shadow-sm h-9 focus:outline-none focus:ring-2 focus:ring-amber-800 transition-all hover:ring-amber-600 text-gray-700"
-                        />
-                    </div>
+                    <Search
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                    />
                 </div>
 
 
@@ -49,8 +61,8 @@ const BillManagement = () => {
                         </thead>
                         <tbody>
                             {
-                                billData && billData.length > 0
-                                && billData.map((item, index) => (
+                                filteredBills && filteredBills.length > 0
+                                && filteredBills.map((item, index) => (
                                     <tr className="hover:bg-gray-50" key={`${item}-${index}`}>
                                         <td className="py-4 px-6 border-b">
                                             {index + 1}
