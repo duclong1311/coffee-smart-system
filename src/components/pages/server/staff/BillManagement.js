@@ -47,19 +47,10 @@ const BillManagement = () => {
             <div className="container p-1">
                 <h1 className="text-center text-3xl font-bold mb-8">Hóa đơn</h1>
                 <div className="flex justify-end gap-2">
-                    <div className="mb-2">
-                        <input
-                            type="date"
-                            className="border border-gray-300 rounded-lg px-4 py-2 shadow-sm h-9 focus:outline-none focus:ring-2 focus:ring-amber-800 transition-all hover:ring-amber-600 text-gray-700"
-                        />
-                    </div>
-                    <div className="mb-2">
-                        <input
-                            type="search"
-                            placeholder="Bạc xỉu,..."
-                            className="border border-gray-300 rounded-lg px-4 py-2 shadow-sm h-9 focus:outline-none focus:ring-2 focus:ring-amber-800 transition-all hover:ring-amber-600 text-gray-700"
-                        />
-                    </div>
+                    <Search
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                    />
                 </div>
 
 
