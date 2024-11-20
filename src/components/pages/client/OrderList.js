@@ -44,8 +44,11 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     const updateTableStatus = async (tableNumber, orderList) => {
+        const d = new Date();
         await delay(5000); // Chờ 5 giây
         return axios.patch(`http://localhost:3000/listTable/${tableNumber}`, {
+            timeIn: d.toLocaleTimeString(),
+            date: d.toLocaleDateString(),
             isAvailability: false,
             food: orderList,
         });
@@ -65,6 +68,13 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
             toast.error('Đã xảy ra lỗi khi gọi món!');
         }
     };
+
+    const handleCallStaff = async () => {
+        const res =  axios.patch(`http://localhost:3000/listTable/${freeTable}`, {
+            isCallingStaff: true,
+        });
+        res ? toast.success("Phục vụ đang đến bạn chờ chút nhé!") : toast.error("Có lỗi khi gọi phục vụ");
+    }
 
 
     return (
@@ -139,7 +149,7 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
                 <div className="orderlist-action">
                     <button onClick={handleDeleteOrder} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Xóa món</button>
                     <button onClick={handleCallOrder} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi món</button>
-                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi phục vụ</button>
+                    <button onClick={handleCallStaff} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi phục vụ</button>
                     <button onClick={() => setShowModal(true)} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Phản hồi</button>
                 </div>
             </div>
