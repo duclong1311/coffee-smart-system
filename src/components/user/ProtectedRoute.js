@@ -6,34 +6,48 @@ import { useEffect, useState } from "react";
 export const ProtectedRoute = ({ children, requiredRole }) => {
     const hasAccess = checkRole(requiredRole);
     const navigate = useNavigate();
-    const [redirecting, setRedirecting] = useState(false); // Kiểm tra trạng thái chuyển hướng
-    const [toastShown, setToastShown] = useState(false); // Kiểm tra khi nào toast được hiển thị
+    const [redirecting, setRedirecting] = useState(false);
+    const [toastShown, setToastShown] = useState(false);
 
-    if (!hasAccess) {
-        // Kiểm tra xem đã hiển thị thông báo chưa trong sessionStorage
-        if (!sessionStorage.getItem('accessDeniedShown')) {
-            // Lưu thông báo vào sessionStorage
-            sessionStorage.setItem('accessDenied', 'Bạn không có quyền truy cập!');
+    useEffect(() => {
+        if (!hasAccess && !toastShown) {
+            // Store the access denied message if not granted
+            localStorage.setItem('accessDenied', 'Bạn không có quyền truy cập!');
+            localStorage.setItem('accessDeniedShown', 'false');
 
-            // Trì hoãn chuyển hướng và hiển thị thông báo
+            // Show the toast
+            toast.error(localStorage.getItem('accessDenied'), {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: true,
+                theme: "light",
+            });
+
+            setToastShown(true); // Mark toast as shown
+        } else if (toastShown) {
+            // Once toast has shown, wait before redirecting
             setTimeout(() => {
-                toast.error(sessionStorage.getItem('accessDenied'), {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    draggable: true,
-                    theme: "light",
-                });
-
-                // Đánh dấu là đã hiển thị thông báo
-                sessionStorage.setItem('accessDeniedShown', 'true');
-            }, 1000); // Đợi 1 giây trước khi hiển thị thông báo
+                // Clean up localStorage and proceed with redirection
+                localStorage.removeItem('accessDenied');
+                localStorage.removeItem('accessDeniedShown');
+                setRedirecting(true); // Trigger redirection
+            }, 3000); // Wait 3 seconds before redirecting
         }
+    }, [hasAccess, toastShown]);
 
-        // Chuyển hướng về trang chính sau khi hiển thị thông báo
-        return <Navigate to="/" replace />;
+    useEffect(() => {
+        if (redirecting) {
+            navigate("/"); // Redirect to homepage after delay
+        }
+    }, [redirecting, navigate]);
+
+    // If the user has access, render the children components
+    if (hasAccess) {
+        return children;
     }
 
-    return children; // Nếu có quyền, render children
+    // Otherwise, return null or some other fallback (e.g., loading spinner)
+    return null;
 };
