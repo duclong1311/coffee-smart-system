@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import Search from "./Search";
 import { includes } from "lodash";
-import Pagonation from "./Pagonation";
+import Pagination from "./Pagination";
 const itemsPerPage = 10;
 
 const BillManagement = () => {
@@ -105,7 +105,7 @@ const BillManagement = () => {
                     </table>
                 </div>
 
-                <Pagonation
+                <Pagination
                     currentPage={currentPage}
                     totalItems={filteredBills.length}
                     itemsPerPage={itemsPerPage}
