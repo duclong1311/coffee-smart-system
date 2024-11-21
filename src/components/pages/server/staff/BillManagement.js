@@ -1,12 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Search from "./Search";
 import { includes } from "lodash";
+import Pagonation from "./Pagonation";
+const itemsPerPage = 10;
 
 const BillManagement = () => {
 
     const [billData, setBillData] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         const fetchBillData = async () => {
@@ -17,22 +20,26 @@ const BillManagement = () => {
     }, []);
 
     const filterBills = (bills, query) => {
-        if (!query) {
-            return bills;
-        }
-        
+        if (!query) return bills;
+
         const lowerCaseQuery = query.toLowerCase();
 
         return bills.filter((bill) => {
-            const billByDate = bill.date.toLowerCase();
-            const billByFood = bill.foods.map((food) => food.name.toLowerCase());
-            if (billByFood.some((food) => food.includes(lowerCaseQuery)))
-                return billByFood;
-            if (billByDate.includes(lowerCaseQuery))
-                return billByDate;
+            const isDateMatch = bill.date.toLowerCase().includes(lowerCaseQuery);
+            const isFoodMatch = bill.foods.some((food) =>
+                food.name.toLowerCase().includes(lowerCaseQuery)
+            );
+
+            return isFoodMatch || isDateMatch;
         })
     };
-    const filteredBills = filterBills(billData, searchQuery);
+    const filteredBills = useMemo(() => filterBills(billData, searchQuery), [billData, searchQuery]);
+
+    const currentTableData = useMemo(() => {
+        const startPageIndex = (currentPage - 1) * itemsPerPage;
+        const endPageIndex = startPageIndex + itemsPerPage;
+        return filteredBills.slice(startPageIndex, endPageIndex);
+    }, [currentPage, filteredBills]);
 
 
     return (
@@ -61,8 +68,8 @@ const BillManagement = () => {
                         </thead>
                         <tbody>
                             {
-                                filteredBills && filteredBills.length > 0
-                                && filteredBills.map((item, index) => (
+                                currentTableData && currentTableData.length > 0
+                                && currentTableData.map((item, index) => (
                                     <tr className="hover:bg-gray-50" key={`${item}-${index}`}>
                                         <td className="py-4 px-6 border-b">
                                             {index + 1}
@@ -88,6 +95,13 @@ const BillManagement = () => {
                         </tbody>
                     </table>
                 </div>
+
+                <Pagonation
+                    currentPage={currentPage}
+                    totalItems={filteredBills.length}
+                    itemsPerPage={itemsPerPage}
+                    onPageChange={page => setCurrentPage(page)}
+                />
             </div>
         </>
     )
