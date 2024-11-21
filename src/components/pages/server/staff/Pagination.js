@@ -1,6 +1,6 @@
-const Pagonation = ({ totalItems, itemsPerPage, currentPage, onPageChange }) => {
+const Pagination = ({ totalItems, itemsPerPage, currentPage, onPageChange }) => {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
-
+    console.log(currentPage);
     const handlePageClick = (page) => {
         if (page >= 1 & page <= totalPages) {
             onPageChange(page);
@@ -28,7 +28,7 @@ const Pagonation = ({ totalItems, itemsPerPage, currentPage, onPageChange }) => 
 
     return (
         <>
-            <div className='pagination mt-2 flex justify-center'>
+            <div className='pagination mt-4 flex justify-center'>
                 <nav aria-label="Page navigation">
                     <ul class="inline-flex -space-x-px text-sm">
                         <li>
@@ -61,4 +61,4 @@ const Pagonation = ({ totalItems, itemsPerPage, currentPage, onPageChange }) => 
     );
 }
 
-export default Pagonation;
+export default Pagination;
