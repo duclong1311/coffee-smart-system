@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid"; // Nếu chưa cài, hãy cài `uuid` qua npm: npm install uuid
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export const MyServiceContext = createContext();
 const ServiceContext = ({ children }) => {
   const [menuList, setMenuList] = useState([]);
@@ -37,7 +38,7 @@ const ServiceContext = ({ children }) => {
         ...data,
         items: [],
       });
-      alert("them thanh cong");
+      toast.success("Thêm nhóm món thành công");
       setInnittialValue(inittialValue);
       getMenuList();
       // closeModal();
@@ -50,7 +51,8 @@ const ServiceContext = ({ children }) => {
     try {
       await axios.delete(`http://localhost:3000/listFood/${id}`);
       // thiếu toast
-      alert("xoa thanh cong");
+      toast.success("xoá nhóm món thành công");
+
       getMenuList();
     } catch (e) {
       alert(e.message);
@@ -84,6 +86,7 @@ const ServiceContext = ({ children }) => {
           items: [...groupDetails.items, newItem],
         }
       );
+      toast.success("Thêm món mới thành công");
       setGroupDetails(res.data);
     } catch (e) {
       alert(e.message);
@@ -111,7 +114,7 @@ const ServiceContext = ({ children }) => {
       );
       setGroupDetails(res.data);
     } catch (e) {
-      alert(e.message);
+      toast.warning(e.message);
     }
   };
 

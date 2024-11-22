@@ -87,6 +87,7 @@ const CategoryDishList = () => {
                 <th className="border border-gray-400 px-4 py-2">Mã số món</th>
                 <th className="border border-gray-400 px-4 py-2">Tên món</th>
                 <th className="border border-gray-400 px-4 py-2">Giá tiền</th>
+                <th className="border border-gray-400 px-4 py-2">Ảnh món</th>
                 <th className="border border-gray-400 px-4 py-2">Hành động</th>
               </tr>
             </thead>

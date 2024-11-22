@@ -1053,39 +1053,25 @@
       "groupName": "Coffee",
       "items": [
         {
-          "code": "C01",
-          "foodName": "Cà phê sữa",
+          "code": "C123",
+          "foodName": "Cà phê đen",
           "price": "25000",
-          "id": "2fb2005b-fc5b-4e92-a90a-68e3ce4c21dc",
-          "image": ""
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267159265_ca-phe-den-8.jpg?alt=media&token=cf3239b5-e57d-4ef2-9d68-090273b88a52",
+          "id": "cd4553f7-74c3-4541-be94-ed3a2ebad065"
         },
         {
-          "code": "rtewt",
-          "foodName": "trew",
-          "price": "43534",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732244858987_Th%C3%AAm%20ti%C3%AAu%20%C4%91%E1%BB%81.png?alt=media&token=6ecb65cb-d5bc-4306-ab54-715e69d84b34",
-          "id": "8b58393f-643b-421c-809d-5e73a9b54c52"
+          "code": "C124",
+          "foodName": "Cà phê sữa",
+          "price": "30000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267225170_hinh-anh-ly-cafe-sua-da_35.jpg?alt=media&token=dd449858-685e-4962-91f6-08524201414b",
+          "id": "9b40522e-1bfd-461d-8715-fac6cb13ef11"
         },
         {
-          "code": "",
-          "foodName": "",
-          "price": "",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250046307_use_case_diagram_pet_accessories.png?alt=media&token=c64e2951-a6c3-4934-ae3a-d4abfb9f3a03",
-          "id": "41939c35-4f84-4811-a8c8-b6c269b32c29"
-        },
-        {
-          "code": "4w5r",
-          "foodName": "324",
-          "price": "234",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250100451_banner-img.png?alt=media&token=6b38e530-8927-4d88-84a4-b99296dfdb0d",
-          "id": "5428b6f2-acbe-440e-934b-00a0d392ae2b"
-        },
-        {
-          "code": "123",
-          "foodName": "cà phê",
-          "price": "50000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250160707_use_case_diagram_pet_accessories.png?alt=media&token=4f74abbd-541b-4b8f-beb6-3c7d7218930d",
-          "id": "6faf29da-d06a-4852-bcdd-f1783789980a"
+          "code": "C125",
+          "foodName": "Latte",
+          "price": "40000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267430302_nghe-thuat-ve-latte-art-la-gi.jpg?alt=media&token=e547c147-d77f-438a-bcdb-ee052266f736",
+          "id": "b5c4ded5-56a6-4770-8c12-9fb612418ce8"
         }
       ]
     },
@@ -1098,7 +1084,22 @@
           "code": "N01",
           "foodName": "Ép cam",
           "price": "15000",
-          "id": "f3730b3e-1046-41d6-b157-c9484bad56c1"
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267562828_epcam.jpg?alt=media&token=f1786501-b766-4aca-a5d0-d85ac1834bda",
+          "id": "2342a767-3bee-420a-bd77-ef2a8c7f930b"
+        },
+        {
+          "code": "N02",
+          "foodName": "Ép ổi",
+          "price": "16000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267615630_nuoc-ep-oi-2.jpg?alt=media&token=46764a84-4848-4843-8d3d-c684f43f97a1",
+          "id": "8bd9e19e-ce47-4807-8cb2-c45b5a38f023"
+        },
+        {
+          "code": "N03",
+          "foodName": "Ép dưa hấu",
+          "price": "17000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267674778_%C3%89p%20d%C6%B0a%20h%E1%BA%A5u.jpg?alt=media&token=5ad2c0f7-dcaa-46a6-ab65-b144b423907e",
+          "id": "221b1f03-f9e6-4d4f-971a-f358190f7ff2"
         }
       ]
     },
@@ -1110,17 +1111,23 @@
         {
           "code": "T01",
           "foodName": "Bò húc",
-          "price": 20000
+          "price": "20000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267812211_bnuoc-tang-luc-bo-huc-lon-24-1-N7C.jpg?alt=media&token=96c9a25e-501f-4924-9ced-f78bd7eac59d",
+          "id": "4d0e2964-eda4-4218-9716-f71f0bf4fe2a"
         },
         {
           "code": "T02",
           "foodName": "Red Bull",
-          "price": 22000
+          "price": "30000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267867442_Red%20Bull.jpg?alt=media&token=e41f0bbe-b693-4b20-ab83-4fcd5595b5b8",
+          "id": "aeda11e0-ec5f-4c4e-a410-6fa5046bb85a"
         },
         {
-          "code": "T03",
-          "foodName": "Number One",
-          "price": 18000
+          "code": "T04",
+          "foodName": "Monster Energy",
+          "price": "30000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267931536_Monster%20Energy.jpg?alt=media&token=00d4ea95-70d0-4bd3-a582-957269e89a98",
+          "id": "3768d5fa-0ca1-47f8-bf54-7ed7eda971b3"
         }
       ]
     },
@@ -1132,25 +1139,25 @@
         {
           "code": "TS01",
           "foodName": "Trà sữa trân châu",
-          "price": 35000
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267984843_Tr%C3%A0%20s%E1%BB%AFa%20tr%C3%A2n%20ch%C3%A2u.jpg?alt=media&token=6b41773b-3c95-4484-82f7-9e8c7040902f",
+          "id": "2660b756-f831-4ddd-9b97-d65b3c0fb13b"
         },
         {
           "code": "TS02",
           "foodName": "Trà sữa matcha",
-          "price": 40000
+          "price": "34000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732268039084_tra-sua-matcha-tran-chau-den.jpg?alt=media&token=9e4df36b-6885-4e45-bc07-3a5c05e871bc",
+          "id": "1bf1757f-ed9e-4f8b-ae81-ea5174b7b71a"
         },
         {
           "code": "TS03",
           "foodName": "Trà sữa socola",
-          "price": 38000
+          "price": "38000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732268085131_Tr%C3%A0%20s%E1%BB%AFa%20socola.jpg?alt=media&token=c5f454ad-171b-4e8d-b972-816596dbd06e",
+          "id": "d1f099fd-0399-4fb4-b570-90c253dae6ef"
         }
       ]
-    },
-    {
-      "id": "7c65",
-      "groupCode": "G07",
-      "groupName": "chipchip",
-      "items": []
     }
   ],
   "users": [
