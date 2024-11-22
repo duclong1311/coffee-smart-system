@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid"; // Nếu chưa cài, hãy cài `uuid` qua npm: npm install uuid
 
 export const MyServiceContext = createContext();
 const ServiceContext = ({ children }) => {
@@ -8,6 +9,11 @@ const ServiceContext = ({ children }) => {
   const [inittialValue, setInnittialValue] = useState({
     groupCode: "",
     groupName: "",
+  });
+  const [defaultDishValues, setDefaultDishValues] = useState({
+    code: "",
+    foodName: "",
+    price: "",
   });
 
   const [groupDetails, setGroupDetails] = useState("");
@@ -61,7 +67,52 @@ const ServiceContext = ({ children }) => {
   };
 
   const fetchDishGroup = (item) => {
+    console.log("🚀 ~ fetchDishGroup ~ item:", item);
     setGroupDetails(item);
+  };
+
+  const updateDishGroup = async (data) => {
+    try {
+      const newItem = {
+        ...data,
+        id: uuidv4(), // ID ngẫu nhiên
+      };
+      const res = await axios.put(
+        `http://localhost:3000/listFood/${groupDetails.id}`,
+        {
+          ...groupDetails,
+          items: [...groupDetails.items, newItem],
+        }
+      );
+      setGroupDetails(res.data);
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+
+  const removeDish = async (id) => {
+    try {
+      const group = menuList.find((group) =>
+        group.items.some((item) => item.id === id)
+      );
+
+      if (!group) throw new Error("Dish not found in any group!");
+
+      // Lọc danh sách items để xóa sản phẩm
+      const updatedItems = group.items.filter((item) => item.id !== id);
+
+      // Tạo nhóm mới sau khi xóa
+      const updatedGroup = { ...group, items: updatedItems };
+
+      // Gửi dữ liệu cập nhật lên server
+      const res = await axios.put(
+        `http://localhost:3000/listFood/${group.id}`,
+        updatedGroup
+      );
+      setGroupDetails(res.data);
+    } catch (e) {
+      alert(e.message);
+    }
   };
 
   useEffect(() => {
@@ -81,6 +132,9 @@ const ServiceContext = ({ children }) => {
           updateFoodList,
           fetchDishGroup,
           groupDetails,
+          updateDishGroup,
+          defaultDishValues,
+          removeDish,
         }}
       >
         {children}

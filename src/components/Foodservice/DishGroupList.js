@@ -7,8 +7,7 @@ import DishGroupItem from "./DishGroupItem";
 import { Outlet } from "react-router-dom";
 
 const DishGroupList = () => {
-  const { menuList, removeDishGroup, setMenuList } =
-    useContext(MyServiceContext);
+  const { menuList } = useContext(MyServiceContext);
   const [searchGroupName, setSearchGroupName] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 

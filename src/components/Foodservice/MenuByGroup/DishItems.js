@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MyServiceContext } from "../../context/ServiceContext";
 
 const DishItems = ({ item, index }) => {
+  const { removeDish } = useContext(MyServiceContext);
+
   return (
     <tr className="bg-white">
       <td className="border border-gray-400 px-4 py-2 text-center">
@@ -52,7 +55,7 @@ const DishItems = ({ item, index }) => {
         {/* delete */}
         <button
           type="button"
-          // onClick={() => removeDishGroup(item.id)}
+          onClick={() => removeDish(item.id)}
           class="py-1 px-1 text-sm rounded-full border border-solid border-red-200 text-red-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-red-600 hover:text-white"
         >
           <span>

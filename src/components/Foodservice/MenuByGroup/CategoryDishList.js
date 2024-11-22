@@ -60,7 +60,10 @@ const CategoryDishList = () => {
                 </span>
               </button>
               {isModalAddDishOpen && (
-                <AddNewDish closeModalAddDish={closeModalAddDish} />
+                <AddNewDish
+                  closeModalAddDish={closeModalAddDish}
+                  groupDetails={groupDetails}
+                />
               )}
             </div>
             <div class="md:flex md:items-center flex justify-end items-end ">
