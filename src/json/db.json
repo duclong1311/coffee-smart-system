@@ -1079,13 +1079,6 @@
           "price": "234",
           "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250100451_banner-img.png?alt=media&token=6b38e530-8927-4d88-84a4-b99296dfdb0d",
           "id": "5428b6f2-acbe-440e-934b-00a0d392ae2b"
-        },
-        {
-          "code": "123",
-          "foodName": "cà phê",
-          "price": "50000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250160707_use_case_diagram_pet_accessories.png?alt=media&token=4f74abbd-541b-4b8f-beb6-3c7d7218930d",
-          "id": "6faf29da-d06a-4852-bcdd-f1783789980a"
         }
       ]
     },
@@ -1099,6 +1092,13 @@
           "foodName": "Ép cam",
           "price": "15000",
           "id": "f3730b3e-1046-41d6-b157-c9484bad56c1"
+        },
+        {
+          "code": "N02",
+          "foodName": "Ép Cam",
+          "price": "25000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250854117_use_case_diagram_pet_accessories.png?alt=media&token=63eee35c-dc6d-45b3-a214-14efe6e6bc58",
+          "id": "e466a674-c2f9-464a-83b6-2f973f76a7b1"
         }
       ]
     },
@@ -1106,23 +1106,7 @@
       "id": "ca55",
       "groupCode": "G04",
       "groupName": "Nước tăng lực",
-      "items": [
-        {
-          "code": "T01",
-          "foodName": "Bò húc",
-          "price": 20000
-        },
-        {
-          "code": "T02",
-          "foodName": "Red Bull",
-          "price": 22000
-        },
-        {
-          "code": "T03",
-          "foodName": "Number One",
-          "price": 18000
-        }
-      ]
+      "items": []
     },
     {
       "id": "ca99",
