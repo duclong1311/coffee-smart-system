@@ -9,11 +9,15 @@ const Dashboard = () => {
   const [selected, setSelected] = useState("");
   const [isPostsDropdownOpen, setIsPostsDropdownOpen] = useState(true);
   const [isManegeDropdownOpen, setIsManegeDropdownOpen] = useState(true);
+  const [isManageStaffDropdownOpen, setIsManageStaffDropdownOpen] = useState(false);
   const togglePostsDropdown = () => {
     setIsPostsDropdownOpen(!isPostsDropdownOpen);
   };
   const toggleManegeDropdown = () => {
     setIsManegeDropdownOpen(!isManegeDropdownOpen);
+  };
+  const toggleManageStaffDropdown = () => {
+    setIsManageStaffDropdownOpen(!isManageStaffDropdownOpen);
   };
 
   const handleClick = (item) => {
@@ -59,11 +63,10 @@ const Dashboard = () => {
                 <button
                   // className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white shadow-md  w-full flex items-center gap-4 px-4 capitalize bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
                   className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "dashboard"
-                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "dashboard"
+                      ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
+                      : ""
+                    }`}
                   onClick={() => handleClick("dashboard")}
                   type="button"
                 >
@@ -88,11 +91,10 @@ const Dashboard = () => {
                 <button
                   type="button"
                   className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "sale"
-                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "sale"
+                      ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
+                      : ""
+                    }`}
                   onClick={() => handleClick("sale")}
                 >
                   <svg
@@ -148,11 +150,10 @@ const Dashboard = () => {
                     <Link className="" to="/staff/feedback">
                       <button
                         className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "feedback"
-                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "feedback"
+                            ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
+                            : ""
+                          }`}
                         onClick={() => handleClick("feedback")}
                         type="button"
                       >
@@ -220,11 +221,10 @@ const Dashboard = () => {
                     <Link className="" to="/admin/createpost">
                       <button
                         className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "create"
-                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "create"
+                            ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
+                            : ""
+                          }`}
                         type="button"
                         onClick={() => handleClick("create")}
                       >
@@ -238,16 +238,77 @@ const Dashboard = () => {
                     <Link className="" to="/admin/postmanagement">
                       <button
                         className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
-                   ${
-                     selected === "postmanagement"
-                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
-                       : ""
-                   }`}
+                   ${selected === "postmanagement"
+                            ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
+                            : ""
+                          }`}
                         type="button"
                         onClick={() => handleClick("postmanagement")}
                       >
                         <p className="block text-base font-medium capitalize">
                           Post Management
+                        </p>
+                      </button>
+                    </Link>
+                  </li>
+
+                </ul>
+              )}
+            </li>
+            <li>
+              <button
+                className="hover:bg-[#c48355]  first-letter:shadow-amber-700  hover:shadow-lg  mb-3 disabled:opacity-50 active:bg-[#6F4F37]  hover:shadow-amber-700 middle none font-sans font-bold transition-all text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize"
+                onClick={toggleManageStaffDropdown}
+                type="button"
+              >
+                <MdOutlineManageAccounts className="size-7" />
+                <p className="block text-base font-medium capitalize">Manage Staff</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="w-5 h-5 text-inherit"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M6 10l6 6 6-6H6z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+
+              {/* Dropdown Items */}
+              {isManageStaffDropdownOpen && (
+                <ul className="ml-9 mr-9 flex flex-col gap-2">
+                  <li>
+                    <Link className="" to="/admin/managestaff">
+                      <button
+                        className={`hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize ${selected === "createStaff"
+                            ? "shadow-md bg-[#6F4F37] hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
+                            : ""
+                          }`}
+                        onClick={() => handleClick("createStaff")}
+                        type="button"
+                      >
+                        <p className="block text-base font-medium capitalize">
+                        Management Staff
+                        </p>
+                      </button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="" to="/admin/createstaff">
+                      <button
+                        className={`hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize ${selected === "editStaff"
+                            ? "shadow-md bg-[#6F4F37] hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
+                            : ""
+                          }`}
+                        onClick={() => handleClick("editStaff")}
+                        type="button"
+                      >
+                        <p className="block text-base font-medium capitalize">
+                          Create Staff
                         </p>
                       </button>
                     </Link>

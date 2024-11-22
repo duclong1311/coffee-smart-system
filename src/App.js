@@ -20,6 +20,8 @@ import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
 import { DetailPost } from "./components/pages/client/Posts/DetailPost";
 import { ProtectedRoute } from "./components/user/ProtectedRoute";
 import DisplayMenu from "./components/pages/client/DisplayMenu";
+import ManageStaff from "./components/pages/server/admin/actionPosts/ManageStaff";
+import CreateStaff from "./components/pages/server/admin/actionPosts/CreateStaff";
 
 function App() {
 
@@ -59,6 +61,8 @@ function App() {
           <Route path="dashboard" element={<DashBoard />} />
           <Route path="createpost" element={<CreatePost />} />
           <Route path="postmanagement" element={<PostManagement />} />
+          <Route path="managestaff" element={<ManageStaff />} />
+          <Route path="createstaff" element={<CreateStaff/>} />
           <Route path="edit/:id" element={<EditPost />} />
         </Route>
 
