@@ -60,21 +60,23 @@ const StaffDashboard = () => {
     return (
         <>
             <h1 className="text-left text-3xl font-bold mb-8">Trang chủ</h1>
-            <div className="container grid grid-cols-2 gap-4">
-                <div className="flex flex-wrap justify-center items-center">
-                    <div className="flex border-2 border-amber-700 size-72 m-1 justify-center items-center">
+
+            <div className="container grid lg:grid-cols-2 gap-4 sm:grid-cols-1 h-full">
+                <div className="grid grid-cols-2 place-items-center gap-4 h-96">
+                    <div className="flex border-2 border-amber-700 h-full w-full m-1 justify-center items-center">
                         {`Bàn trống: ${reportData[0]?.freeTable}`}
                     </div>
-                    <div className="flex border-2 border-amber-700 size-72 m-1 justify-center items-center">
+                    <div className="flex border-2 border-amber-700 h-full w-full m-1 justify-center items-center">
                         {` Nhân viên đang làm việc: ${reportData[0]?.staffWorking}`}
                     </div>
-                    <div className="flex border-2 border-amber-700 size-72 m-1 justify-center items-center">
+                    <div className="flex border-2 border-amber-700 h-full w-full m-1 justify-center items-center">
                         {`Tổng doanh thu: ${reportData[0]?.revenue.toLocaleString('vi', { style: 'currency', currency: 'VND' })}`}
                     </div>
-                    <div className="flex border-2 border-amber-700 size-72 m-1 justify-center items-center">
+                    <div className="flex border-2 border-amber-700 h-full w-full m-1 justify-center items-center">
                         {`Bán chạy nhất: ${reportData[0]?.bestSeller[0]?.name}`}
                     </div>
                 </div>
+
                 <div className="">
                     <ResponsiveContainer className={"w-full h-full"}>
                         <BarChart data={data} margin={{ top: 0, left: 20, right: 0, bottom: 100 }}>
