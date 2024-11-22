@@ -268,7 +268,7 @@
       "id": "ce55"
     },
     {
-      "id": "2f2d",
+      "id": "31b3",
       "tableNumber": "TB001",
       "isAvailability": false,
       "food": [
@@ -283,8 +283,7 @@
           "quantity": 1,
           "total": 30000
         }
-      ],
-      "id": "31b3"
+      ]
     },
     {
       "tableNumber": "TB006",
@@ -534,7 +533,15 @@
           "code": "C01",
           "foodName": "Cà phê sữa",
           "price": "25000",
-          "id": "2fb2005b-fc5b-4e92-a90a-68e3ce4c21dc"
+          "id": "2fb2005b-fc5b-4e92-a90a-68e3ce4c21dc",
+          "image": ""
+        },
+        {
+          "code": "rtewt",
+          "foodName": "trew",
+          "price": "43534",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732244858987_Th%C3%AAm%20ti%C3%AAu%20%C4%91%E1%BB%81.png?alt=media&token=6ecb65cb-d5bc-4306-ab54-715e69d84b34",
+          "id": "8b58393f-643b-421c-809d-5e73a9b54c52"
         }
       ]
     },
