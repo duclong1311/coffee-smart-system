@@ -258,12 +258,24 @@
     },
     {
       "tableNumber": "TB002",
-      "isAvailability": true,
-      "food": [],
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        }
+      ],
       "id": "4527",
-      "isCallingStaff": false,
-      "timeIn": "",
-      "date": ""
+      "isCallingStaff": true,
+      "timeIn": "6:37:04 PM",
+      "date": "11/22/2024"
     },
     {
       "tableNumber": "TB003",
@@ -1031,31 +1043,16 @@
       "createdBy": "Trần Đức Long",
       "emai": "duclong1311.work@gmail.com",
       "feedback": "Test feedback"
+    },
+    {
+      "id": "163a",
+      "feedbackDate": "11/22/2024",
+      "createdBy": "Huynh Nhu",
+      "emai": "camlypham61@gmail.com",
+      "feedback": "Cà phê ngon"
     }
   ],
   "listFood": [
-    {
-      "id": "bc79",
-      "groupCode": "G01",
-      "groupName": "Bánh",
-      "items": [
-        {
-          "code": "B01",
-          "foodName": "Tiramisu",
-          "price": 30000
-        },
-        {
-          "code": "B02",
-          "foodName": "Bánh bò",
-          "price": 15000
-        },
-        {
-          "code": "B03",
-          "foodName": "Bánh kem",
-          "price": 50000
-        }
-      ]
-    },
     {
       "id": "aa87",
       "groupCode": "G02",
@@ -1069,18 +1066,18 @@
           "id": "cd4553f7-74c3-4541-be94-ed3a2ebad065"
         },
         {
-          "code": "C124",
-          "foodName": "Cà phê sữa",
-          "price": "30000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267225170_hinh-anh-ly-cafe-sua-da_35.jpg?alt=media&token=dd449858-685e-4962-91f6-08524201414b",
-          "id": "9b40522e-1bfd-461d-8715-fac6cb13ef11"
-        },
-        {
           "code": "C125",
           "foodName": "Latte",
           "price": "40000",
           "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267430302_nghe-thuat-ve-latte-art-la-gi.jpg?alt=media&token=e547c147-d77f-438a-bcdb-ee052266f736",
           "id": "b5c4ded5-56a6-4770-8c12-9fb612418ce8"
+        },
+        {
+          "code": "CF1",
+          "foodName": "Latte",
+          "price": "100",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732275753632_banner-img.png?alt=media&token=09053247-c56d-483c-94c8-cee1990a4de5",
+          "id": "2b3d4718-284f-4bd0-8765-dcd297233b78"
         }
       ]
     },
@@ -1102,13 +1099,6 @@
           "price": "16000",
           "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267615630_nuoc-ep-oi-2.jpg?alt=media&token=46764a84-4848-4843-8d3d-c684f43f97a1",
           "id": "8bd9e19e-ce47-4807-8cb2-c45b5a38f023"
-        },
-        {
-          "code": "N03",
-          "foodName": "Ép dưa hấu",
-          "price": "17000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267674778_%C3%89p%20d%C6%B0a%20h%E1%BA%A5u.jpg?alt=media&token=5ad2c0f7-dcaa-46a6-ab65-b144b423907e",
-          "id": "221b1f03-f9e6-4d4f-971a-f358190f7ff2"
         }
       ]
     },
@@ -1246,6 +1236,43 @@
       "dob": "19-05-2002",
       "salary": "10.000.000 VND",
       "position": "Nhân Viên"
+    },
+    {
+      "id": "3290",
+      "username": "huynhnnhu999",
+      "fullName": "Nguyễn Văn A",
+      "address": "Tra vinh",
+      "phoneNumber": "0364402249",
+      "gender": "Nam",
+      "birthDate": "2009-02-28",
+      "salary": "10.000.000 ",
+      "position": "Nhân Viên",
+      "password": "123456",
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2Fbanner-img.png?alt=media&token=e2fd9bd4-e1af-4154-9977-eb28664ffb6a"
+    },
+    {
+      "id": "36b5",
+      "username": "nhulth",
+      "fullName": "Nguyễn Thành Nhân",
+      "address": "Tra vinh",
+      "phoneNumber": "0364402249",
+      "gender": "Nữ",
+      "birthDate": "2007-01-22",
+      "salary": "10.000.000",
+      "position": "Nhân Viên",
+      "password": "HEd@ynHB"
+    },
+    {
+      "id": "d2e9",
+      "username": "chi1",
+      "fullName": "Nguyễn Văn A",
+      "address": "Tra vinh",
+      "phoneNumber": "0364402249",
+      "gender": "Nam",
+      "birthDate": "2013-01-22",
+      "salary": "10.000.000 ",
+      "position": "Nhân Viên",
+      "password": "RsDl5h&%"
     }
   ]
 }
