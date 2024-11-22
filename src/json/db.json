@@ -1065,6 +1065,27 @@
           "price": "43534",
           "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732244858987_Th%C3%AAm%20ti%C3%AAu%20%C4%91%E1%BB%81.png?alt=media&token=6ecb65cb-d5bc-4306-ab54-715e69d84b34",
           "id": "8b58393f-643b-421c-809d-5e73a9b54c52"
+        },
+        {
+          "code": "",
+          "foodName": "",
+          "price": "",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250046307_use_case_diagram_pet_accessories.png?alt=media&token=c64e2951-a6c3-4934-ae3a-d4abfb9f3a03",
+          "id": "41939c35-4f84-4811-a8c8-b6c269b32c29"
+        },
+        {
+          "code": "4w5r",
+          "foodName": "324",
+          "price": "234",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250100451_banner-img.png?alt=media&token=6b38e530-8927-4d88-84a4-b99296dfdb0d",
+          "id": "5428b6f2-acbe-440e-934b-00a0d392ae2b"
+        },
+        {
+          "code": "123",
+          "foodName": "cà phê",
+          "price": "50000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732250160707_use_case_diagram_pet_accessories.png?alt=media&token=4f74abbd-541b-4b8f-beb6-3c7d7218930d",
+          "id": "6faf29da-d06a-4852-bcdd-f1783789980a"
         }
       ]
     },
