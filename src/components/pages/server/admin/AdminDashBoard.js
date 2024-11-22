@@ -106,7 +106,7 @@ function AdminDashBoard() {
                   </li>
                 </ul>
               )}
-            </li>
+            </li>            
             {/* Other navigation items */}
             <li>
               <Link className="" to="/admin/sale">
@@ -121,7 +121,7 @@ function AdminDashBoard() {
                   </p>
                 </button>
               </Link>
-            </li>
+            </li>       
           </ul>
         </div>
       </aside>
