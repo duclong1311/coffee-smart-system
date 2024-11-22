@@ -13,7 +13,7 @@ const ManageStaff = () => {
     // Lấy danh sách nhân viên từ API
     const fetchStaff = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/staff");
+            const response = await axios.get("http://localhost:3000/user");
             setStaffList(response.data);
         } catch (error) {
             toast.error("Lỗi khi tải dữ liệu nhân viên!");

@@ -15,25 +15,22 @@ const CreateStaff = () => {
     position: "",
   });
 
-  // Hàm tạo mật khẩu ngẫu nhiên
+  // Generate random password
   const generateRandomPassword = (length = 8) => {
     const chars =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}|;:,.<>?";
-    let password = "";
-    for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * chars.length);
-      password += chars[randomIndex];
-    }
-    return password;
+    return Array.from({ length }, () =>
+      chars.charAt(Math.floor(Math.random() * chars.length))
+    ).join("");
   };
 
-  // Hàm xử lý thay đổi dữ liệu trong form
+  // Handle form input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Hàm xử lý gửi dữ liệu
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,13 +38,10 @@ const CreateStaff = () => {
     const updatedFormData = { ...formData, password: randomPassword };
 
     try {
-      await axios.post("http://localhost:3000/staff", updatedFormData);
+      await axios.post("http://localhost:3000/users", updatedFormData);
       toast.success(
-        `Nhân viên đã được tạo thành công! Mật khẩu: ${randomPassword}`,
-        {
-          position: "top-right",
-          autoClose: 5000,
-        }
+        `Nhân viên được tạo thành công! Mật khẩu: ${randomPassword}`,
+        { position: "top-right", autoClose: 5000 }
       );
       setFormData({
         username: "",
@@ -69,67 +63,36 @@ const CreateStaff = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-6">
       <h1 className="text-xl font-bold text-center mb-6">Thêm Mới Nhân Viên</h1>
       <form
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto border p-4 rounded-lg shadow-lg space-y-4"
+        className="max-w-2xl mx-auto border p-6 rounded-lg shadow-md space-y-4 bg-white"
       >
+        {[
+          { name: "username", label: "Tên tài khoản", type: "text", required: true },
+          { name: "fullName", label: "Họ và tên", type: "text", required: true },
+          { name: "address", label: "Địa chỉ", type: "text" },
+          { name: "phoneNumber", label: "Số điện thoại", type: "text", required: true },
+          { name: "birthDate", label: "Ngày sinh", type: "date", required: true },
+          { name: "salary", label: "Lương", type: "text" },
+          { name: "position", label: "Vị trí", type: "text", required: true },
+        ].map(({ name, label, type, required }) => (
+          <div key={name}>
+            <label className="block text-sm font-medium text-gray-700">{label}</label>
+            <input
+              type={type}
+              name={name}
+              value={formData[name]}
+              onChange={handleInputChange}
+              className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-800"
+              required={required}
+            />
+          </div>
+        ))}
+
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Tên tài khoản
-          </label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-800"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Họ và tên
-          </label>
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleInputChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-800"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Địa chỉ
-          </label>
-          <input
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleInputChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-800"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Số điện thoại
-          </label>
-          <input
-            type="text"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleInputChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-800"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Giới tính
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Giới tính</label>
           <select
             name="gender"
             value={formData.gender}
@@ -143,44 +106,11 @@ const CreateStaff = () => {
             <option value="Khác">Khác</option>
           </select>
         </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Ngày sinh
-          </label>
-          <input
-            type="date"
-            name="birthDate"
-            value={formData.birthDate}
-            onChange={handleInputChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-800"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Lương</label>
-          <input
-            type="text"
-            name="salary"
-            value={formData.salary}
-            onChange={handleInputChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-800"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Vị trí</label>
-          <input
-            type="text"
-            name="position"
-            value={formData.position}
-            onChange={handleInputChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-800"
-            required
-          />
-        </div>
+
         <div className="text-center">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition"
+            className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
           >
             Thêm Nhân Viên
           </button>

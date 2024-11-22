@@ -41,7 +41,7 @@ function Update() {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         const MAX_SIZE = 5 * 1024 * 1024; // 5MB
-    
+
         if (file) {
             // Check if the file size exceeds the limit
             if (file.size > MAX_SIZE) {
@@ -284,9 +284,17 @@ function Update() {
                             <div className="text-center mt-6">
                                 <button
                                     type="submit"
-                                    className="bg-[#333] text-white p-2 rounded-lg text-lg w-full"
+                                    className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
                                 >
                                     Cập Nhật
+                                </button>
+                                {/* Cancel Button */}
+                                <button
+                                    type="button"
+                                    onClick={() => navigate("/profile")}
+                                    className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#FF0000] hover:text-white transition border border-black"
+                                >
+                                    Hủy
                                 </button>
                             </div>
                         </form>
