@@ -247,9 +247,10 @@ function Update() {
                                         onChange={handleChange}
                                         className="w-full p-4 border-2 rounded-lg text-[#333]"
                                     >
-                                        <option value="male">Nam</option>
-                                        <option value="female">Nữ</option>
-                                        <option value="other">Khác</option>
+                                        <option value="">Chọn Giới Tính</option>
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                        <option value="Khác">Khác</option>
                                     </select>
                                 </div>
 
@@ -279,9 +280,37 @@ function Update() {
                                         className="w-full p-4 border-2 rounded-lg text-[#333]"
                                     />
                                 </div>
+
+                                {/* Salary - Display Only */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Lương</label>
+                                    <input
+                                        type="text"
+                                        name="salary"
+                                        value={user.salary}
+                                        readOnly
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Lương"
+                                    />
+                                </div>
                             </div>
 
-                            <div className="text-center mt-6">
+                            <div className="grid grid-cols-2 gap-4">
+                                {/* Position - Display Only */}
+                                <div>
+                                    <label className="block text-[#333] font-bold">Vị Trí</label>
+                                    <input
+                                        type="text"
+                                        name="position"
+                                        value={user.position}
+                                        readOnly
+                                        className="w-full p-4 border-2 rounded-lg text-[#333]"
+                                        placeholder="Vị trí"
+                                    />
+                                </div>
+                            </div>
+                            <div className="flex justify-center space-x-16 mt-4">
+                                {/* Submit Button */}
                                 <button
                                     type="submit"
                                     className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
@@ -298,6 +327,8 @@ function Update() {
                                 </button>
                             </div>
                         </form>
+
+
                     </div>
                 </section>
             </div>
