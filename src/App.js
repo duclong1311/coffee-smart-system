@@ -20,9 +20,11 @@ import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
 import { DetailPost } from "./components/pages/client/Posts/DetailPost";
 import { ProtectedRoute } from "./components/user/ProtectedRoute";
 import DisplayMenu from "./components/pages/client/DisplayMenu";
+import DishGroupList from "./components/Foodservice/DishGroupList";
+import ServiceContext from "./components/context/ServiceContext";
+import CategoryDishList from "./components/Foodservice/MenuByGroup/CategoryDishList";
 
 function App() {
-
   return (
     <>
       <ToastContainer
@@ -51,11 +53,14 @@ function App() {
         <Route path="/update" element={<Update />} />
 
         {/* Trang admin */}
-        <Route path="admin" element={
-          <ProtectedRoute requiredRole={1}>
-            <HomeAdmin />
-          </ProtectedRoute>
-        }>
+        <Route
+          path="admin"
+          element={
+            <ProtectedRoute requiredRole={1}>
+              <HomeAdmin />
+            </ProtectedRoute>
+          }
+        >
           <Route path="dashboard" element={<DashBoard />} />
           <Route path="createpost" element={<CreatePost />} />
           <Route path="postmanagement" element={<PostManagement />} />
@@ -63,11 +68,14 @@ function App() {
         </Route>
 
         {/* Trang quản lý nhân viên */}
-        <Route path="staff" element={
-          <ProtectedRoute requiredRole={1}>
-            <Staff />
-          </ProtectedRoute>
-        }>
+        <Route
+          path="staff"
+          element={
+            <ProtectedRoute requiredRole={1}>
+              <Staff />
+            </ProtectedRoute>
+          }
+        >
           <Route
             path="sale"
             element={
@@ -77,6 +85,22 @@ function App() {
             }
           />
           <Route path="feedback" element={<FeedbackTable />} />
+          <Route
+            path="service"
+            element={
+              <ServiceContext>
+                <DishGroupList />
+              </ServiceContext>
+            }
+          ></Route>
+          <Route
+            path="groupeddishes"
+            element={
+              <ServiceContext>
+                <CategoryDishList />
+              </ServiceContext>
+            }
+          />
         </Route>
       </Routes>
     </>
