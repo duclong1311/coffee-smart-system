@@ -816,6 +816,18 @@
       "salary": "10.000.000 VND",
       "position": "Nhân Viên",
       "password": "123123"
+    },
+    {
+      "id": "632b",
+      "username": "nhupro123",
+      "fullName": "nhule",
+      "address": "123fff",
+      "phoneNumber": "333",
+      "gender": "Nữ",
+      "birthDate": "2006-10-24",
+      "salary": "10.000.000 VND",
+      "position": "Nhân Viên",
+      "password": "f.AhG#gz"
     }
   ]
 }

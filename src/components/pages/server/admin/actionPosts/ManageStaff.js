@@ -13,13 +13,13 @@ const ManageStaff = () => {
     // Lấy danh sách nhân viên từ API
     const fetchStaff = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/user");
+            const response = await axios.get("http://localhost:3000/users");
+            console.log(response.data); // Xem cấu trúc dữ liệu
             setStaffList(response.data);
         } catch (error) {
             toast.error("Lỗi khi tải dữ liệu nhân viên!");
         }
     };
-
     // Xử lý tìm kiếm khi người dùng nhấn nút "Tìm kiếm"
     const handleSearch = () => {
         // Nếu không có điều kiện tìm kiếm, không thực hiện tìm kiếm
@@ -88,9 +88,9 @@ const ManageStaff = () => {
     // Lọc danh sách nhân viên dựa trên các giá trị tìm kiếm
     const filteredStaff = staffList.filter(
         (staff) =>
-            staff.username.toLowerCase().includes(searchUsername.toLowerCase()) &&
-            staff.fullName.toLowerCase().includes(searchFullName.toLowerCase()) &&
-            staff.phoneNumber.includes(searchPhoneNumber)
+            (staff.username && staff.username.toLowerCase().includes(searchUsername.toLowerCase())) &&
+            (staff.fullName && staff.fullName.toLowerCase().includes(searchFullName.toLowerCase())) &&
+            (staff.phoneNumber && staff.phoneNumber.includes(searchPhoneNumber))
     );
 
     return (
@@ -127,78 +127,78 @@ const ManageStaff = () => {
                     Tìm Kiếm
                 </button>
             </div>
-            {/* Bảng nhân viên */ }
-    <table className="w-full border-collapse border border-gray-400">
-        <thead>
-            <tr className="bg-gray-200">
-                <th className="border border-gray-400 px-4 py-2">STT</th>
-                <th className="border border-gray-400 px-4 py-2">Tên tài khoản</th>
-                <th className="border border-gray-400 px-4 py-2">Họ và tên</th>
-                <th className="border border-gray-400 px-4 py-2">Địa chỉ</th>
-                <th className="border border-gray-400 px-4 py-2">Số điện thoại</th>
-                <th className="border border-gray-400 px-4 py-2">Giới tính</th>
-                <th className="border border-gray-400 px-4 py-2">Ngày sinh</th>
-                <th className="border border-gray-400 px-4 py-2">Lương</th>
-                <th className="border border-gray-400 px-4 py-2">Vị trí</th>
-                <th className="border border-gray-400 px-4 py-2">Thao tác</th>
-            </tr>
-        </thead>
-        <tbody>
-            {filteredStaff.length > 0 ? (
-                filteredStaff.map((staff, index) => (
-                    <tr key={staff.id} className="bg-white">
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {index + 1}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {staff.username}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {staff.fullName}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {staff.address}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {staff.phoneNumber}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {staff.gender}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {staff.birthDate}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {staff.salary}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center">
-                            {staff.position}
-                        </td>
-                        <td className="border border-gray-400 px-4 py-2 text-center flex justify-center gap-2">
-                            <button
-                                onClick={() => handleEdit(staff.id)}
-                                className="text-blue-500 hover:text-blue-700 transition"
-                            >
-                                <FaEdit size={18} />
-                            </button>
-                            <button
-                                onClick={() => handleDelete(staff.id)}
-                                className="text-red-500 hover:text-red-700 transition"
-                            >
-                                <FaTrash size={18} />
-                            </button>
-                        </td>
+            {/* Bảng nhân viên */}
+            <table className="w-full border-collapse border border-gray-400">
+                <thead>
+                    <tr className="bg-gray-200">
+                        <th className="border border-gray-400 px-4 py-2">STT</th>
+                        <th className="border border-gray-400 px-4 py-2">Tên tài khoản</th>
+                        <th className="border border-gray-400 px-4 py-2">Họ và tên</th>
+                        <th className="border border-gray-400 px-4 py-2">Địa chỉ</th>
+                        <th className="border border-gray-400 px-4 py-2">Số điện thoại</th>
+                        <th className="border border-gray-400 px-4 py-2">Giới tính</th>
+                        <th className="border border-gray-400 px-4 py-2">Ngày sinh</th>
+                        <th className="border border-gray-400 px-4 py-2">Lương</th>
+                        <th className="border border-gray-400 px-4 py-2">Vị trí</th>
+                        <th className="border border-gray-400 px-4 py-2">Thao tác</th>
                     </tr>
-                ))
-            ) : (
-                <tr>
-                    <td colSpan="10" className="text-center py-4">
-                        Không tìm thấy nhân viên nào
-                    </td>
-                </tr>
-            )}
-        </tbody>
-    </table>
+                </thead>
+                <tbody>
+                    {filteredStaff.length > 0 ? (
+                        filteredStaff.map((users, index) => (
+                            <tr key={users.id} className="bg-white">
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {index + 1}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {users.username}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {users.fullName}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {users.address}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {users.phoneNumber}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {users.gender}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {users.birthDate}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {users.salary}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center">
+                                    {users.position}
+                                </td>
+                                <td className="border border-gray-400 px-4 py-2 text-center flex justify-center gap-2">
+                                    <button
+                                        onClick={() => handleEdit(users.id)}
+                                        className="text-blue-500 hover:text-blue-700 transition"
+                                    >
+                                        <FaEdit size={18} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleDelete(users.id)}
+                                        className="text-red-500 hover:text-red-700 transition"
+                                    >
+                                        <FaTrash size={18} />
+                                    </button>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="10" className="text-center py-4">
+                                Không tìm thấy nhân viên nào
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
         </div >
     );
 };
