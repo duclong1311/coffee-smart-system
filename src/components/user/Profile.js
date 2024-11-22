@@ -25,7 +25,7 @@ export function Profile() {
             <div className="bg-cover bg-center bg-[#F9F4EE] bg-[url('https://example.com/your-image.jpg')] text-gray-300 py-10">
                 <section className="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
                     <div className="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-xl p-6 rounded-xl h-fit self-center bg-[#fff] text-[#333]">
-                        <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-bold mb-2 text-[#333] text-center f ">
+                        <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-bold mb-4 text-[#333] text-center">
                             Thông Tin Cá Nhân
                         </h1>
 

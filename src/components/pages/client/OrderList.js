@@ -1,11 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './OrderList.css';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     const [selectedItems, setSelectedItems] = useState([]);
-    const [freeTable, setFreeTable] = useState('TB001');
+    const [freeTable, setFreeTable] = useState('');
+
+    useEffect(() => {
+        const findAvailabelTable = async () => {
+            try {
+                const res = await axios.get('http://localhost:3000/listTable');
+                if (res.data && res.data.length > 0) {
+                    const isTabelAvailable = res.data.find((item) => item?.isAvailability === true);
+                    isTabelAvailable ? setFreeTable(isTabelAvailable?.id) : toast.error("Không còn bàn trống! :(");
+                }
+            } catch (error) {
+                console.error("Error fetching table list:", error);
+            }
+        };
+        findAvailabelTable();
+    }, []);
 
     const handleCheckboxChange = (event, itemId) => {
         if (event.target.checked) {
@@ -20,20 +35,29 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
             const updatedOrderList = orderList.filter((item) => !selectedItems.includes(item.id));
             setOrderList(updatedOrderList);
             setSelectedItems([]);
-            toast.success("Delete success");
+            toast.success("Xóa thành công");
         } else {
-            toast.error("No item selected to delete");
+            toast.error("Không có mục nào được chọn để xóa");
         }
+    };
+
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    const updateTableStatus = async (tableNumber, orderList) => {
+        const d = new Date();
+        await delay(5000); // Chờ 5 giây
+        return axios.patch(`http://localhost:3000/listTable/${tableNumber}`, {
+            timeIn: d.toLocaleTimeString(),
+            date: d.toLocaleDateString(),
+            isAvailability: false,
+            food: orderList,
+        });
     };
 
     const handleCallOrder = async () => {
         try {
             await toast.promise(
-                axios.post('http://localhost:3000/listTable', {
-                    tableNumber: freeTable,
-                    isAvailability: false,
-                    food: orderList
-                }),
+                updateTableStatus(freeTable, orderList),
                 {
                     pending: 'Đang tiến hành gọi món...',
                     success: 'Gọi món thành công 👌',
@@ -43,7 +67,15 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
         } catch (error) {
             toast.error('Đã xảy ra lỗi khi gọi món!');
         }
+    };
+
+    const handleCallStaff = async () => {
+        const res =  axios.patch(`http://localhost:3000/listTable/${freeTable}`, {
+            isCallingStaff: true,
+        });
+        res ? toast.success("Phục vụ đang đến bạn chờ chút nhé!") : toast.error("Có lỗi khi gọi phục vụ");
     }
+
 
     return (
         <>
@@ -117,7 +149,7 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
                 <div className="orderlist-action">
                     <button onClick={handleDeleteOrder} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Xóa món</button>
                     <button onClick={handleCallOrder} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi món</button>
-                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi phục vụ</button>
+                    <button onClick={handleCallStaff} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Gọi phục vụ</button>
                     <button onClick={() => setShowModal(true)} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Phản hồi</button>
                 </div>
             </div>

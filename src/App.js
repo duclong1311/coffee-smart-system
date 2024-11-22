@@ -14,6 +14,7 @@ import { Profile } from "./components/user/Profile";
 import { ChangePassword } from "./components/user/Changepassword";
 import Update from "./components/user/Update";
 import Staff from "./components/pages/server/staff/Staff";
+import BillManagement from "./components/pages/server/staff/BillManagement";
 import ContextDataTable from "./components/context/ContextDataTable";
 import TableManagement from "./components/TableManagement/TableManagement";
 import FeedbackTable from "../src/components/FeedBack/FeedbackTable";
@@ -23,6 +24,8 @@ import DisplayMenu from "./components/pages/client/DisplayMenu";
 import DishGroupList from "./components/Foodservice/DishGroupList";
 import ServiceContext from "./components/context/ServiceContext";
 import CategoryDishList from "./components/Foodservice/MenuByGroup/CategoryDishList";
+import ManageStaff from "./components/pages/server/admin/actionPosts/ManageStaff";
+import CreateStaff from "./components/pages/server/admin/actionPosts/CreateStaff";
 
 function App() {
   return (
@@ -64,6 +67,8 @@ function App() {
           <Route path="dashboard" element={<DashBoard />} />
           <Route path="createpost" element={<CreatePost />} />
           <Route path="postmanagement" element={<PostManagement />} />
+          <Route path="managestaff" element={<ManageStaff />} />
+          <Route path="createstaff" element={<CreateStaff/>} />
           <Route path="edit/:id" element={<EditPost />} />
         </Route>
 
@@ -101,6 +106,7 @@ function App() {
               </ServiceContext>
             }
           />
+          <Route path="bill" element={<BillManagement />} />
         </Route>
       </Routes>
     </>
