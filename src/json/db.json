@@ -518,46 +518,15 @@
   ],
   "listFood": [
     {
-      "id": "bc79",
-      "groupCode": "G01",
-      "groupName": "Bánh",
-      "items": [
-        {
-          "code": "B01",
-          "foodName": "Tiramisu",
-          "price": 30000
-        },
-        {
-          "code": "B02",
-          "foodName": "Bánh bò",
-          "price": 15000
-        },
-        {
-          "code": "B03",
-          "foodName": "Bánh kem",
-          "price": 50000
-        }
-      ]
-    },
-    {
       "id": "aa87",
       "groupCode": "G02",
       "groupName": "Coffee",
       "items": [
         {
           "code": "C01",
-          "foodName": "Cà phê đen",
-          "price": 15000
-        },
-        {
-          "code": "C02",
-          "foodName": "Cà phê sữa đá",
-          "price": 20000
-        },
-        {
-          "code": "C03",
-          "foodName": "Espresso",
-          "price": 25000
+          "foodName": "Cà phê sữa",
+          "price": "25000",
+          "id": "2fb2005b-fc5b-4e92-a90a-68e3ce4c21dc"
         }
       ]
     },
@@ -569,17 +538,8 @@
         {
           "code": "N01",
           "foodName": "Ép cam",
-          "price": 25000
-        },
-        {
-          "code": "N02",
-          "foodName": "Ép dứa",
-          "price": 30000
-        },
-        {
-          "code": "N03",
-          "foodName": "Ép ổi",
-          "price": 28000
+          "price": "15000",
+          "id": "f3730b3e-1046-41d6-b157-c9484bad56c1"
         }
       ]
     },
@@ -628,19 +588,9 @@
       ]
     },
     {
-      "id": "a72d",
-      "groupCode": "C05",
-      "groupName": "Trứng"
-    },
-    {
-      "id": "caef",
-      "groupCode": "ádas",
-      "groupName": "ádasd"
-    },
-    {
-      "id": "7112",
-      "groupCode": "asdas",
-      "groupName": "asd",
+      "id": "7c65",
+      "groupCode": "G07",
+      "groupName": "chipchip",
       "items": []
     }
   ],

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid"; // Nếu chưa cài, hãy cài `uuid` qua npm: npm install uuid
 
 export const MyServiceContext = createContext();
 const ServiceContext = ({ children }) => {
@@ -9,21 +10,13 @@ const ServiceContext = ({ children }) => {
     groupCode: "",
     groupName: "",
   });
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModaEditlOpen, setIsModaEditlOpen] = useState(false);
+  const [defaultDishValues, setDefaultDishValues] = useState({
+    code: "",
+    foodName: "",
+    price: "",
+  });
 
-  const handleAddClick = () => {
-    setIsModalOpen(true);
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  const handleEditClick = () => {
-    setIsModaEditlOpen(true);
-  };
-  const closeModalEdit = () => {
-    setIsModaEditlOpen(false);
-  };
+  const [groupDetails, setGroupDetails] = useState("");
 
   const getMenuList = async () => {
     try {
@@ -47,7 +40,7 @@ const ServiceContext = ({ children }) => {
       alert("them thanh cong");
       setInnittialValue(inittialValue);
       getMenuList();
-      closeModal();
+      // closeModal();
     } catch (e) {
       alert(e.message);
     }
@@ -56,8 +49,67 @@ const ServiceContext = ({ children }) => {
   const removeDishGroup = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/listFood/${id}`);
+      // thiếu toast
       alert("xoa thanh cong");
       getMenuList();
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+
+  const updateFoodList = async (data) => {
+    try {
+      await axios.put(`http://localhost:3000/listFood/${data.id}`, data);
+      getMenuList();
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+
+  const fetchDishGroup = (item) => {
+    console.log("🚀 ~ fetchDishGroup ~ item:", item);
+    setGroupDetails(item);
+  };
+
+  const updateDishGroup = async (data) => {
+    try {
+      const newItem = {
+        ...data,
+        id: uuidv4(), // ID ngẫu nhiên
+      };
+      const res = await axios.put(
+        `http://localhost:3000/listFood/${groupDetails.id}`,
+        {
+          ...groupDetails,
+          items: [...groupDetails.items, newItem],
+        }
+      );
+      setGroupDetails(res.data);
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+
+  const removeDish = async (id) => {
+    try {
+      const group = menuList.find((group) =>
+        group.items.some((item) => item.id === id)
+      );
+
+      if (!group) throw new Error("Dish not found in any group!");
+
+      // Lọc danh sách items để xóa sản phẩm
+      const updatedItems = group.items.filter((item) => item.id !== id);
+
+      // Tạo nhóm mới sau khi xóa
+      const updatedGroup = { ...group, items: updatedItems };
+
+      // Gửi dữ liệu cập nhật lên server
+      const res = await axios.put(
+        `http://localhost:3000/listFood/${group.id}`,
+        updatedGroup
+      );
+      setGroupDetails(res.data);
     } catch (e) {
       alert(e.message);
     }
@@ -75,14 +127,14 @@ const ServiceContext = ({ children }) => {
           loading,
           removeDishGroup,
           AddNewDishGroup,
-          isModalOpen,
-          handleAddClick,
-          closeModal,
-          inittialValue,
-          handleEditClick,
-          isModaEditlOpen,
-          closeModalEdit,
           setMenuList,
+          inittialValue,
+          updateFoodList,
+          fetchDishGroup,
+          groupDetails,
+          updateDishGroup,
+          defaultDishValues,
+          removeDish,
         }}
       >
         {children}

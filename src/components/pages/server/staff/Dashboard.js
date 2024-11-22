@@ -114,7 +114,6 @@ const Dashboard = () => {
                     Sale
                   </p>
                 </button>
-
               </Link>
             </li>
             <li>
@@ -165,13 +164,13 @@ const Dashboard = () => {
                     </Link>
                   </li>
                   {/* service here */}
-                  {/* <li>
+                  <li>
                     <Link className="" to="/staff/service">
                       <button
-                        className={`hover:bg-blue-500 middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
+                        className={` hover:bg-[#c48355] middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg  text-white  w-full flex items-center gap-4 px-4 capitalize"
                    ${
                      selected === "service"
-                       ? "shadow-md disabled:opacity-50 bg-gradient-to-tr from-blue-600 to-blue-400 shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                       ? "shadow-md disabled:opacity-50 bg-[#6F4F37] first-letter:shadow-amber-700  hover:shadow-lg hover:shadow-amber-700 active:opacity-[0.85]"
                        : ""
                    }`}
                         onClick={() => handleClick("service")}
@@ -184,7 +183,7 @@ const Dashboard = () => {
                         </p>
                       </button>
                     </Link>
-                  </li> */}
+                  </li>
                 </ul>
               )}
             </li>
