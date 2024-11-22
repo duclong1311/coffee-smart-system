@@ -854,6 +854,19 @@
       ]
     }
   ],
+  "report": [
+    {
+      "revenue": 50000000,
+      "freeTable": 5,
+      "staffWorking": 12,
+      "bestSeller": [
+        {
+          "name": "Rượu vang đỏ",
+          "Quantity": 100
+        }
+      ]
+    }
+  ],
   "feedBack": [
     {
       "id": "1",

@@ -21,6 +21,7 @@ import { DetailPost } from "./components/pages/client/Posts/DetailPost";
 import { ProtectedRoute } from "./components/user/ProtectedRoute";
 import DisplayMenu from "./components/pages/client/DisplayMenu";
 import BillManagement from "./components/pages/server/staff/BillManagement";
+import StaffDashboard from "./components/pages/server/StaffDashboard";
 
 function App() {
 
@@ -79,6 +80,7 @@ function App() {
           />
           <Route path="feedback" element={<FeedbackTable />} />
           <Route path="bill" element={<BillManagement />} />
+          <Route path="dashboard" element={<StaffDashboard />} />
         </Route>
       </Routes>
     </>
