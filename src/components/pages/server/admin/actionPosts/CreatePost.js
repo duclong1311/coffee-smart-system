@@ -1,11 +1,18 @@
 import Tiny from "../../../../../Tiny";
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
-import * as Yup from "yup"; 
+import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+    storage,
+    ref,
+    uploadBytesResumable,
+    getDownloadURL,
+} from "../../../../../firebase"; // Import Firebase methods
 
+// Validation schema
 const validationSchema = Yup.object({
     title: Yup.string()
         .required("Tiêu đề là bắt buộc")
@@ -14,31 +21,67 @@ const validationSchema = Yup.object({
     content: Yup.string()
         .required("Nội dung là bắt buộc")
         .min(20, "Nội dung phải có ít nhất 20 ký tự"),
-    img: Yup.string()
-        .url("Ảnh phải là một URL hợp lệ")
-        .required("Ảnh là bắt buộc")
 });
-
 
 export function CreatePost() {
     const navigate = useNavigate();
 
-    const createPost = async (value) => {
+    // Function to upload an image to Firebase
+    const uploadImage = async (file) => {
+        const fileName = `${new Date().getTime()}_${file.name}`;
+        const storageRef = ref(storage, `post_images/${fileName}`);
+        const uploadTask = uploadBytesResumable(storageRef, file);
+
+        return new Promise((resolve, reject) => {
+            uploadTask.on(
+                "state_changed",
+                (snapshot) => {
+                    const progress =
+                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    console.log(`Upload progress: ${progress}%`);
+                },
+                (error) => {
+                    console.error("Upload failed:", error);
+                    toast.error("Upload ảnh thất bại");
+                    reject(error);
+                },
+                async () => {
+                    const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                    resolve(downloadURL);
+                }
+            );
+        });
+    };
+
+    // Function to create a post
+    const createPost = async (values, { setSubmitting, resetForm }) => {
         const currentDateTime = new Date().toISOString();
-        const postData = { ...value, date: currentDateTime };
-        console.log("Form values:", value);
+        const postData = { ...values, date: currentDateTime };
+
         try {
-            await axios.post('http://localhost:3000/posts', postData);
+            // If there is an image file, upload it first
+            if (values.imageFile) {
+                const downloadURL = await uploadImage(values.imageFile);
+                postData.img = downloadURL; // Add the image URL to the post data
+            }
+
+            // Send post data to the server
+            await axios.post("http://localhost:3000/posts", postData);
             toast.success("Thêm tin thành công", {
                 position: "top-right",
                 autoClose: 3000,
             });
+
+            resetForm(); // Reset the form
             navigate("/admin/postmanagement");
         } catch (error) {
+            console.error("Error creating post:", error);
             toast.error("Thêm tin thất bại", {
                 position: "top-right",
                 autoClose: 3000,
             });
+        } finally {
+            setSubmitting(false);
         }
     };
 
@@ -51,13 +94,15 @@ export function CreatePost() {
                     initialValues={{
                         title: "",
                         content: "",
-                        img: ""
+                        imageFile: null, // Store the uploaded image file
+                        img: "", // Store the image URL
                     }}
-                    validationSchema={validationSchema} 
+                    validationSchema={validationSchema}
                     onSubmit={createPost}
                 >
-                    {({ setFieldValue, setFieldTouched, errors, touched }) => (
+                    {({ setFieldValue, errors, touched, isSubmitting }) => (
                         <Form className="space-y-4">
+                            {/* Title */}
                             <div>
                                 <Field
                                     type="text"
@@ -69,34 +114,41 @@ export function CreatePost() {
                                     <div className="text-red-500 text-sm">{errors.title}</div>
                                 )}
                             </div>
+
+                            {/* Content */}
                             <div>
                                 <Tiny
-                                    onChange={(content) => {
-                                        setFieldValue("content", content);
-                                        setFieldTouched("content", true); // Mark field as touched
-                                    }}
+                                    onChange={(content) => setFieldValue("content", content)}
                                 />
                                 {touched.content && errors.content && (
                                     <div className="text-red-500 text-sm">{errors.content}</div>
                                 )}
                             </div>
+
+                            {/* Image */}
                             <div>
-                                <Field
-                                    type="text"
-                                    name="img"
-                                    placeholder="Ảnh"
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        setFieldValue("imageFile", file); // Store the file object
+                                    }}
                                     className="block w-full p-2 border border-gray-300 rounded"
                                 />
                                 {touched.img && errors.img && (
                                     <div className="text-red-500 text-sm">{errors.img}</div>
                                 )}
                             </div>
+
+                            {/* Submit Button */}
                             <div className="flex items-center justify-center">
                                 <button
                                     type="submit"
                                     className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
+                                    disabled={isSubmitting} // Disable the button while submitting
                                 >
-                                    Đăng tin
+                                    {isSubmitting ? "Đang xử lý..." : "Đăng tin"}
                                 </button>
                             </div>
                         </Form>
