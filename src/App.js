@@ -26,6 +26,7 @@ import ServiceContext from "./components/context/ServiceContext";
 import CategoryDishList from "./components/Foodservice/MenuByGroup/CategoryDishList";
 import ManageStaff from "./components/pages/server/admin/actionPosts/ManageStaff";
 import CreateStaff from "./components/pages/server/admin/actionPosts/CreateStaff";
+import StaffDashboard from "./components/pages/server/StaffDashboard";
 
 function App() {
   return (
@@ -107,6 +108,7 @@ function App() {
             }
           />
           <Route path="bill" element={<BillManagement />} />
+          <Route path="dashboard" element={<StaffDashboard />} />
         </Route>
       </Routes>
     </>
