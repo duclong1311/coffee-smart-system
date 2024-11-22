@@ -14,6 +14,7 @@ import { Profile } from "./components/user/Profile";
 import { ChangePassword } from "./components/user/Changepassword";
 import Update from "./components/user/Update";
 import Staff from "./components/pages/server/staff/Staff";
+import BillManagement from "./components/pages/server/staff/BillManagement";
 import ContextDataTable from "./components/context/ContextDataTable";
 import TableManagement from "./components/TableManagement/TableManagement";
 import FeedbackTable from "../src/components/FeedBack/FeedbackTable";

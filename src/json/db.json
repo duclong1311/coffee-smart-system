@@ -1266,6 +1266,19 @@
       "salary": "10.000.000 VND",
       "position": "Nhân Viên",
       "password": "f.AhG#gz"
+    },
+    {
+      "id": "784b",
+      "username": "huynhnnhu999",
+      "fullName": "Nguyễn Thành Nhân",
+      "address": "Tra vinh",
+      "phoneNumber": "0364402249",
+      "gender": "Nữ",
+      "birthDate": "2013-02-22",
+      "salary": "5000000",
+      "position": "Nhân Viên",
+      "password": "t>>ucMVS",
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2Fbanner-img.png?alt=media&token=84e827ed-264b-46c6-a9ef-0098cb50e16e"
     }
   ]
 }
