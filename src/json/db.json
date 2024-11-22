@@ -508,7 +508,14 @@
       "id": "aa87",
       "groupCode": "G02",
       "groupName": "Coffee",
-      "items": []
+      "items": [
+        {
+          "code": "C01",
+          "foodName": "Cà phê sữa",
+          "price": "25000",
+          "id": "2fb2005b-fc5b-4e92-a90a-68e3ce4c21dc"
+        }
+      ]
     },
     {
       "id": "cb97",
@@ -571,12 +578,6 @@
       "id": "7c65",
       "groupCode": "G07",
       "groupName": "chipchip",
-      "items": []
-    },
-    {
-      "id": "89ac",
-      "groupCode": "qq",
-      "groupName": "ee",
       "items": []
     }
   ],
