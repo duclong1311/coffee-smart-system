@@ -7,50 +7,24 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [freeTable, setFreeTable] = useState("");
 
-  // useEffect(() => {
-  //     const findAvailabelTable = async () => {
-  //         try {
-  //             const res = await axios.get('http://localhost:3000/listTable');
-  //             if (res.data && res.data.length > 0) {
-  //                 const isTabelAvailable = res.data.find((item) => item?.isAvailability === true);
-  //                 isTabelAvailable ? setFreeTable(isTabelAvailable?.id) : toast.error("Không còn bàn trống! :(");
-  //             }
-  //         } catch (error) {
-  //             console.error("Error fetching table list:", error);
-  //         }
-  //     };
-  //     findAvailabelTable();
-  // }, []);
-
-  // const getAvailableTable = async () => {
-  //   // call get API de lay list table va tim ra table trong,
-  //   // return table id
-  // };
-  // const handleCallOrder = async () => {
-  //   // viec 1: call; API get list table va tim ra table trong:
-  //   const availableTable = await getAvailableTable();
-  //   await updateTableStatus(availableTable, orderList);
-  // };
-
-  // đã chỉnh sửa
-  const findAvailabelTable = async () => {
-    try {
-      const res = await axios.get("http://localhost:3000/listTable");
-      if (res.data && res.data.length > 0) {
-        const isTabelAvailable = res.data.find(
-          (item) => item?.isAvailability === true
-        );
-        if (isTabelAvailable) {
-          return isTabelAvailable?.id;
-        } else {
-          toast.error("Không còn bàn trống! :(");
-          return null;
+  useEffect(() => {
+    const findAvailabelTable = async () => {
+      try {
+        const res = await axios.get("http://localhost:3000/listTable");
+        if (res.data && res.data.length > 0) {
+          const isTabelAvailable = res.data.find(
+            (item) => item?.isAvailability === true
+          );
+          isTabelAvailable
+            ? setFreeTable(isTabelAvailable?.id)
+            : toast.error("Không còn bàn trống! :(");
         }
+      } catch (error) {
+        console.error("Error fetching table list:", error);
       }
-    } catch (error) {
-      console.error("Error fetching table list:", error);
-    }
-  };
+    };
+    findAvailabelTable();
+  }, []);
 
   const handleCheckboxChange = (event, itemId) => {
     if (event.target.checked) {
@@ -88,11 +62,9 @@ const OrderList = ({ orderList, setOrderList, setShowModal }) => {
     });
   };
 
-  // đã chỉnh sửa
   const handleCallOrder = async () => {
     try {
-      const availableTable = await findAvailabelTable();
-      await toast.promise(updateTableStatus(availableTable, orderList), {
+      await toast.promise(updateTableStatus(freeTable, orderList), {
         pending: "Đang tiến hành gọi món...",
         success: "Gọi món thành công 👌",
         error: "Gọi món thất bại 🤯",

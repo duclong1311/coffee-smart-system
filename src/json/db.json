@@ -363,12 +363,46 @@
     },
     {
       "tableNumber": "TB004",
-      "isAvailability": true,
-      "food": [],
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        },
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        },
+        {
+          "id": "3",
+          "name": "Nâu đá",
+          "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
+          "img": "/assets/images/Menu/nau-da.jpg",
+          "price": 20000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 20000
+        }
+      ],
       "id": "c695",
       "isCallingStaff": false,
-      "timeIn": "16:27:44",
-      "date": "20/11/2024"
+      "timeIn": "18:40:53",
+      "date": "23/11/2024"
     },
     {
       "id": "31b3",
