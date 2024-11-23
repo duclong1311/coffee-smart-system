@@ -68,18 +68,21 @@ const ServiceContext = ({ children }) => {
     }
   };
 
+  /// danh sách món ăn
+
   const fetchDishGroup = (item) => {
     console.log("🚀 ~ fetchDishGroup ~ item:", item);
     setGroupDetails(item);
   };
 
-  const updateDishGroup = async (data) => {
+  // thêm món ăn
+  const AddDishGroup = async (data) => {
     try {
       const newItem = {
         ...data,
         id: uuidv4(), // ID ngẫu nhiên
       };
-      const res = await axios.put(
+      const res = await axios.patch(
         `http://localhost:3000/listFood/${groupDetails.id}`,
         {
           ...groupDetails,
@@ -88,6 +91,7 @@ const ServiceContext = ({ children }) => {
       );
       toast.success("Thêm món mới thành công");
       setGroupDetails(res.data);
+      getMenuList();
     } catch (e) {
       alert(e.message);
     }
@@ -99,22 +103,51 @@ const ServiceContext = ({ children }) => {
         group.items.some((item) => item.id === id)
       );
 
-      if (!group) throw new Error("Dish not found in any group!");
+      if (!group) toast.warning("Dish not found in any group!");
 
       // Lọc danh sách items để xóa sản phẩm
       const updatedItems = group.items.filter((item) => item.id !== id);
 
-      // Tạo nhóm mới sau khi xóa
       const updatedGroup = { ...group, items: updatedItems };
+      console.log("🚀 ~ removeDish ~ updatedGroup:", updatedGroup);
 
-      // Gửi dữ liệu cập nhật lên server
-      const res = await axios.put(
+      const res = await axios.patch(
         `http://localhost:3000/listFood/${group.id}`,
         updatedGroup
       );
       setGroupDetails(res.data);
+      getMenuList();
     } catch (e) {
       toast.warning(e.message);
+    }
+  };
+  const updateDishDetails = async (data) => {
+    try {
+      // Kiểm tra món có tồn tại hay không
+      const itemExists = groupDetails.items.some((item) => item.id === data.id);
+
+      const updatedItems = itemExists
+        ? groupDetails.items.map(
+            (item) => (item.id === data.id ? { ...item, ...data } : item) // Cập nhật món nếu đã tồn tại
+          )
+        : [...groupDetails.items, data]; // Thêm mới nếu chưa tồn tại
+
+      // Gửi danh sách items mới lên server
+      const res = await axios.patch(
+        `http://localhost:3000/listFood/${groupDetails.id}`,
+        {
+          ...groupDetails,
+          items: updatedItems, // Cập nhật danh sách items
+        }
+      );
+
+      console.log("🚀 ~ UpdateDish ~ res:", res.data);
+
+      // Cập nhật state
+      setGroupDetails(res.data);
+      getMenuList(); // Làm mới danh sách trên giao diện
+    } catch (e) {
+      toast.warning(`Cập nhật thất bại: ${e.message}`);
     }
   };
 
@@ -135,9 +168,10 @@ const ServiceContext = ({ children }) => {
           updateFoodList,
           fetchDishGroup,
           groupDetails,
-          updateDishGroup,
+          AddDishGroup,
           defaultDishValues,
           removeDish,
+          updateDishDetails,
         }}
       >
         {children}

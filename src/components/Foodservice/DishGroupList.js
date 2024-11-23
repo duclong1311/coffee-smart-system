@@ -27,7 +27,9 @@ const DishGroupList = () => {
   return (
     <>
       <div className="p-1 ">
-        <h1 className=" text-xl font-bold text-center mt-2">Danh sách món</h1>
+        <h1 className=" text-xl font-bold text-center mt-2">
+          Danh sách nhóm món
+        </h1>
 
         <div className="w-full flex justify-center mb-2">
           <div className="w-4/6 flex justify-between items-end">

@@ -1,10 +1,20 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import { MyServiceContext } from "../../context/ServiceContext";
+import EditDish from "./ActionMenuByGroup/EditDish";
 
 const DishItems = ({ item, index }) => {
   const { removeDish } = useContext(MyServiceContext);
+  const [isModalEditDishOpen, setIsModalEditDishOpen] = useState(false);
+  const [oldDish, setOldDish] = useState({});
 
+  const handleEditDishClick = (data) => {
+    // console.log("🚀 ~ handleAddDishClick ~ item:", data);
+    setOldDish(data);
+    setIsModalEditDishOpen(true);
+  };
+  const closeModalEditDish = () => {
+    setIsModalEditDishOpen(false);
+  };
   return (
     <tr className="bg-white hover:bg-gray-100">
       <td className="border border-gray-400 px-4 py-2 text-center">
@@ -31,7 +41,7 @@ const DishItems = ({ item, index }) => {
         <div className="flex justify-center items-center w-full h-auto gap-4">
           <button
             type="button"
-            // onClick={() => handleEditClick(item)}
+            onClick={() => handleEditDishClick(item)}
             class="py-1 px-1 text-sm rounded-full border border-solid border-amber-200 text-amber-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-amber-600 hover:text-white"
           >
             <span>
@@ -51,12 +61,12 @@ const DishItems = ({ item, index }) => {
               </svg>
             </span>
           </button>
-          {/* {isModaEditlOpen && (
-            <EditDishGroup
-              oldDishGroup={oldDishGroup}
-              closeModalEdit={closeModalEdit}
+          {isModalEditDishOpen && (
+            <EditDish
+              oldDish={oldDish}
+              closeModalEditDish={closeModalEditDish}
             />
-          )} */}
+          )}
           <button
             type="button"
             onClick={() => removeDish(item.id)}

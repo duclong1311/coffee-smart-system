@@ -2,10 +2,15 @@ import axios from "axios";
 import { Field, Form, Formik } from "formik";
 import React, { useContext, useState } from "react";
 import { MyServiceContext } from "../../../context/ServiceContext";
-import { storage, ref, uploadBytesResumable, getDownloadURL } from "../../../../firebase";
+import {
+  storage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "../../../../firebase";
 
 const AddNewDish = ({ closeModalAddDish, groupDetails }) => {
-  const { updateDishGroup, defaultDishValues } = useContext(MyServiceContext);
+  const { AddDishGroup, defaultDishValues } = useContext(MyServiceContext);
   const [uploading, setUploading] = useState(false);
   const [previewImage, setPreviewImage] = useState(""); // State lưu URL ảnh preview
   const [imageToUpload, setImageToUpload] = useState(null); // Lưu trữ file ảnh chưa upload
@@ -24,7 +29,8 @@ const AddNewDish = ({ closeModalAddDish, groupDetails }) => {
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log(`Upload progress: ${progress}%`);
         },
         (error) => {
@@ -39,13 +45,13 @@ const AddNewDish = ({ closeModalAddDish, groupDetails }) => {
           data.image = downloadURL; // Gán URL ảnh vào dữ liệu
 
           // Gửi dữ liệu đã bao gồm URL ảnh lên server
-          updateDishGroup(data);
+          AddDishGroup(data);
           closeModalAddDish();
         }
       );
     } else {
       // Nếu không có ảnh, gửi luôn dữ liệu mà không upload ảnh
-      updateDishGroup(data);
+      AddDishGroup(data);
       closeModalAddDish();
     }
   };
