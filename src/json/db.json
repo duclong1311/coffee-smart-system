@@ -240,6 +240,28 @@
       "isAvailability": false,
       "food": [
         {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        },
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        },
+        {
           "id": "3",
           "name": "Nâu đá",
           "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
@@ -247,17 +269,92 @@
           "price": 20000,
           "category": "coffee",
           "availability": true,
-          "quantity": 2,
-          "total": 40000
+          "quantity": 1,
+          "total": 20000
         }
       ],
       "id": "b1a7",
       "isCallingStaff": false,
-      "timeIn": "16:30:00",
-      "date": "20/11/2024"
+      "timeIn": "11:00:03",
+      "date": "23/11/2024"
     },
     {
       "tableNumber": "TB002",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "10",
+          "name": "Nước ép dưa hấu",
+          "description": "Nước ép dưa hấu mát lạnh, giàu nước và vitamin A, giúp giải nhiệt và cung cấp năng lượng cho cơ thể.",
+          "img": "/assets/images/Menu/nuoc-ep-dua-hau.jpg",
+          "price": 35000,
+          "category": "juice",
+          "availability": true,
+          "quantity": 1,
+          "total": 35000
+        },
+        {
+          "id": "11",
+          "name": "Nước ép dưa hấu & carrot",
+          "description": "Sự kết hợp tươi mát giữa dưa hấu và cà rốt, đem lại hương vị ngọt nhẹ, cung cấp vitamin và dưỡng chất cho sức khỏe.",
+          "img": "/assets/images/Menu/nuoc-ep-carrot.jpg",
+          "price": 35000,
+          "category": "juice",
+          "availability": true,
+          "quantity": 2,
+          "total": 70000
+        },
+        {
+          "id": "9",
+          "name": "Nước ép táo",
+          "description": "Nước ép táo tự nhiên, thơm ngon, chứa nhiều chất chống oxy hóa, giúp làm đẹp da và cải thiện tiêu hóa.",
+          "img": "/assets/images/Menu/nuoc-ep-tao.jpg",
+          "price": 35000,
+          "category": "juice",
+          "availability": true,
+          "quantity": 1,
+          "total": 35000
+        }
+      ],
+      "id": "4527",
+      "isCallingStaff": true,
+      "timeIn": "09:56:09",
+      "date": "23/11/2024"
+    },
+    {
+      "tableNumber": "TB003",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "17",
+          "name": "Rượu Vang Đỏ",
+          "description": "Rượu vang đỏ đậm đà, hương vị phức hợp của quả mọng chín, lý tưởng để kết hợp cùng các món thịt đỏ.",
+          "img": "/assets/images/Menu/ruou-vang-do.jpg",
+          "price": 150000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 1,
+          "total": 150000
+        },
+        {
+          "id": "18",
+          "name": "Rượu Vang Trắng",
+          "description": "Rượu vang trắng thanh khiết, hương vị tươi mát của trái cây nhiệt đới, thích hợp để thưởng thức cùng hải sản.",
+          "img": "/assets/images/Menu/ruou-vang-trang.jpg",
+          "price": 140000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 1,
+          "total": 140000
+        }
+      ],
+      "id": "8abd",
+      "isCallingStaff": false,
+      "timeIn": "11:10:55",
+      "date": "23/11/2024"
+    },
+    {
+      "tableNumber": "TB004",
       "isAvailability": false,
       "food": [
         {
@@ -270,39 +367,40 @@
           "availability": true,
           "quantity": 1,
           "total": 25000
+        },
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        },
+        {
+          "id": "3",
+          "name": "Nâu đá",
+          "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
+          "img": "/assets/images/Menu/nau-da.jpg",
+          "price": 20000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 20000
         }
       ],
-      "id": "4527",
-      "isCallingStaff": true,
-      "timeIn": "6:37:04 PM",
-      "date": "11/22/2024"
-    },
-    {
-      "tableNumber": "TB003",
-      "isAvailability": true,
-      "food": [],
-      "id": "8abd",
-      "isCallingStaff": false,
-      "timeIn": "",
-      "date": ""
-    },
-    {
-      "tableNumber": "TB004",
-      "isAvailability": true,
-      "food": [],
       "id": "c695",
       "isCallingStaff": false,
-      "timeIn": "16:27:44",
-      "date": "20/11/2024"
+      "timeIn": "18:40:53",
+      "date": "23/11/2024"
     },
     {
+      "id": "31b3",
       "tableNumber": "TB005",
       "isAvailability": true,
-      "food": [],
-      "id": "2f2d",
-      "isCallingStaff": false,
-      "timeIn": "",
-      "date": ""
+      "food": []
     },
     {
       "tableNumber": "TB006",
@@ -380,7 +478,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "c244"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -398,7 +497,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "dd77"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -411,7 +511,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "521c"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -429,7 +530,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "c6e0"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -442,7 +544,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "a8c6"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -460,7 +563,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "2c15"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -473,7 +577,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "7af0"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -491,7 +596,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "1959"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -504,7 +610,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "20a2"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -522,7 +629,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "128f"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -535,7 +643,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "f2a7"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -553,7 +662,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "80f4"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -566,7 +676,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "5551"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -584,7 +695,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "b01f"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -597,7 +709,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "99c7"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -615,7 +728,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "d4b8"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -628,7 +742,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "489e"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -646,7 +761,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "b00e"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -659,7 +775,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "0fce"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -677,7 +794,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "1d84"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -690,7 +808,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "795a"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -708,7 +827,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "70eb"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -721,7 +841,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "2f75"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -739,7 +860,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "fda4"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -752,7 +874,8 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "9733"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -770,7 +893,8 @@
           "price": 20000,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "ff4d"
     },
     {
       "timeIn": "7:36:05 AM",
@@ -783,7 +907,74 @@
           "price": 20000,
           "quantity": 2
         }
-      ]
+      ],
+      "id": "160b"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "718a"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "5dcf"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "335b"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "8a5e"
     },
     {
       "timeIn": "8:36:05 AM",
@@ -1059,25 +1250,18 @@
       "groupName": "Coffee",
       "items": [
         {
-          "code": "C123",
-          "foodName": "Cà phê đen",
+          "code": "CF01",
+          "foodName": "Cà phê muối",
           "price": "25000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267159265_ca-phe-den-8.jpg?alt=media&token=cf3239b5-e57d-4ef2-9d68-090273b88a52",
-          "id": "cd4553f7-74c3-4541-be94-ed3a2ebad065"
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732328982834_ca-phe-muoi.jpg?alt=media&token=f0eb1e33-c0f3-45fe-a623-8c2834962b3a",
+          "id": "f51657c9-6ee0-4892-aa1b-ad709a2312c1"
         },
         {
-          "code": "C125",
-          "foodName": "Latte",
-          "price": "40000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267430302_nghe-thuat-ve-latte-art-la-gi.jpg?alt=media&token=e547c147-d77f-438a-bcdb-ee052266f736",
-          "id": "b5c4ded5-56a6-4770-8c12-9fb612418ce8"
-        },
-        {
-          "code": "CF1",
-          "foodName": "Latte",
-          "price": "100",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732275753632_banner-img.png?alt=media&token=09053247-c56d-483c-94c8-cee1990a4de5",
-          "id": "2b3d4718-284f-4bd0-8765-dcd297233b78"
+          "code": "CF02",
+          "foodName": "Nâu đá",
+          "price": "20000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329037700_nau-da.jpg?alt=media&token=df2029fb-9b61-43f0-8c2d-7cf8c68e6dad",
+          "id": "5d24ab60-3b74-4514-94d4-e322f82c6085"
         }
       ]
     },
@@ -1087,74 +1271,102 @@
       "groupName": "Nước ép",
       "items": [
         {
-          "code": "N01",
-          "foodName": "Ép cam",
-          "price": "15000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267562828_epcam.jpg?alt=media&token=f1786501-b766-4aca-a5d0-d85ac1834bda",
-          "id": "2342a767-3bee-420a-bd77-ef2a8c7f930b"
+          "code": "NE01",
+          "foodName": "NƯớc ép ổi",
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329205877_nuoc-ep-oi.jpg?alt=media&token=6ff908e5-7f93-4dfe-bbdf-d95fc81afd37",
+          "id": "c678d3f7-96ee-4619-bfe3-6214f6a86f26"
         },
         {
-          "code": "N02",
-          "foodName": "Ép ổi",
-          "price": "16000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267615630_nuoc-ep-oi-2.jpg?alt=media&token=46764a84-4848-4843-8d3d-c684f43f97a1",
-          "id": "8bd9e19e-ce47-4807-8cb2-c45b5a38f023"
+          "code": "NE02",
+          "foodName": "Nước ép táo",
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329228421_nuoc-ep-tao.jpg?alt=media&token=96caaeb4-589d-4657-b791-57d136daf089",
+          "id": "26385b6f-8191-450a-805b-29b0a9ed7af0"
+        },
+        {
+          "code": "NE03",
+          "foodName": "Nước ép dưa hấu",
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329256571_nuoc-ep-dua-hau.jpg?alt=media&token=c4fd3a08-c6f8-41b0-aa97-b7ba96a3e70d",
+          "id": "747e834b-5f18-44e0-a166-0b2303114e8d"
+        },
+        {
+          "code": "NE04",
+          "foodName": "Nước ép dưa hấu & cà rốt",
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329294769_nuoc-ep-carrot.jpg?alt=media&token=cb19bb38-d1b7-48c7-9573-9f2b5f4784d1",
+          "id": "674cbf2c-8de4-4aa6-aa96-13c980c36e44"
         }
       ]
     },
     {
       "id": "ca55",
       "groupCode": "G04",
-      "groupName": "Nước tăng lực",
+      "groupName": "Bánh",
       "items": [
         {
-          "code": "T01",
-          "foodName": "Bò húc",
-          "price": "20000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267812211_bnuoc-tang-luc-bo-huc-lon-24-1-N7C.jpg?alt=media&token=96c9a25e-501f-4924-9ced-f78bd7eac59d",
-          "id": "4d0e2964-eda4-4218-9716-f71f0bf4fe2a"
+          "code": "BA01",
+          "foodName": "Bánh sô-cô-la",
+          "price": "40000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329844693_banh-socola.jpg?alt=media&token=1d2fcd7d-8f0d-46ba-b3d6-d0ff3a150421",
+          "id": "a0b0c6ed-dff9-470a-93e8-d1fad1a8de67"
         },
         {
-          "code": "T02",
-          "foodName": "Red Bull",
-          "price": "30000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267867442_Red%20Bull.jpg?alt=media&token=e41f0bbe-b693-4b20-ab83-4fcd5595b5b8",
-          "id": "aeda11e0-ec5f-4c4e-a410-6fa5046bb85a"
+          "code": "BA02",
+          "foodName": "Bánh vani",
+          "price": "38000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329915766_banh-vani.jpg?alt=media&token=7eba2d3c-83dd-4fad-be21-c50ec9ed1bc7",
+          "id": "a964d24f-8592-4526-861a-7d9279978251"
         },
         {
-          "code": "T04",
-          "foodName": "Monster Energy",
-          "price": "30000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267931536_Monster%20Energy.jpg?alt=media&token=00d4ea95-70d0-4bd3-a582-957269e89a98",
-          "id": "3768d5fa-0ca1-47f8-bf54-7ed7eda971b3"
+          "code": "BA03",
+          "foodName": "Bánh Topper",
+          "price": "42000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329950973_banh-topper.jpg?alt=media&token=65d27d14-8297-4f4b-9cf9-7baa23980bd2",
+          "id": "3c69f364-d32d-4486-acb7-c3ff662912f3"
+        },
+        {
+          "code": "BA04",
+          "foodName": "Bánh mật ong",
+          "price": "45000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329975104_banh-mat-ong.jpg?alt=media&token=56f57c7d-b148-43d5-be8f-126416c74162",
+          "id": "adbaf9c1-f70a-4585-9861-a157bfecd44b"
         }
       ]
     },
     {
       "id": "ca99",
       "groupCode": "G05",
-      "groupName": "Trà sữa",
+      "groupName": "Đồ uống có cồn",
       "items": [
         {
-          "code": "TS01",
-          "foodName": "Trà sữa trân châu",
-          "price": "35000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732267984843_Tr%C3%A0%20s%E1%BB%AFa%20tr%C3%A2n%20ch%C3%A2u.jpg?alt=media&token=6b41773b-3c95-4484-82f7-9e8c7040902f",
-          "id": "2660b756-f831-4ddd-9b97-d65b3c0fb13b"
+          "code": "RU01",
+          "foodName": "Rựu vang đỏ",
+          "price": "150000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732330230298_ruou-vang-do.jpg?alt=media&token=2f01facd-94d0-42cd-aa0f-1daf77d2d777",
+          "id": "73360cd2-feef-4b58-b377-e2e0fc7b5ee3"
         },
         {
-          "code": "TS02",
-          "foodName": "Trà sữa matcha",
-          "price": "34000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732268039084_tra-sua-matcha-tran-chau-den.jpg?alt=media&token=9e4df36b-6885-4e45-bc07-3a5c05e871bc",
-          "id": "1bf1757f-ed9e-4f8b-ae81-ea5174b7b71a"
+          "code": "RU02",
+          "foodName": "Rựu vang trắng",
+          "price": "140000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732330258006_ruou-vang-trang.jpg?alt=media&token=b51d21e7-8289-4eed-b17b-0c9cd8e4ecc3",
+          "id": "d7bb9e8b-d289-48ed-bf48-cb729a1ae36d"
         },
         {
-          "code": "TS03",
-          "foodName": "Trà sữa socola",
-          "price": "38000",
-          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732268085131_Tr%C3%A0%20s%E1%BB%AFa%20socola.jpg?alt=media&token=c5f454ad-171b-4e8d-b972-816596dbd06e",
-          "id": "d1f099fd-0399-4fb4-b570-90c253dae6ef"
+          "code": "RU03",
+          "foodName": "Cocktail Mojito",
+          "price": "80000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732330288956_mojito.jpg?alt=media&token=78dc6b5c-4488-4966-b9cd-439694d59bf7",
+          "id": "0875b1d3-a9d0-490c-81ed-72cc235b9d32"
+        },
+        {
+          "code": "RU04",
+          "foodName": "Rượu Sake Nhật",
+          "price": "120000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732330328705_ruou-sake-nhat.jpg?alt=media&token=277a05d3-2844-4ffa-8b62-3599b2fa8559",
+          "id": "139ccaa8-1a83-4e0c-97ec-b9034ddc9d29"
         }
       ]
     }

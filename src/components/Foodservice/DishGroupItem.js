@@ -124,7 +124,7 @@ const DishGroupItem = ({ item, index }) => {
               </svg>
             </span>
             <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-              Grouped Menu List
+              Danh sách món ăn
             </span>
           </Link>
         </button>
