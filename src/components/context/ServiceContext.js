@@ -27,7 +27,7 @@ const ServiceContext = ({ children }) => {
       setMenuList(response.data);
     } catch (e) {
       setLoading(false);
-
+      toast.warning(e.message);
       console.error("Error fetching data:", e);
     }
   };
@@ -43,7 +43,7 @@ const ServiceContext = ({ children }) => {
       getMenuList();
       // closeModal();
     } catch (e) {
-      alert(e.message);
+      toast.warning(e.message);
     }
   };
 
@@ -55,7 +55,7 @@ const ServiceContext = ({ children }) => {
 
       getMenuList();
     } catch (e) {
-      alert(e.message);
+      toast.warning(e.message);
     }
   };
 
@@ -64,7 +64,7 @@ const ServiceContext = ({ children }) => {
       await axios.put(`http://localhost:3000/listFood/${data.id}`, data);
       getMenuList();
     } catch (e) {
-      alert(e.message);
+      toast.warning(e.message);
     }
   };
 
@@ -93,7 +93,7 @@ const ServiceContext = ({ children }) => {
       setGroupDetails(res.data);
       getMenuList();
     } catch (e) {
-      alert(e.message);
+      toast.warning(e.message);
     }
   };
 

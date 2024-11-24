@@ -2,6 +2,8 @@ import axios from "axios";
 import { Field, Form, Formik } from "formik";
 import React, { useContext, useState } from "react";
 import { MyServiceContext } from "../../../context/ServiceContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   storage,
   ref,
@@ -35,7 +37,7 @@ const AddNewDish = ({ closeModalAddDish, groupDetails }) => {
         },
         (error) => {
           console.error("Upload failed:", error);
-          alert("Upload ảnh thất bại. Vui lòng thử lại.");
+          toast.warning(error.message);
           setUploading(false);
         },
         async () => {
