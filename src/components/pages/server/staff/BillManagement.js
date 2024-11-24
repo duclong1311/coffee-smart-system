@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import Search from "./Search";
 import { includes } from "lodash";
 import Pagination from "./Pagination";
-const itemsPerPage = 10;
+const itemsPerPage = 6;
 
 const BillManagement = () => {
 
