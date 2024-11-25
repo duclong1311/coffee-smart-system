@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Tiny from "../../../../../Tiny";
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
@@ -10,7 +11,7 @@ import {
     ref,
     uploadBytesResumable,
     getDownloadURL,
-} from "../../../../../firebase"; // Import Firebase methods
+} from "../../../../../firebase";
 
 // Validation schema
 const validationSchema = Yup.object({
@@ -25,6 +26,7 @@ const validationSchema = Yup.object({
 
 export function CreatePost() {
     const navigate = useNavigate();
+    const [preview, setPreview] = useState(null); // State for image preview
 
     // Function to upload an image to Firebase
     const uploadImage = async (file) => {
@@ -73,6 +75,7 @@ export function CreatePost() {
             });
 
             resetForm(); // Reset the form
+            setPreview(null); // Clear the image preview
             navigate("/admin/postmanagement");
         } catch (error) {
             console.error("Error creating post:", error);
@@ -86,75 +89,85 @@ export function CreatePost() {
     };
 
     return (
-        <>
-            <div className="max-w-2xl mx-auto p-4">
-                <h1 className="text-2xl font-bold mb-4">Đăng tin</h1>
+        <div className="max-w-2xl mx-auto p-4">
+            <h1 className="text-2xl font-bold mb-4">Đăng tin</h1>
 
-                <Formik
-                    initialValues={{
-                        title: "",
-                        content: "",
-                        imageFile: null, // Store the uploaded image file
-                        img: "", // Store the image URL
-                    }}
-                    validationSchema={validationSchema}
-                    onSubmit={createPost}
-                >
-                    {({ setFieldValue, errors, touched, isSubmitting }) => (
-                        <Form className="space-y-4">
-                            {/* Title */}
-                            <div>
-                                <Field
-                                    type="text"
-                                    name="title"
-                                    placeholder="Tiêu đề"
-                                    className="block w-full p-2 border border-gray-300 rounded"
-                                />
-                                {touched.title && errors.title && (
-                                    <div className="text-red-500 text-sm">{errors.title}</div>
-                                )}
-                            </div>
+            <Formik
+                initialValues={{
+                    title: "",
+                    content: "",
+                    imageFile: null, // Store the uploaded image file
+                    img: "", // Store the image URL
+                }}
+                validationSchema={validationSchema}
+                onSubmit={createPost}
+            >
+                {({ setFieldValue, errors, touched, isSubmitting }) => (
+                    <Form className="space-y-4">
+                        {/* Title */}
+                        <div>
+                            <Field
+                                type="text"
+                                name="title"
+                                placeholder="Tiêu đề"
+                                className="block w-full p-2 border border-gray-300 rounded"
+                            />
+                            {touched.title && errors.title && (
+                                <div className="text-red-500 text-sm">{errors.title}</div>
+                            )}
+                        </div>
 
-                            {/* Content */}
-                            <div>
-                                <Tiny
-                                    onChange={(content) => setFieldValue("content", content)}
-                                />
-                                {touched.content && errors.content && (
-                                    <div className="text-red-500 text-sm">{errors.content}</div>
-                                )}
-                            </div>
+                        {/* Content */}
+                        <div>
+                            <Tiny
+                                onChange={(content) => setFieldValue("content", content)}
+                            />
+                            {touched.content && errors.content && (
+                                <div className="text-red-500 text-sm">{errors.content}</div>
+                            )}
+                        </div>
 
-                            {/* Image */}
-                            <div>
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={(e) => {
-                                        const file = e.target.files[0];
+                        {/* Image */}
+                        <div>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => {
+                                    const file = e.target.files[0];
+                                    if (file) {
+                                        setPreview(URL.createObjectURL(file)); // Set the preview URL
                                         setFieldValue("imageFile", file); // Store the file object
-                                    }}
-                                    className="block w-full p-2 border border-gray-300 rounded"
-                                />
-                                {touched.img && errors.img && (
-                                    <div className="text-red-500 text-sm">{errors.img}</div>
-                                )}
-                            </div>
+                                    }
+                                }}
+                                className="block w-full p-2 border border-gray-300 rounded"
+                            />
+                            {preview && (
+                                <div className="mt-2">
+                                    <img
+                                        src={preview}
+                                        alt="Preview"
+                                        className="max-w-28 h-auto border rounded"
+                                    />
+                                </div>
+                            )}
+                            {touched.img && errors.img && (
+                                <div className="text-red-500 text-sm">{errors.img}</div>
+                            )}
+                        </div>
 
-                            {/* Submit Button */}
-                            <div className="flex items-center justify-center">
-                                <button
-                                    type="submit"
-                                    className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
-                                    disabled={isSubmitting} // Disable the button while submitting
-                                >
-                                    {isSubmitting ? "Đang xử lý..." : "Đăng tin"}
-                                </button>
-                            </div>
-                        </Form>
-                    )}
-                </Formik>
-            </div>
-        </>
+                        {/* Submit Button */}
+                        <div className="flex items-center justify-center">
+                            <button
+                                type="submit"
+                                className="px-4 py-2 bg-white text-[#333] rounded hover:bg-[#333] hover:text-white transition border border-black"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? "Đang xử lý..." : "Đăng tin"}
+                            </button>
+                        </div>
+                    </Form>
+                )}
+            </Formik>
+        </div>
     );
 }
