@@ -52,7 +52,6 @@ const ServiceContext = ({ children }) => {
       await axios.delete(`http://localhost:3000/listFood/${id}`);
       // thiếu toast
       toast.success("xoá nhóm món thành công");
-
       getMenuList();
     } catch (e) {
       toast.warning(e.message);
@@ -62,6 +61,7 @@ const ServiceContext = ({ children }) => {
   const updateFoodList = async (data) => {
     try {
       await axios.put(`http://localhost:3000/listFood/${data.id}`, data);
+      toast.success("Câp nhật thành công");
       getMenuList();
     } catch (e) {
       toast.warning(e.message);
@@ -71,7 +71,6 @@ const ServiceContext = ({ children }) => {
   /// danh sách món ăn
 
   const fetchDishGroup = (item) => {
-    console.log("🚀 ~ fetchDishGroup ~ item:", item);
     setGroupDetails(item);
   };
 
@@ -116,6 +115,8 @@ const ServiceContext = ({ children }) => {
         updatedGroup
       );
       setGroupDetails(res.data);
+      toast.success("xoá món thành công");
+
       getMenuList();
     } catch (e) {
       toast.warning(e.message);
@@ -145,6 +146,7 @@ const ServiceContext = ({ children }) => {
 
       // Cập nhật state
       setGroupDetails(res.data);
+      toast.success("Câp nhật thành công");
       getMenuList(); // Làm mới danh sách trên giao diện
     } catch (e) {
       toast.warning(`Cập nhật thất bại: ${e.message}`);
