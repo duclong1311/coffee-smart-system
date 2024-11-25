@@ -1,46 +1,1572 @@
 {
-  "posts": [
+  "menu": [
     {
       "id": "1",
-      "title": "Hello World",
-      "content": "This is the first post",
-      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+      "name": "Cà phê muối",
+      "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+      "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+      "price": 25000,
+      "category": "coffee",
+      "availability": true
     },
     {
       "id": "2",
-      "title": "Another Post",
-      "content": "This is another post",
-      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+      "name": "Bạc xỉu kem muối",
+      "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+      "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+      "price": 30000,
+      "category": "coffee",
+      "availability": true
     },
     {
       "id": "3",
-      "title": "Another Post",
-      "content": "This is another post",
-      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+      "name": "Nâu đá",
+      "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
+      "img": "/assets/images/Menu/nau-da.jpg",
+      "price": 20000,
+      "category": "coffee",
+      "availability": true
     },
     {
       "id": "4",
-      "title": "Another Post",
-      "content": "This is another post",
-      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+      "name": "Sữa tươi cà phê",
+      "description": "Sữa tươi kết hợp với cà phê, đem lại vị thanh mát, béo nhẹ và hương thơm tự nhiên của cà phê.",
+      "img": "/assets/images/Menu/sua-tuoi-cafe.jpg",
+      "price": 27000,
+      "category": "coffee",
+      "availability": true
     },
     {
-      "id": "b412",
-      "title": "Cà phê chồn ",
-      "content": "Cà phê chồn một sản phẩm mới ra mắt",
-      "img": "https://cdn.tgdd.vn/2021/01/CookProduct/Ca-phe-chon-la-gi-nguon-goc-qua-trinh-va-gia-ca-phe-chon-tren-thi-truong-1-1200x676.jpg"
+      "id": "5",
+      "name": "Bạc xỉu",
+      "description": "Bạc xỉu, loại thức uống pha chế từ cà phê với nhiều sữa hơn cà phê, mang đến vị ngọt và dễ uống.",
+      "img": "/assets/images/Menu/bac-xiu.jpg",
+      "price": 28000,
+      "category": "coffee",
+      "availability": true
+    },
+    {
+      "id": "6",
+      "name": "Đen đá",
+      "description": "Cà phê đen đá truyền thống, giữ nguyên vị đắng đặc trưng của cà phê nguyên chất, mát lạnh sảng khoái.",
+      "img": "/assets/images/Menu/den-da.jpg",
+      "price": 18000,
+      "category": "coffee",
+      "availability": true
+    },
+    {
+      "id": "7",
+      "name": "Coldbrew",
+      "description": "Cà phê cold brew được ủ lạnh trong nhiều giờ, mang lại hương vị nhẹ nhàng, ít chua và đậm đà.",
+      "img": "/assets/images/Menu/coldbrew.jpg",
+      "price": 35000,
+      "category": "coffee",
+      "availability": true
+    },
+    {
+      "id": "8",
+      "name": "Nước ép ổi",
+      "description": "Nước ép ổi tươi ngon, giàu vitamin C, giúp tăng cường sức đề kháng và thanh lọc cơ thể.",
+      "img": "/assets/images/Menu/nuoc-ep-oi.jpg",
+      "price": 35000,
+      "category": "juice",
+      "availability": true
+    },
+    {
+      "id": "9",
+      "name": "Nước ép táo",
+      "description": "Nước ép táo tự nhiên, thơm ngon, chứa nhiều chất chống oxy hóa, giúp làm đẹp da và cải thiện tiêu hóa.",
+      "img": "/assets/images/Menu/nuoc-ep-tao.jpg",
+      "price": 35000,
+      "category": "juice",
+      "availability": true
+    },
+    {
+      "id": "10",
+      "name": "Nước ép dưa hấu",
+      "description": "Nước ép dưa hấu mát lạnh, giàu nước và vitamin A, giúp giải nhiệt và cung cấp năng lượng cho cơ thể.",
+      "img": "/assets/images/Menu/nuoc-ep-dua-hau.jpg",
+      "price": 35000,
+      "category": "juice",
+      "availability": true
+    },
+    {
+      "id": "11",
+      "name": "Nước ép dưa hấu & carrot",
+      "description": "Sự kết hợp tươi mát giữa dưa hấu và cà rốt, đem lại hương vị ngọt nhẹ, cung cấp vitamin và dưỡng chất cho sức khỏe.",
+      "img": "/assets/images/Menu/nuoc-ep-carrot.jpg",
+      "price": 35000,
+      "category": "juice",
+      "availability": true
+    },
+    {
+      "id": "12",
+      "name": "Nước ép dứa & táo",
+      "description": "Nước ép dứa và táo thơm mát, ngọt nhẹ, bổ sung vitamin C và các chất chống oxy hóa tự nhiên.",
+      "img": "/assets/images/Menu/nuoc-ep-dua-tao.jpg",
+      "price": 35000,
+      "category": "juice",
+      "availability": true
+    },
+    {
+      "id": "13",
+      "name": "Bánh Sô-cô-la",
+      "description": "Bánh sô-cô-la thơm ngon, vị ngọt đậm đà và mềm mịn, phủ lớp sô-cô-la hấp dẫn, lý tưởng cho các tín đồ hảo ngọt.",
+      "img": "/assets/images/Menu/banh-socola.jpg",
+      "price": 40000,
+      "category": "cake",
+      "availability": true
+    },
+    {
+      "id": "14",
+      "name": "Bánh vani",
+      "description": "Bánh vani mềm mịn, thơm nồng nàn hương vani tự nhiên, là món ăn ngọt ngào và dễ ăn cho mọi lứa tuổi.",
+      "img": "/assets/images/Menu/banh-vani.jpg",
+      "price": 38000,
+      "category": "cake",
+      "availability": true
+    },
+    {
+      "id": "15",
+      "name": "Bánh Topper",
+      "description": "Bánh topper độc đáo với nhiều lớp bánh và kem, tạo cảm giác thú vị với từng miếng cắn.",
+      "img": "/assets/images/Menu/banh-topper.jpg",
+      "price": 42000,
+      "category": "cake",
+      "availability": true
+    },
+    {
+      "id": "16",
+      "name": "Bánh mật ong",
+      "description": "Bánh mật ong ngọt thanh, kết hợp mật ong thiên nhiên với độ mềm mịn, mang đến hương vị ấm áp và dịu nhẹ.",
+      "img": "/assets/images/Menu/banh-mat-ong.jpg",
+      "price": 45000,
+      "category": "cake",
+      "availability": true
+    },
+    {
+      "id": "17",
+      "name": "Rượu Vang Đỏ",
+      "description": "Rượu vang đỏ đậm đà, hương vị phức hợp của quả mọng chín, lý tưởng để kết hợp cùng các món thịt đỏ.",
+      "img": "/assets/images/Menu/ruou-vang-do.jpg",
+      "price": 150000,
+      "category": "alcohol",
+      "availability": true
+    },
+    {
+      "id": "18",
+      "name": "Rượu Vang Trắng",
+      "description": "Rượu vang trắng thanh khiết, hương vị tươi mát của trái cây nhiệt đới, thích hợp để thưởng thức cùng hải sản.",
+      "img": "/assets/images/Menu/ruou-vang-trang.jpg",
+      "price": 140000,
+      "category": "alcohol",
+      "availability": true
+    },
+    {
+      "id": "19",
+      "name": "Cocktail Mojito",
+      "description": "Cocktail Mojito thơm ngon, sự kết hợp tươi mát của rượu rum, bạc hà và chanh, hoàn hảo để giải nhiệt.",
+      "img": "/assets/images/Menu/mojito.jpg",
+      "price": 80000,
+      "category": "alcohol",
+      "availability": true
+    },
+    {
+      "id": "20",
+      "name": "Rượu Sake Nhật",
+      "description": "Rượu Sake Nhật thanh nhã, vị ngọt nhẹ nhàng, phù hợp cho các bữa ăn Nhật Bản truyền thống.",
+      "img": "/assets/images/Menu/ruou-sake-nhat.jpg",
+      "price": 120000,
+      "category": "alcohol",
+      "availability": true
     }
   ],
-  "comments": [
+  "order": [
     {
       "id": "1",
-      "postId": 1,
-      "content": "Nice post!"
+      "name": "",
+      "title": "Hello World",
+      "content": "This is the first post",
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg"
+    }
+  ],
+  "posts": [
+    {
+      "id": "4",
+      "title": "Another Post",
+      "content": "Có rất nhiều địa điểm để bạn có thể trải nghiệm cà phê bệt ở Sài Gòn, từ những khu vực trung tâm như  Nhà thờ Đức Bà, Phố đi bộ Nguyễn Huệ cho đến những khu vực ven thành phố như Hồ Con Rùa. Mỗi nơi đều có những điểm hấp dẫn riêng, từ không gian, khung cảnh đến các món ăn vặt và thức uống kèm theo. Bạn có thể tự do lựa chọn nơi mình thích nhất để tận hưởng ly cà phê bệt theo cách của mình.",
+      "img": "https://wowmart.vn/wp-content/uploads/2018/11/cafe-hoa-tan-caffe-d-vita-mocha-cappuccino-1-8kg-b.jpg",
+      "date": "2024-11-16T17:26:06.794Z",
+      "lastEdited": "11/15/2024, 11:46:18 PM",
+      "comments": [
+        {
+          "content": "Cà phê ngon quá",
+          "date": "11/18/2024, 6:41:55 PM"
+        },
+        {
+          "content": "cà phê ngon",
+          "date": "15:27:17 25/11/2024"
+        },
+        {
+          "content": "cà phê ngon",
+          "date": "18:47:30 25/11/2024"
+        }
+      ]
+    },
+    {
+      "id": "e4d8",
+      "title": "Cà phê",
+      "content": "Cà phê (bắt nguồn từ tiếng Pháp: café [/kafe/])[2] là một loại thức uống được ủ từ hạt cà phê rang, lấy từ quả của cây cà phê. Các giống cây cà phê được bắt nguồn từ vùng nhiệt đới châu Phi và các vùng Madagascar, Comoros, Mauritius và Réunion trên các khu vực thuộc đường xích đạo.[3] Giống cây này được xuất khẩu từ châu Phi tới các nước trên thế giới và hiện nay đã được trồng tại tổng cộng hơn 70 quốc gia, chủ yếu là các khu vực nằm gần đường xích đạo thuộc châu Mỹ, Đông Nam Á, Ấn Độ và châu Phi. Hai giống cà phê được trồng phổ biến nhất là cà phê chè, và cà phê vối. Sau khi chín, quả cà phê sẽ được hái, chế biến theo các cách thức khác nhau, rang, xay và pha với nước. Quy trình chế biến cũng có nhiều dạng như như chế biến khô, chế biến ướt, chế biến mật ong; hạt cà phê khô được rang trong nhiều điều kiện nhiệt độ khác nhau từ rang sáng tới rang tối màu; sau khi rang lại được đem đi xay theo các kích cỡ hạt mịn hay thô, và ủ với nước sôi hoặc nước lạnh, tùy thị hiếu, để tạo ra cà phê dưới dạng thức uống.",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/330px-A_small_cup_of_coffee.JPG",
+      "date": "2024-11-16T04:15:34.838Z"
+    },
+    {
+      "id": "48c1",
+      "title": "Cà phê ",
+      "content": "Cà phê chồn là một loại cà phê đặc biệt, được xếp vào trong danh sách các loại đồ uống độc đáo nhất trên thế giới. Hương vị của hạt cà phê bị biến đổi nhờ trải qua quá trình tiêu hóa hạt cà phê trong dạ dày của loài chồn, nhất là sự tác động của enzyme làm biến đổi các thành phần vốn có trong hạt cà phê.",
+      "img": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/9/8934680113274-tet-1.jpg.webp",
+      "date": "2024-11-16T05:22:59.698Z"
+    },
+    {
+      "id": "f343",
+      "title": "Cà phê chồn ",
+      "content": "Cà phê chồn nghe thì nặng mùi nhưng thật ra nó mới chính là một hương vị hảo hạn trong giới cà phê",
+      "img": "https://cdn.tgdd.vn/2021/01/CookProduct/Ca-phe-chon-la-gi-nguon-goc-qua-trinh-va-gia-ca-phe-chon-tren-thi-truong-1-1200x676.jpg",
+      "date": "2024-11-01"
+    },
+    {
+      "id": "f357",
+      "title": "Cà phê chồn",
+      "content": "Cà phê chồn hay cà phê phân chồn là tên một loại cà phê đặc biệt, một thứ đồ uống được xếp vào loại hiếm nhất trên thế giới. Loại cà phê này có nhiều ở Indonesia, trên các hòn đảo Sumatra, Java và Sulawesi. Từ Kopi Luwak được dùng để chỉ một loại hạt do loài cầy vòi đốm ăn quả cà phê rồi thải phân ra đem đi phơi khô rồi chế biến .",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Luwak_coffee_beans.jpg/450px-Luwak_coffee_beans.jpg",
+      "date": "2024-11-15"
+    },
+    {
+      "id": "136d",
+      "title": "NGƯỢC LÊN TÂY BẮC GÓI VỊ MỘC VỀ XUÔI",
+      "content": "Những dải ruộng bậc thang, các cô gái Thái với điệu múa xòe hoa, muôn cung đường ngợp mùa hoa… đó là rẻo cao Tây Bắc luôn làm say lòng lữ khách miền xuôi. Và nép mình bên dưới núi non hùng vĩ ấy còn có món quà gói trọn vị thiên nhiên: trà xanh Tây Bắc.\nGói trọn hương vị của núi rừng\nỞ chốn “Ngàn thước lên cao, ngàn thước xuống”, Tây Bắc chứa đựng nhiều khó khăn nhưng cũng gói ghém những ngọt lành chẳng ở đâu có. Địa hình hiểm trở và thổ nhưỡng nơi đây tạo nên những đặc sản nức tiếng: món Chéo người Thái, món thắng cố người Mông, món rêu đá nướng... Mỗi món đều khiến thực khách e ngại lúc mới bắt đầu, nhưng lại có hương vị khó quên khi kết thúc. Bởi thế, mỗi thứ đồ ăn và thức uống từ vùng đất này đều khiến người ta nhớ mãi. ",
+      "img": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/post_images%2F1732523946356_Screenshot%202024-11-25%20153831.png?alt=media&token=167e740e-eda6-4ded-a133-40ba89aaff1f",
+      "imageFile": {},
+      "date": "2024-11-25T08:39:06.356Z"
+    },
+    {
+      "id": "d476",
+      "title": "Giới thiệu về nguồn gốc cà phê",
+      "content": "iết về câu chuyện và nguồn gốc của cà phê được sử dụng trong quán, từ việc trồng, thu hoạch đến quá trình rang xay, giúp khách hàng hiểu rõ hơn về sản phẩm mà họ đang thưởng thức.",
+      "imageFile": {},
+      "img": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/post_images%2F1732535550202_Screenshot%202024-11-25%20153831.png?alt=media&token=9306fdb3-8da3-4ac9-a550-6de9ba57ca86",
+      "date": "2024-11-25T11:52:30.202Z"
+    }
+  ],
+  "listTable": [
+    {
+      "tableNumber": "TB001",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        },
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        },
+        {
+          "id": "3",
+          "name": "Nâu đá",
+          "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
+          "img": "/assets/images/Menu/nau-da.jpg",
+          "price": 20000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 20000
+        }
+      ],
+      "id": "b1a7",
+      "isCallingStaff": false,
+      "timeIn": "11:00:03",
+      "date": "23/11/2024"
+    },
+    {
+      "tableNumber": "TB002",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "10",
+          "name": "Nước ép dưa hấu",
+          "description": "Nước ép dưa hấu mát lạnh, giàu nước và vitamin A, giúp giải nhiệt và cung cấp năng lượng cho cơ thể.",
+          "img": "/assets/images/Menu/nuoc-ep-dua-hau.jpg",
+          "price": 35000,
+          "category": "juice",
+          "availability": true,
+          "quantity": 1,
+          "total": 35000
+        },
+        {
+          "id": "11",
+          "name": "Nước ép dưa hấu & carrot",
+          "description": "Sự kết hợp tươi mát giữa dưa hấu và cà rốt, đem lại hương vị ngọt nhẹ, cung cấp vitamin và dưỡng chất cho sức khỏe.",
+          "img": "/assets/images/Menu/nuoc-ep-carrot.jpg",
+          "price": 35000,
+          "category": "juice",
+          "availability": true,
+          "quantity": 2,
+          "total": 70000
+        },
+        {
+          "id": "9",
+          "name": "Nước ép táo",
+          "description": "Nước ép táo tự nhiên, thơm ngon, chứa nhiều chất chống oxy hóa, giúp làm đẹp da và cải thiện tiêu hóa.",
+          "img": "/assets/images/Menu/nuoc-ep-tao.jpg",
+          "price": 35000,
+          "category": "juice",
+          "availability": true,
+          "quantity": 1,
+          "total": 35000
+        }
+      ],
+      "id": "4527",
+      "isCallingStaff": true,
+      "timeIn": "09:56:09",
+      "date": "23/11/2024"
+    },
+    {
+      "tableNumber": "TB003",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "17",
+          "name": "Rượu Vang Đỏ",
+          "description": "Rượu vang đỏ đậm đà, hương vị phức hợp của quả mọng chín, lý tưởng để kết hợp cùng các món thịt đỏ.",
+          "img": "/assets/images/Menu/ruou-vang-do.jpg",
+          "price": 150000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 1,
+          "total": 150000
+        },
+        {
+          "id": "18",
+          "name": "Rượu Vang Trắng",
+          "description": "Rượu vang trắng thanh khiết, hương vị tươi mát của trái cây nhiệt đới, thích hợp để thưởng thức cùng hải sản.",
+          "img": "/assets/images/Menu/ruou-vang-trang.jpg",
+          "price": 140000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 1,
+          "total": 140000
+        }
+      ],
+      "id": "8abd",
+      "isCallingStaff": false,
+      "timeIn": "11:10:55",
+      "date": "23/11/2024"
+    },
+    {
+      "tableNumber": "TB004",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        },
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        },
+        {
+          "id": "3",
+          "name": "Nâu đá",
+          "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
+          "img": "/assets/images/Menu/nau-da.jpg",
+          "price": 20000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 20000
+        }
+      ],
+      "id": "c695",
+      "isCallingStaff": false,
+      "timeIn": "18:40:53",
+      "date": "23/11/2024"
+    },
+    {
+      "id": "31b3",
+      "tableNumber": "TB005",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "1",
+          "name": "Cà phê muối",
+          "description": "Thức uống kết hợp giữa cà phê đậm đà và một chút muối đặc biệt, tạo nên hương vị độc đáo, đậm đà và mặn ngọt.",
+          "img": "/assets/images/Menu/ca-phe-muoi.jpg",
+          "price": 25000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 25000
+        },
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        }
+      ],
+      "timeIn": "15:24:59",
+      "date": "25/11/2024"
+    },
+    {
+      "tableNumber": "TB006",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "18",
+          "name": "Rượu Vang Trắng",
+          "description": "Rượu vang trắng thanh khiết, hương vị tươi mát của trái cây nhiệt đới, thích hợp để thưởng thức cùng hải sản.",
+          "img": "/assets/images/Menu/ruou-vang-trang.jpg",
+          "price": 140000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 2,
+          "total": 280000
+        },
+        {
+          "id": "19",
+          "name": "Cocktail Mojito",
+          "description": "Cocktail Mojito thơm ngon, sự kết hợp tươi mát của rượu rum, bạc hà và chanh, hoàn hảo để giải nhiệt.",
+          "img": "/assets/images/Menu/mojito.jpg",
+          "price": 80000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 1,
+          "total": 80000
+        }
+      ],
+      "id": "84d3",
+      "isCallingStaff": false,
+      "timeIn": "15:41:45",
+      "date": "25/11/2024"
+    },
+    {
+      "tableNumber": "TB007",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "3",
+          "name": "Nâu đá",
+          "description": "Cà phê sữa đá truyền thống, với hương vị đậm đà của cà phê hòa quyện cùng sữa đặc ngọt ngào.",
+          "img": "/assets/images/Menu/nau-da.jpg",
+          "price": 20000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 20000
+        },
+        {
+          "id": "4",
+          "name": "Sữa tươi cà phê",
+          "description": "Sữa tươi kết hợp với cà phê, đem lại vị thanh mát, béo nhẹ và hương thơm tự nhiên của cà phê.",
+          "img": "/assets/images/Menu/sua-tuoi-cafe.jpg",
+          "price": 27000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 27000
+        }
+      ],
+      "id": "f6c6",
+      "isCallingStaff": true,
+      "timeIn": "17:35:13",
+      "date": "25/11/2024"
+    },
+    {
+      "tableNumber": "TB008",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "4",
+          "name": "Sữa tươi cà phê",
+          "description": "Sữa tươi kết hợp với cà phê, đem lại vị thanh mát, béo nhẹ và hương thơm tự nhiên của cà phê.",
+          "img": "/assets/images/Menu/sua-tuoi-cafe.jpg",
+          "price": 27000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 2,
+          "total": 54000
+        },
+        {
+          "id": "2",
+          "name": "Bạc xỉu kem muối",
+          "description": "Bạc xỉu pha cùng kem mặn, tạo cảm giác béo ngậy, đậm đà. Một món uống yêu thích của các tín đồ cà phê đặc biệt.",
+          "img": "/assets/images/Menu/bac-xiu-kem-muoi.jpg",
+          "price": 30000,
+          "category": "coffee",
+          "availability": true,
+          "quantity": 1,
+          "total": 30000
+        }
+      ],
+      "id": "7577",
+      "isCallingStaff": true,
+      "timeIn": "17:59:42",
+      "date": "25/11/2024"
+    },
+    {
+      "tableNumber": "TB009",
+      "isAvailability": false,
+      "food": [
+        {
+          "id": "19",
+          "name": "Cocktail Mojito",
+          "description": "Cocktail Mojito thơm ngon, sự kết hợp tươi mát của rượu rum, bạc hà và chanh, hoàn hảo để giải nhiệt.",
+          "img": "/assets/images/Menu/mojito.jpg",
+          "price": 80000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 2,
+          "total": 160000
+        },
+        {
+          "id": "20",
+          "name": "Rượu Sake Nhật",
+          "description": "Rượu Sake Nhật thanh nhã, vị ngọt nhẹ nhàng, phù hợp cho các bữa ăn Nhật Bản truyền thống.",
+          "img": "/assets/images/Menu/ruou-sake-nhat.jpg",
+          "price": 120000,
+          "category": "alcohol",
+          "availability": true,
+          "quantity": 1,
+          "total": 120000
+        }
+      ],
+      "id": "5a0b",
+      "isCallingStaff": true,
+      "timeIn": "18:46:22",
+      "date": "25/11/2024"
+    },
+    {
+      "tableNumber": "TB010",
+      "isAvailability": true,
+      "food": [],
+      "id": "6224",
+      "isCallingStaff": false,
+      "timeIn": "",
+      "date": ""
+    },
+    {
+      "tableNumber": "TB011",
+      "isAvailability": true,
+      "food": [],
+      "id": "7f76",
+      "isCallingStaff": false,
+      "timeIn": "",
+      "date": ""
+    },
+    {
+      "tableNumber": "TB012",
+      "isAvailability": true,
+      "food": [],
+      "id": "7f76",
+      "isCallingStaff": false,
+      "timeIn": "",
+      "date": ""
+    }
+  ],
+  "bills": [
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "c244"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "dd77"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "521c"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "c6e0"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "a8c6"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "2c15"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "7af0"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "1959"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "20a2"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "128f"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "f2a7"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "80f4"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "5551"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "b01f"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "99c7"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "d4b8"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "489e"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "b00e"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "0fce"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "1d84"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "795a"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "70eb"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "2f75"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "fda4"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "9733"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "ff4d"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "160b"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "718a"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "5dcf"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "335b"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "8a5e"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "1a68"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "d248"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "50fd"
+    },
+    {
+      "timeIn": "7:36:05 AM",
+      "timeOut": "7:38:05 AM",
+      "date": "13/11/2024",
+      "total": 100000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "id": "7275"
+    },
+    {
+      "timeIn": "8:36:05 AM",
+      "timeOut": "9:38:05 AM",
+      "date": "20/11/2024",
+      "total": 200000,
+      "foods": [
+        {
+          "name": "Nâu đá",
+          "price": 20000,
+          "quantity": 1
+        },
+        {
+          "name": "Bạc xỉu",
+          "price": 20000,
+          "quantity": 1
+        }
+      ],
+      "id": "a11b"
+    }
+  ],
+  "report": [
+    {
+      "revenue": 50000000,
+      "freeTable": 5,
+      "staffWorking": 12,
+      "bestSeller": [
+        {
+          "name": "Rượu vang đỏ",
+          "Quantity": 100
+        }
+      ],
+      "id": "5e0b"
+    }
+  ],
+  "feedBack": [
+    {
+      "id": "b12x",
+      "feedbackCode": "FB01",
+      "feedbackDate": "25/11/2024",
+      "createdBy": "Nguyễn Văn A",
+      "email": "abc@gmail.com",
+      "feedback": "Delicious drink"
+    },
+    {
+      "id": "h35z",
+      "feedbackCode": "FB02",
+      "feedbackDate": "12/02/2021",
+      "createdBy": "Nguyễn Văn A",
+      "email": "abc@gmail.com",
+      "feedback": "Nice view"
+    },
+    {
+      "id": "t82c",
+      "feedbackCode": "FB03",
+      "feedbackDate": "15/05/2021",
+      "createdBy": "Trần Thị B",
+      "email": "tranb@gmail.com",
+      "feedback": "Good service"
+    },
+    {
+      "id": "l59q",
+      "feedbackCode": "FB04",
+      "feedbackDate": "22/06/2021",
+      "createdBy": "Lê Văn C",
+      "email": "levanc@gmail.com",
+      "feedback": "Comfortable space"
+    },
+    {
+      "id": "r74p",
+      "feedbackCode": "FB05",
+      "feedbackDate": "10/07/2021",
+      "createdBy": "Phạm Thị D",
+      "email": "phamd@gmail.com",
+      "feedback": "Reasonable price"
+    },
+    {
+      "id": "d91a",
+      "feedbackCode": "FB06",
+      "feedbackDate": "18/08/2021",
+      "createdBy": "Vũ Thị E",
+      "email": "vuthie@gmail.com",
+      "feedback": "Delicious food"
+    },
+    {
+      "id": "k68f",
+      "feedbackCode": "FB07",
+      "feedbackDate": "30/09/2021",
+      "createdBy": "Ngô Văn F",
+      "email": "ngovanf@gmail.com",
+      "feedback": "Good music"
+    },
+    {
+      "id": "m23j",
+      "feedbackCode": "FB08",
+      "feedbackDate": "05/10/2021",
+      "createdBy": "Đỗ Thị G",
+      "email": "dothig@gmail.com",
+      "feedback": "Fast service"
+    },
+    {
+      "id": "p40y",
+      "feedbackCode": "FB09",
+      "feedbackDate": "15/10/2021",
+      "createdBy": "Hoàng Văn H",
+      "email": "hoangvanh@gmail.com",
+      "feedback": "Great atmosphere"
+    },
+    {
+      "id": "n88w",
+      "feedbackCode": "FB10",
+      "feedbackDate": "25/11/2021",
+      "createdBy": "Lê Thị I",
+      "email": "lethi@gmail.com",
+      "feedback": "Good quality"
+    },
+    {
+      "id": "a111",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "Long",
+      "emai": "tdl13112002@gmail.com",
+      "feedback": "Đồ ngon"
+    },
+    {
+      "id": "b12c",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "Long",
+      "emai": "tdl13112002@gmail.com",
+      "feedback": "Đồ ngon quá"
+    },
+    {
+      "id": "f759",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "Long",
+      "emai": "tdl13112002@gmail.com",
+      "feedback": "Đồ ngon quá"
+    },
+    {
+      "id": "4f45",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "telegram",
+      "emai": "",
+      "feedback": "uong nhu cut"
+    },
+    {
+      "id": "72cc",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "telegram",
+      "emai": "tdl13112002@gmail.com",
+      "feedback": "uong nhu cut"
+    },
+    {
+      "id": "7988",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "Trần Đức Long",
+      "emai": "tdl13112002@gmail.com",
+      "feedback": "Ngonnnn"
+    },
+    {
+      "id": "ee93",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "Trần Đức Long",
+      "emai": "tdl13112002@gmail.com",
+      "feedback": "Ngonnn tuyệt"
+    },
+    {
+      "id": "e468",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "Trần Đức Long",
+      "emai": "tdl13112002@gmail.com",
+      "feedback": "Ngonnn tuyệt"
+    },
+    {
+      "id": "b8a5",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "Trần Đức Long",
+      "emai": "tdl13112002@gmail.com",
+      "feedback": "Uoongs cung dc"
+    },
+    {
+      "id": "a02c",
+      "feedbackDate": "20/11/2024",
+      "createdBy": "Trần Đức Long",
+      "emai": "duclong1311.work@gmail.com",
+      "feedback": "Test feedback"
+    },
+    {
+      "id": "163a",
+      "feedbackDate": "11/22/2024",
+      "createdBy": "Huynh Nhu",
+      "emai": "camlypham61@gmail.com",
+      "feedback": "Cà phê ngon"
+    },
+    {
+      "id": "f3ab",
+      "feedbackDate": "25/11/2024",
+      "createdBy": "Lê Vũ Hoàng",
+      "emai": "levuhoangks@gmail.com",
+      "feedback": "abceqweqweq"
+    },
+    {
+      "id": "003b",
+      "feedbackDate": "25/11/2024",
+      "createdBy": "Lê Vũ Hoàng",
+      "emai": "levuhoangks@gmail.com",
+      "feedback": "ưqeweqweqweasdasd"
+    }
+  ],
+  "listFood": [
+    {
+      "id": "cb97",
+      "groupCode": "G03",
+      "groupName": "Nước ép",
+      "items": [
+        {
+          "code": "NE01",
+          "foodName": "NƯớc ép ổi",
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329205877_nuoc-ep-oi.jpg?alt=media&token=6ff908e5-7f93-4dfe-bbdf-d95fc81afd37",
+          "id": "c678d3f7-96ee-4619-bfe3-6214f6a86f26"
+        },
+        {
+          "code": "NE02",
+          "foodName": "Nước ép táo",
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329228421_nuoc-ep-tao.jpg?alt=media&token=96caaeb4-589d-4657-b791-57d136daf089",
+          "id": "26385b6f-8191-450a-805b-29b0a9ed7af0"
+        },
+        {
+          "code": "NE03",
+          "foodName": "Nước ép dưa hấu",
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329256571_nuoc-ep-dua-hau.jpg?alt=media&token=c4fd3a08-c6f8-41b0-aa97-b7ba96a3e70d",
+          "id": "747e834b-5f18-44e0-a166-0b2303114e8d"
+        },
+        {
+          "code": "NE04",
+          "foodName": "Nước ép dưa hấu & cà rốt",
+          "price": "35000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329294769_nuoc-ep-carrot.jpg?alt=media&token=cb19bb38-d1b7-48c7-9573-9f2b5f4784d1",
+          "id": "674cbf2c-8de4-4aa6-aa96-13c980c36e44"
+        }
+      ]
+    },
+    {
+      "id": "ca55",
+      "groupCode": "G04",
+      "groupName": "Bánh",
+      "items": [
+        {
+          "code": "BA01",
+          "foodName": "Bánh sô-cô-la",
+          "price": "40000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329844693_banh-socola.jpg?alt=media&token=1d2fcd7d-8f0d-46ba-b3d6-d0ff3a150421",
+          "id": "a0b0c6ed-dff9-470a-93e8-d1fad1a8de67"
+        },
+        {
+          "code": "BA02",
+          "foodName": "Bánh vani",
+          "price": "38000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329915766_banh-vani.jpg?alt=media&token=7eba2d3c-83dd-4fad-be21-c50ec9ed1bc7",
+          "id": "a964d24f-8592-4526-861a-7d9279978251"
+        },
+        {
+          "code": "BA03",
+          "foodName": "Bánh Topper",
+          "price": "42000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329950973_banh-topper.jpg?alt=media&token=65d27d14-8297-4f4b-9cf9-7baa23980bd2",
+          "id": "3c69f364-d32d-4486-acb7-c3ff662912f3"
+        },
+        {
+          "code": "BA04",
+          "foodName": "Bánh mật ong",
+          "price": "45000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732329975104_banh-mat-ong.jpg?alt=media&token=56f57c7d-b148-43d5-be8f-126416c74162",
+          "id": "adbaf9c1-f70a-4585-9861-a157bfecd44b"
+        },
+        {
+          "code": "BA05",
+          "foodName": "Bánh tráng trộn",
+          "price": "25000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732522627633_images.jpg?alt=media&token=2e5dba2c-3f3b-49d4-b8e7-27e74e7f7914",
+          "id": "147b31c6-d9e3-4e2c-a894-81292f8b9269"
+        }
+      ]
+    },
+    {
+      "id": "ca99",
+      "groupCode": "G05",
+      "groupName": "Đồ uống có cồn",
+      "items": [
+        {
+          "code": "RU01",
+          "foodName": "Rựu vang đỏ",
+          "price": "150000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732330230298_ruou-vang-do.jpg?alt=media&token=2f01facd-94d0-42cd-aa0f-1daf77d2d777",
+          "id": "73360cd2-feef-4b58-b377-e2e0fc7b5ee3"
+        },
+        {
+          "code": "RU02",
+          "foodName": "Rựu vang trắng",
+          "price": "140000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732330258006_ruou-vang-trang.jpg?alt=media&token=b51d21e7-8289-4eed-b17b-0c9cd8e4ecc3",
+          "id": "d7bb9e8b-d289-48ed-bf48-cb729a1ae36d"
+        },
+        {
+          "code": "RU03",
+          "foodName": "Cocktail Mojito",
+          "price": "80000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732330288956_mojito.jpg?alt=media&token=78dc6b5c-4488-4966-b9cd-439694d59bf7",
+          "id": "0875b1d3-a9d0-490c-81ed-72cc235b9d32"
+        },
+        {
+          "code": "RU04",
+          "foodName": "Rượu Sake Nhật",
+          "price": "120000",
+          "image": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/dish_images%2F1732330328705_ruou-sake-nhat.jpg?alt=media&token=277a05d3-2844-4ffa-8b62-3599b2fa8559",
+          "id": "139ccaa8-1a83-4e0c-97ec-b9034ddc9d29"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "123456",
+      "fullName": "Nguyễn Thành Nhân",
+      "address": "Codegym C05",
+      "gender": "Nam",
+      "phone": "0364923664",
+      "dob": "19-05-2002",
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2Fbanner1.png?alt=media&token=92821f76-0461-4810-bd4e-9c0c9a96e14f",
+      "id": "1",
+      "role": 1
     },
     {
       "id": "2",
-      "postId": 1,
-      "content": "Thanks for sharing!"
+      "username": "phuc",
+      "password": "12345678",
+      "fullName": "Phùng Bửu Hoàng Phúc",
+      "address": "Codegym C05",
+      "gender": "Nam",
+      "phone": "0122456789",
+      "dob": "19-05-2002",
+      "salary": "10.000.000 VND",
+      "position": "Nhân Viên",
+      "role": 0,
+      "profileImage": "https://firebasestorage.googleapis.com/v0/b/vuejs-cb0f7.appspot.com/o/profile_images%2Fbac-xiu-kem-muoi.jpg?alt=media&token=34366ac6-35e9-4363-aae4-69b8ce63182b"
+    },
+    {
+      "id": "5",
+      "username": "phuc123",
+      "password": "123",
+      "fullName": "Phùng Bửu Hoàng Phúc",
+      "address": "Codegym C05",
+      "gender": "Nam",
+      "phone": "0122456789",
+      "dob": "19-05-2002",
+      "salary": "10.000.000 VND",
+      "position": "Nhân Viên",
+      "role": 0
+    },
+    {
+      "id": "6",
+      "username": "phuc456",
+      "password": "123",
+      "fullName": "Phùng Bửu Hoàng Phúc",
+      "address": "Codegym C05",
+      "gender": "Nam",
+      "phone": "0122456789",
+      "dob": "19-05-2002",
+      "salary": "10.000.000 VND",
+      "position": "Nhân Viên"
+    },
+    {
+      "id": "009d",
+      "username": "ád",
+      "fullName": "qưeqw",
+      "address": "eqw",
+      "phoneNumber": "qưeq",
+      "gender": "Nam",
+      "birthDate": "2024-11-21",
+      "salary": "qưe",
+      "position": "qưe",
+      "password": "OChM9vM}"
     }
   ]
 }
