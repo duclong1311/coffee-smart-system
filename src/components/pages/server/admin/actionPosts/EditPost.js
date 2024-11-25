@@ -1,6 +1,6 @@
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Tiny from "../../../../../Tiny";
-import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -15,14 +15,16 @@ import {
 export function EditPost() {
     const { id } = useParams();
     const [post, setPost] = useState({ title: '', content: '', img: '', date: '' });
+    const [preview, setPreview] = useState(null); // State for image preview
+    const [progress, setProgress] = useState(0); // State for upload progress
     const navigate = useNavigate();
 
-    // Lấy dữ liệu bài viết từ API
+    // Fetch the post data
     useEffect(() => {
         const getPost = async () => {
             try {
                 const response = await axios.get(`http://localhost:3000/posts/${id}`);
-                setPost(response.data); // Lưu dữ liệu bài viết vào state
+                setPost(response.data);
             } catch (error) {
                 toast.error('Không thể tải bài viết!', {
                     position: "top-right",
@@ -34,7 +36,7 @@ export function EditPost() {
         getPost();
     }, [id]);
 
-    // Validation với Yup
+    // Validation schema
     const validationSchema = Yup.object({
         title: Yup.string()
             .required("Tiêu đề là bắt buộc")
@@ -45,7 +47,7 @@ export function EditPost() {
             .min(20, "Nội dung phải có ít nhất 20 ký tự"),
     });
 
-    // Upload ảnh lên Firebase
+    // Upload image to Firebase
     const uploadImage = async (file) => {
         const fileName = `${new Date().getTime()}_${file.name}`;
         const storageRef = ref(storage, `post_images/${fileName}`);
@@ -55,9 +57,10 @@ export function EditPost() {
             uploadTask.on(
                 "state_changed",
                 (snapshot) => {
-                    const progress =
-                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log(`Upload progress: ${progress}%`);
+                    const progressPercentage = Math.round(
+                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                    );
+                    setProgress(progressPercentage); // Update progress state
                 },
                 (error) => {
                     console.error("Upload failed:", error);
@@ -66,24 +69,25 @@ export function EditPost() {
                 },
                 async () => {
                     const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                    setProgress(0); // Reset progress state after upload
                     resolve(downloadURL);
                 }
             );
         });
     };
 
-    // Hàm xử lý sửa bài viết
+    // Handle form submission
     const handleEdit = async (values) => {
         const updatedPost = { ...values, date: new Date().toISOString() };
 
         try {
-            // Nếu người dùng chọn file ảnh mới, upload lên Firebase
+            // If a new image is selected, upload it
             if (values.imageFile) {
                 const downloadURL = await uploadImage(values.imageFile);
-                updatedPost.img = downloadURL; // Cập nhật URL ảnh mới
+                updatedPost.img = downloadURL;
             }
 
-            // Cập nhật bài viết
+            // Update the post
             await axios.put(`http://localhost:3000/posts/${id}`, updatedPost);
             toast.success("Cập nhật tin thành công!", {
                 position: "top-right",
@@ -110,7 +114,7 @@ export function EditPost() {
                 >
                     {({ setFieldValue, errors, touched }) => (
                         <Form>
-                            {/* Tiêu đề */}
+                            {/* Title */}
                             <div className="mb-4">
                                 <label className="block text-gray-700">Tiêu đề:</label>
                                 <Field
@@ -121,7 +125,7 @@ export function EditPost() {
                                 <ErrorMessage name="title" component="div" className="text-red-500 text-sm" />
                             </div>
 
-                            {/* Nội dung */}
+                            {/* Content */}
                             <div className="mb-4">
                                 <label className="block text-gray-700">Nội dung:</label>
                                 <Tiny
@@ -133,20 +137,50 @@ export function EditPost() {
                                 )}
                             </div>
 
-                            {/* Hình ảnh */}
+                            {/* Image */}
                             <div className="mb-4">
                                 <label className="block text-gray-700">Hình ảnh hiện tại:</label>
                                 <img src={post.img} alt="Current" className="w-32 h-32 object-cover mb-2" />
+                                <label className="block text-gray-700">Hình ảnh mới:</label>
                                 <input
                                     type="file"
                                     accept="image/*"
-                                    onChange={(e) => setFieldValue("imageFile", e.target.files[0])}
+                                    onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        if (file) {
+                                            setPreview(URL.createObjectURL(file)); // Set preview
+                                            setFieldValue("imageFile", file);
+                                        }
+                                    }}
                                     className="border border-gray-300 p-2 w-full"
                                 />
+                                {preview && (
+                                    <div className="mt-2">
+                                        <p className="text-gray-600">Xem trước ảnh mới:</p>
+                                        <img
+                                            src={preview}
+                                            alt="Preview"
+                                            className="w-32 h-32 object-cover border rounded"
+                                        />
+                                    </div>
+                                )}
                                 <ErrorMessage name="img" component="div" className="text-red-500 text-sm" />
                             </div>
 
-                            {/* Nút lưu thay đổi */}
+                            {/* Progress Bar */}
+                            {progress > 0 && (
+                                <div className="mb-4">
+                                    <p className="text-gray-600">Đang tải ảnh: {progress}%</p>
+                                    <div className="w-full bg-gray-200 h-2 rounded">
+                                        <div
+                                            className="bg-[#C48355] h-2 rounded"
+                                            style={{ width: `${progress}%` }}
+                                        ></div>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Submit Button */}
                             <div className="flex items-center justify-center">
                                 <button
                                     type="submit"

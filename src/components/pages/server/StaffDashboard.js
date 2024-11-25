@@ -61,7 +61,7 @@ const StaffDashboard = () => {
         <>
             <h1 className="text-left text-3xl font-bold mb-8">Trang chủ</h1>
 
-            <div className="container grid lg:grid-cols-2 gap-4 sm:grid-cols-1 h-full">
+            <div className="container grid gap-4 grid-cols-1 lg:grid-cols-2 h-[550px]">
                 <div className="grid grid-cols-2 place-items-center gap-4 h-96">
                     <div className="flex border-2 border-amber-700 h-full w-full m-1 justify-center items-center">
                         {`Bàn trống: ${reportData[0]?.freeTable}`}
