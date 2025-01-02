@@ -1,74 +1,68 @@
-# Getting Started with Create React App
+# Coffee Smart System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Coffee Smart System is an innovative solution designed to enhance the efficiency and quality of beverage dispensing in coffee shops and related establishments. By integrating automated dispensing technology, the system ensures precise dosing, reduces waste, and streamlines workflow.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Automated Beverage Dispensing**: Delivers consistent portions for various beverages, including dairy, plant-based milks, cold brew, and iced teas.
+- **Hands-Free Operation**: Enhances hygiene and efficiency with touchless dispensing.
+- **Customizable Controls**: Allows for tailored settings to meet specific business needs.
+- **Integrated Cleaning System**: Features semi-automated or fully automated cleaning processes to maintain optimal hygiene standards.
+- **Space-Saving Design**: Compact footprint suitable for various layouts, compatible with multiple refrigerator units.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Benefits
 
-### `npm test`
+- **Reduce Waste and Costs**: Minimizes overpours and product waste, leading to cost savings.
+- **Diversify Menu Offerings**: Easily expand beverage options with minimal training.
+- **Improve Consistency**: Ensures uniform quality in every serving.
+- **Speed Up Service**: Accelerates beverage preparation, enhancing customer satisfaction.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Hardware Setup**: Install the Coffee Smart System unit according to the manufacturer's guidelines.
+2. **Software Configuration**:
+   - Clone this repository to your local machine:
+     ```bash
+     git clone https://github.com/team1-c05wfe/coffee-smart-system.git
+     ```
+   - Navigate to the project directory:
+     ```bash
+     cd coffee-smart-system
+     ```
+   - Install the necessary dependencies:
+     ```bash
+     npm install
+     ```
+   - Configure environment variables as per your setup.
+   - Start the application:
+     ```bash
+     npm start
+     ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+- **Dispensing Beverages**: Place the cup under the dispenser and select the desired beverage.
+- **Cleaning Cycle**: Initiate the cleaning process through the control panel as per the maintenance schedule.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+We welcome contributions to enhance the Coffee Smart System. Please follow these steps:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
 
 ### jsonSever
 
-json-server --watch src/json/db.json --port 3000
+npx json-server --watch db.json --port 3000
